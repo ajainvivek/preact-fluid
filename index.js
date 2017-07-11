@@ -1,11 +1,13 @@
 import './style';
 import { Component } from 'preact';
 
+import AppBar from './components/AppBar';
+
 export default class App extends Component {
 	render() {
 		return (
 			<div>
-				<h1>Hello, World!</h1>
+				<AppBar title="Preact Fluid" />
 			</div>
 		);
 	}

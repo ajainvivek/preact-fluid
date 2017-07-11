@@ -1,0 +1,23 @@
+// Button
+@import './../../styles/mixins/padding';
+
+.fluid_btn {
+	appearance: none;
+	cursor: pointer;
+	display: inline-block;
+	outline: none;
+	text-align: center;
+	text-decoration: none;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+	@include padding(5px, 10px, 5px, 10px);
+
+	&:focus {
+		text-decoration: none;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+}

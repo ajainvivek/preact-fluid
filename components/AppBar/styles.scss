@@ -1,0 +1,32 @@
+@import './../../styles/mixins/margin';
+
+// AppBar
+.fluid_app_bar {
+	align-items: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	&__section {
+		align-items: center;
+		display: flex;
+		flex: 1 0 0;
+
+		&:last-child {
+			justify-content: flex-end;
+		}
+	}
+
+	&__center {
+		align-items: center;
+		display: flex;
+		flex: 0 0 auto;
+	}
+
+	&__brand {
+		font-size: 14px;
+		font-weight: 500;
+		text-decoration: none;
+		@include margin(0px, 10px, 0px, 10px);
+	}
+}
