@@ -3,11 +3,26 @@ import { Component } from 'preact';
 
 import AppBar from './components/AppBar';
 
+const leftNav = [
+	{
+		component: 'Link',
+		title: 'Docs',
+		url: '#',
+		target: 'blank'
+	},
+	{
+		component: 'Link',
+		title: 'Github',
+		url: '#',
+		target: 'blank'
+	}
+];
+
 export default class App extends Component {
 	render() {
 		return (
 			<div>
-				<AppBar title="Preact Fluid" />
+				<AppBar title="Preact Fluid" left={leftNav} />
 			</div>
 		);
 	}

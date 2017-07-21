@@ -10,25 +10,27 @@ const fluid_btn = {
 		background: colors.bgColorLight,
 		border: `1px solid ${colors.primaryColor}`,
 		borderRadius: '2px',
-		color: colors.linkColor,
-		fontSize: '12px',
-		lineHeight: '12px'
+		color: colors.linkColor
 	},
 	primary: {
 		background: colors.primaryColor,
 		border: `1px solid ${colors.primaryColorDark}`,
 		borderRadius: '2px',
-		color: colors.lightColor,
-		fontSize: '12px',
-		lineHeight: '12px'
+		color: colors.lightColor
+	},
+	link: {
+		background: 'transparent',
+		borderColor: 'transparent',
+		color: colors.linkColor
 	}
 };
 
 class Button extends Component {
 	render() {
+		const { type = 'default' } = this.props;
 		return (
-			<button className={`${style.fluid_btn}`} style={fluid_btn.default}>
-				default button
+			<button className={`${style.fluid_btn}`} style={fluid_btn[type]}>
+				{this.props.children}
 			</button>
 		);
 	}
