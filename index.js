@@ -22,7 +22,7 @@ export default class App extends Component {
 	render() {
 		return (
 			<div>
-				<AppBar title="Preact Fluid" left={leftNav} />
+				<AppBar title="Preact Fluid" left={leftNav} titleStyle={{ fontSize: '18px' }} />
 			</div>
 		);
 	}

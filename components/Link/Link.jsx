@@ -14,10 +14,11 @@ const fluid_link = {
 class Link extends Component {
 	render() {
 		const { type = 'default' } = this.props;
+		const inlineStyle = Object.assign({}, fluid_link[type], this.props.style || {});
 		return (
 			<a
 				className={`${style.fluid_link}`}
-				style={fluid_link[type]}
+				style={inlineStyle}
 				href={this.props.url || '#'}
 				target={this.props.target || ''}
 			>
@@ -30,7 +31,8 @@ class Link extends Component {
 Link.propTypes = {
 	type: PropTypes.string,
 	url: PropTypes.string,
-	target: PropTypes.string
+	target: PropTypes.string,
+	style: PropTypes.object
 };
 Link.defaultProps = {};
 

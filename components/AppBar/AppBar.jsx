@@ -1,10 +1,11 @@
 import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
-import Button from './../Button';
-import Link from './../Link';
+import Components from './../index';
 
 import style from './styles';
+
+const Link = Components.Link;
 
 class AppBar extends Component {
 	render() {
@@ -16,9 +17,9 @@ class AppBar extends Component {
 		return (
 			<header className={`${style.fluid_app_bar}`}>
 				<section className={`${style.fluid_app_bar__section}`}>
-					<Link>{title}</Link>
+					<Link style={this.props.titleStyle}>{title}</Link>
 					{left.map((partial) => {
-						const CustomComponent = partial.component;
+						const CustomComponent = Components[partial.component];
 						return (
 							<CustomComponent> {partial.title} </CustomComponent>
 						);
@@ -37,8 +38,8 @@ class AppBar extends Component {
 
 AppBar.propTypes = {
 	title: PropTypes.string.isRequired,
-	left: PropTypes.array
-
+	left: PropTypes.array,
+	titleStyle: PropTypes.object
 };
 AppBar.defaultProps = {};
 
