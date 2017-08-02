@@ -18,11 +18,20 @@ const leftNav = [
 	}
 ];
 
+const rightNav = [
+	{
+		component: 'Button',
+		title: 'Github',
+		url: '#',
+		target: 'blank'
+	}
+];
+
 export default class App extends Component {
 	render() {
 		return (
 			<div>
-				<AppBar title="Preact Fluid" left={leftNav} titleStyle={{ fontSize: '18px' }} />
+				<AppBar title="Preact Fluid" left={leftNav} right={rightNav} titleStyle={{ fontSize: '18px' }} />
 			</div>
 		);
 	}

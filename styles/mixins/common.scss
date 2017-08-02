@@ -1,0 +1,45 @@
+//
+// Clearfix Mixin
+//
+// Usage --->
+// @include clearfix();
+//
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+//
+// Margin Mixin
+//
+// Usage --->
+// @include margin(top, right, bottom, left);
+//
+
+@mixin margin($top, $right, $bottom, $left) {
+	margin-top: $top;
+	margin-right: $right;
+	margin-bottom: $bottom;
+	margin-left: $left;
+}
+
+//
+// Padding Mixin
+//
+// Usage --->
+// @include padding(top, right, bottom, left);
+//
+
+@mixin padding($top, $right, $bottom, $left) {
+	padding-top: $top;
+	padding-right: $right;
+	padding-bottom: $bottom;
+	padding-left: $left;
+}

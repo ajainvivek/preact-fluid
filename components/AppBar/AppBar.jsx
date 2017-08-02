@@ -11,7 +11,8 @@ class AppBar extends Component {
 	render() {
 		const {
 			title = '',
-			left = []
+			left = [],
+			right =[]
 		} = this.props;
 
 		return (
@@ -26,10 +27,12 @@ class AppBar extends Component {
 					})}
 				</section>
 				<section className={`${style.fluid_app_bar__section}`}>
-					<div className="input-group input-inline">
-						<input className="form-input" type="text" placeholder="search" />
-						<button className="btn btn-primary input-group-btn">Search</button>
-					</div>
+					{right.map((partial) => {
+						const CustomComponent = Components[partial.component];
+						return (
+							<CustomComponent> {partial.title} </CustomComponent>
+						);
+					})}
 				</section>
 			</header>
 		);

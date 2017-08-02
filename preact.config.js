@@ -11,7 +11,7 @@ export default function (config, env, helpers) {
 	config.module.loaders[2].use.push({
 		loader: 'sass-resources-loader',
 		options: {
-			resources: ['./styles/mixins/*.scss']
+			resources: ['./styles/mixins/*.scss', './styles/variables.scss']
 		}
 	});
 }
