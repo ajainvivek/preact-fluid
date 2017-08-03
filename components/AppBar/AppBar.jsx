@@ -7,6 +7,7 @@ import style from './styles';
 
 const Link = Components.Link;
 
+
 class AppBar extends Component {
 	render() {
 		const {

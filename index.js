@@ -1,7 +1,7 @@
 import './style';
 import { Component } from 'preact';
 
-import AppBar from './components/AppBar';
+import { AppBar } from './components';
 
 const leftNav = [
 	{
