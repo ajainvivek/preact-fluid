@@ -7,21 +7,20 @@ import style from './styles';
 class Cols extends Component {
 	render() {
 		const {
-			df,
 			xl,
 			lg,
 			md,
 			sm,
 			xs
 		} = this.props;
-		const dfClass = df ? `col-${df}` : ''; // Default
-		const xlClass = xl ? `col-xl-${xl}` : ''; // Extra Large
-		const lgClass = lg ? `col-lg-${lg}` : ''; // Large
-		const mdClass = md ? `col-md-${md}` : ''; // Medium
-		const smClass = sm ? `col-sm-${sm}` : ''; // Small
-		const xsClass = sm ? `col-xs-${xs}` : ''; // Extra Small
+		const dfClass = style[`fluid_column__col-${xl || lg || md || sm || xs || ''}`]; // Default
+		const xlClass = xl ? style[`fluid_column__col-md-${xl}`] : ''; // Extra Large
+		const lgClass = lg ? style[`fluid_column__col-lg-${lg}`] : ''; // Large
+		const mdClass = md ? style[`fluid_column__col-md-${md}`] : ''; // Medium
+		const smClass = sm ? style[`fluid_column__col-sm-${sm}`] : ''; // Small
+		const xsClass = sm ? style[`fluid_column__col-xs-${xs}`] : ''; // Extra Small
 		return (
-			<div className={`${style[dfClass]} ${style[xlClass]} ${style[lgClass]} ${style[mdClass]} ${style[smClass]} ${style[xsClass]}`}>
+			<div className={`${dfClass} ${xlClass} ${lgClass} ${mdClass} ${smClass} ${xsClass}`}>
 				{this.props.children}
 			</div>
 		);
@@ -29,7 +28,6 @@ class Cols extends Component {
 }
 
 Cols.propTypes = {
-	df: PropTypes.number,
 	xl: PropTypes.number,
 	lg: PropTypes.number,
 	md: PropTypes.number,

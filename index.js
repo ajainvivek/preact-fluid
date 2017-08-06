@@ -1,7 +1,7 @@
 import './style';
 import { Component } from 'preact';
 
-import { AppBar } from './components';
+import { AppBar, Container, Columns, Col } from './components';
 
 const leftNav = [
 	{
@@ -32,6 +32,19 @@ export default class App extends Component {
 		return (
 			<div>
 				<AppBar title="Preact Fluid" left={leftNav} right={rightNav} titleStyle={{ fontSize: '18px' }} />
+				<Container>
+					<Columns>
+						<Col md={3}>
+							A
+						</Col>
+						<Col md={6}>
+							B
+						</Col>
+						<Col md={3}>
+							C
+						</Col>
+					</Columns>
+				</Container>
 			</div>
 		);
 	}

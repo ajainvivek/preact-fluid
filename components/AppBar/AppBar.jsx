@@ -1,12 +1,15 @@
 import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
-import Components from './../index';
+import Link from './../Link';
+import Button from './../Button';
 
 import style from './styles';
 
-const Link = Components.Link;
-
+const Components = {
+    Link,
+    Button
+};
 
 class AppBar extends Component {
 	render() {

@@ -1,13 +1,3 @@
-import LContainer from './Container';
-import LColumns from './Columns';
-import LCol from './Col';
-
-
-export const Container = LContainer;
-export const Columns = LColumns;
-export const Col = LCol;
-export default {
-	Container,
-	Columns,
-	Col
-};
+export Container from './Container';
+export Columns from './Columns';
+export Col from './Col';
