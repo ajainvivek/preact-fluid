@@ -1,12 +1,13 @@
 {
   "name": "preact-fluid",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "eslint . && preact test",
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
+    "prepublish": "npm run build",
     "serve": "preact build && preact serve",
     "dev": "preact watch"
   },
