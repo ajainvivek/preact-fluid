@@ -13,12 +13,12 @@ class Cols extends Component {
 			sm,
 			xs
 		} = this.props;
-		const dfClass = style[`fluid_column__col-${xl || lg || md || sm || xs || ''}`]; // Default
-		const xlClass = xl ? style[`fluid_column__col-md-${xl}`] : ''; // Extra Large
-		const lgClass = lg ? style[`fluid_column__col-lg-${lg}`] : ''; // Large
-		const mdClass = md ? style[`fluid_column__col-md-${md}`] : ''; // Medium
-		const smClass = sm ? style[`fluid_column__col-sm-${sm}`] : ''; // Small
-		const xsClass = sm ? style[`fluid_column__col-xs-${xs}`] : ''; // Extra Small
+		const dfClass = `fluid_column__col-${xl || lg || md || sm || xs || ''}`; // Default
+		const xlClass = xl ? `fluid_column__col-md-${xl}` : ''; // Extra Large
+		const lgClass = lg ? `fluid_column__col-lg-${lg}` : ''; // Large
+		const mdClass = md ? `fluid_column__col-md-${md}` : ''; // Medium
+		const smClass = sm ? `fluid_column__col-sm-${sm}` : ''; // Small
+		const xsClass = sm ? `fluid_column__col-xs-${xs}` : ''; // Extra Small
 		return (
 			<div className={`${dfClass} ${xlClass} ${lgClass} ${mdClass} ${smClass} ${xsClass}`}>
 				{this.props.children}

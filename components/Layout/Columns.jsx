@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
-import style from './styles';
+import './styles';
 
 
 class Columns extends Component {
@@ -13,8 +13,8 @@ class Columns extends Component {
 		return (
 			<div
 				className={`
-					${style.fluid_columns} ${noGutter ? style.fluid_columns__no_gutter : ''}
-					${oneLine ? style.fluid_columns__online : ''}
+					fluid_columns ${noGutter ? 'fluid_columns__no_gutter' : ''}
+					${oneLine ? 'fluid_columns__online' : ''}
 				`}
 			>
 				{this.props.children}

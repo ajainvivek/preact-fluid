@@ -1,5 +1,7 @@
-// Responsive Flex Layout
+@import '../styles/variables';
+@import '../styles/mixins/common';
 
+// Responsive Flex Layout
 .fluid_container {
 	width: 100%;
 	@include margin(0, auto, 0, auto);
