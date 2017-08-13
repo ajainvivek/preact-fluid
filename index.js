@@ -50,5 +50,5 @@ export default class App extends Component {
 	}
 }
 
-// Export
+// Export Components
 export { AppBar, Button, Link, Container, Columns, Col } from './components';
