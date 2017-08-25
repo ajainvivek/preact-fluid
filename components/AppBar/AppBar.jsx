@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import Link from './../Link';
 import Button from './../Button';
 
-import './styles';
+import styles from './styles';
 
 const Components = {
-    Link,
-    Button
+	Link,
+	Button
 };
 
 class AppBar extends Component {
@@ -20,8 +20,8 @@ class AppBar extends Component {
 		} = this.props;
 
 		return (
-			<header className='fluid_app_bar'>
-				<section className='fluid_app_bar__section'>
+			<header className={styles.fluid_app_bar}>
+				<section className={styles.fluid_app_bar__section}>
 					<Link style={this.props.titleStyle}>{title}</Link>
 					{left.map((partial) => {
 						const CustomComponent = Components[partial.component];
@@ -30,7 +30,7 @@ class AppBar extends Component {
 						);
 					})}
 				</section>
-				<section className='fluid_app_bar__section'>
+				<section className={styles.fluid_app_bar__section}>
 					{right.map((partial) => {
 						const CustomComponent = Components[partial.component];
 						return (

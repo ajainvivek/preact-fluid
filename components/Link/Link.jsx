@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import colors from './../theme';
 
-import style from './styles';
+import styles from './styles';
 
 const fluid_link = {
 	default: {
@@ -17,7 +17,7 @@ class Link extends Component {
 		const inlineStyle = Object.assign({}, fluid_link[type], this.props.style || {});
 		return (
 			<a
-				className='fluid_link'
+				className={styles.fluid_link}
 				style={inlineStyle}
 				href={this.props.url || '#'}
 				target={this.props.target || ''}

@@ -1,12 +1,12 @@
 import { Component } from 'preact';
 
-import './styles';
+import styles from './styles';
 
 
 class Container extends Component {
 	render() {
 		return (
-			<div className='fluid_container'>
+			<div className={styles.fluid_container}>
 				{this.props.children}
 			</div>
 		);
