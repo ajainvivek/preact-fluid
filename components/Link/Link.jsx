@@ -17,7 +17,7 @@ class Link extends Component {
 		const inlineStyle = Object.assign({}, fluid_link[type], this.props.style || {});
 		return (
 			<a
-				className={`${style.fluid_link}`}
+				className='fluid_link'
 				style={inlineStyle}
 				href={this.props.url || '#'}
 				target={this.props.target || ''}
