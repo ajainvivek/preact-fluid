@@ -1,37 +1,15 @@
 import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
-import colors from './../theme';
-
-import styles from './styles';
-
-const fluid_btn = {
-	default: {
-		background: colors.bgColorLight,
-		border: `1px solid ${colors.primaryColor}`,
-		borderRadius: '2px',
-		color: colors.linkColor
-	},
-	primary: {
-		background: colors.primaryColor,
-		border: `1px solid ${colors.primaryColorDark}`,
-		borderRadius: '2px',
-		color: colors.lightColor
-	},
-	link: {
-		background: 'transparent',
-		borderColor: 'transparent',
-		color: colors.linkColor
-	}
-};
+import { StyledButton } from './styles';
 
 class Button extends Component {
 	render() {
 		const { type = 'default' } = this.props;
 		return (
-			<button className={styles.fluid_btn} style={fluid_btn[type]}>
+			<StyledButton type={type}>
 				{this.props.children}
-			</button>
+			</StyledButton>
 		);
 	}
 }

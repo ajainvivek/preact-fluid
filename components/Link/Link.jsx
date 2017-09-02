@@ -1,29 +1,20 @@
 import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
-import colors from './../theme';
-
-import styles from './styles';
-
-const fluid_link = {
-	default: {
-		color: colors.linkColor
-	}
-};
+import { StyledLink } from './styles';
 
 class Link extends Component {
 	render() {
-		const { type = 'default' } = this.props;
-		const inlineStyle = Object.assign({}, fluid_link[type], this.props.style || {});
+		const { type = 'default', style = {} } = this.props;
 		return (
-			<a
-				className={styles.fluid_link}
-				style={inlineStyle}
+			<StyledLink
+				type={type}
+				style={style}
 				href={this.props.url || '#'}
 				target={this.props.target || ''}
 			>
 				{this.props.children}
-			</a>
+			</StyledLink>
 		);
 	}
 }

@@ -30,6 +30,7 @@
     "preact": "^8.2.0",
     "preact-compat": "^3.16.0",
     "preact-router": "^2.5.4",
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.5.10",
+    "styled-components": "^2.1.2"
   }
 }

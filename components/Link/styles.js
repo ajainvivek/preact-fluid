@@ -1,7 +1,8 @@
-@import '../styles/mixins/common';
+import styled, {css} from 'styled-components';
 
-// Button
-.fluid_btn {
+import colors from './../theme';
+
+export const StyledLink = styled.a`
 	appearance: none;
 	cursor: pointer;
 	display: inline-block;
@@ -13,9 +14,8 @@
 	white-space: nowrap;
 	font-size: 14px;
 	line-height: 14px;
-	@include padding(5px, 10px, 5px, 10px);
-	@include margin(5px, 10px, 5px, 10px);
-
+	margin: 5px 10px;
+	
 	&:focus {
 		text-decoration: none;
 	}
@@ -23,4 +23,8 @@
 	&:hover {
 		text-decoration: none;
 	}
-}
+	
+	${props => (props.type === 'default') && css`
+		color: ${colors.linkColor}
+	`}
+`;
