@@ -2,7 +2,7 @@ import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 import Link from './../Link';
-import Button from './../Button';
+import Button from '../Button';
 
 import styles from './styles';
 
