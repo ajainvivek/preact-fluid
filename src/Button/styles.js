@@ -14,8 +14,8 @@ export const StyledButton = styled.button`
 	white-space: nowrap;
 	font-size: 14px;
 	line-height: 14px;
-	padding: 5px 10px;
-	margin: 5px 10px;
+	padding: 8px 16px;
+	margin: 8px 16px;
 	background: ${colors.bgColorLight};
 	border: 1px solid ${colors.primaryColor};
 	border-radius: 2px;

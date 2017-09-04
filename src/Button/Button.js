@@ -10,11 +10,32 @@ class Button extends Component {
 
 	static propTypes = {
 
-		/** If true, the button will use the theme's primary color  */
+		/**
+		 * Button label.
+		 */
+		children: PropTypes.string.isRequired,
+
+		/**
+		 * The size of the Button
+		 */
+		size: PropTypes.oneOf(['small', 'normal', 'large']),
+
+		/**
+		 * If true, the button will use the theme's primary color
+		 */
 		primary: PropTypes.bool,
 
-		/** If true, the button will use the theme's secondary color  */
-		secondary: PropTypes.bool
+		/**
+		 * If true, the button will use the theme's secondary color
+		 */
+		secondary: PropTypes.bool,
+
+		/**
+		 * Gets called when the user clicks on the button
+		 *
+		 * @param {SyntheticEvent} event The react `SyntheticEvent`
+		 */
+		onClick: PropTypes.func
 	};
 
 	static defaultProps = {
