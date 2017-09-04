@@ -4,17 +4,27 @@ import PropTypes from 'prop-types';
 import { StyledButton } from './styles';
 
 /**
- * General component description in JSDoc format. Markdown is *supported*.
+ * Button indicates possible user actions
  */
 class Button extends Component {
+
 	static propTypes = {
-		/** Description of prop "foo". */
-		type: PropTypes.string
+
+		/** If true, the button will use the theme's primary color  */
+		primary: PropTypes.bool,
+
+		/** If true, the button will use the theme's secondary color  */
+		secondary: PropTypes.bool
 	};
+
+	static defaultProps = {
+		primary: false,
+		secondary: false
+	};
+
 	render() {
-		const { type = 'default' } = this.props;
 		return (
-			<StyledButton type={type}>
+			<StyledButton {...this.props}>
 				{this.props.children}
 			</StyledButton>
 		);

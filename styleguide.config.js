@@ -6,7 +6,7 @@ var path = require('path');
 module.exports = {
 	title: '(P)react Fluid',
 	sections: [{
-		name: 'Button', content: './src/Button/Readme.md', components: function() {
+		name: 'Button', content: './docs/components/Button.md', components: function() {
 			return [
 				'./src/Button/Button.js'
 			];
@@ -24,7 +24,7 @@ module.exports = {
 		};
 		if (env !== 'production') {
 			babel.query = {
-				presets: ["es2015", "stage-0", "react"]
+				presets: ['es2015', 'stage-0', 'react']
 			};
 		}
 
@@ -35,7 +35,7 @@ module.exports = {
 			resolve: {
 				extensions: ['.jsx', '.js', '.json', '.less'],
 				modules: [
-					path.resolve(__dirname, "node_modules"),
+					path.resolve(__dirname, 'node_modules'),
 					'node_modules'
 				],
 				alias: {
