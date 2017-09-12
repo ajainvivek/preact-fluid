@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import colors from '../theme';
 
 export const StyledButton = styled.button`
+	position: relative;
 	appearance: none;
 	cursor: pointer;
 	display: inline-block;
@@ -35,4 +36,12 @@ export const StyledButton = styled.button`
 		border-radius: 2px;
 		color: ${colors.lightColor}
 	`}
+`;
+
+export const AnimeDiv = styled.div`
+	background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+    position: absolute;
 `;

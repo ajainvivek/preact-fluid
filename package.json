@@ -32,6 +32,8 @@
     "webpack": "^3.5.5"
   },
   "dependencies": {
+    "animejs": "^2.0.2",
+    "lodash": "^4.17.4",
     "preact": "^8.2.0",
     "preact-compat": "^3.16.0",
     "preact-router": "^2.5.4",

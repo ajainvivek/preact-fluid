@@ -1,7 +1,8 @@
 import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
 
-import { StyledButton } from './styles';
+import { StyledButton, AnimeDiv } from './styles';
+import Anime from './../Anime';
 
 /**
  * Button indicates possible user actions
@@ -43,10 +44,37 @@ class Button extends Component {
 		secondary: false
 	};
 
+	_handleClick = (event) => {
+		const xPos = event.pageX - event.target.offsetLeft;
+		const yPos = event.pageY - event.target.offsetTop;
+
+		this.setState({
+			animeElements: (
+				<Anime
+					scale={{
+						value: 40,
+						duration: 1000,
+					}}
+					opacity={{
+						value: 0,
+						duration: 1000
+					}}
+					easing="easeOutSine"
+				    complete={() => {
+				    	this.setState({});
+				    }}
+				>
+					<AnimeDiv style={{ left: xPos + 'px', top: yPos + 'px' }} />
+				</Anime>
+			)
+		});
+	}
+
 	render() {
 		return (
-			<StyledButton {...this.props}>
+			<StyledButton {...this.props} onClick={this._handleClick}>
 				{this.props.children}
+				{this.state.animeElements || []}
 			</StyledButton>
 		);
 	}
