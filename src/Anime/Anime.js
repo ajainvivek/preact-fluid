@@ -79,7 +79,6 @@ class Anime extends Component {
 	render() {
 		let { style } = this.props;
 		let { cur } = this.children;
-
 		return (
 			<g style={{ ...style }}>
 				{cur.map((child, i) =>

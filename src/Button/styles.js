@@ -1,6 +1,24 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import colors from '../theme';
+
+const effect = keyframes`
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+`;
 
 export const StyledButton = styled.button`
 	position: relative;
@@ -21,6 +39,11 @@ export const StyledButton = styled.button`
 	border: 1px solid ${colors.primaryColor};
 	border-radius: 2px;
 	color: ${colors.linkColor};
+	
+	&:focus {
+		outline: 0;
+		animation: ${effect} 0.8s ease-out;
+	}
 
 	${props => props.primary && css`
 		background: ${colors.primaryColor};
@@ -36,12 +59,4 @@ export const StyledButton = styled.button`
 		border-radius: 2px;
 		color: ${colors.lightColor}
 	`}
-`;
-
-export const AnimeDiv = styled.div`
-	background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 100%;
-    width: 10px;
-    height: 10px;
-    position: absolute;
 `;
