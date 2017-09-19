@@ -1,24 +1,7 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import colors from '../theme';
-
-const effect = keyframes`
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-`;
+import keyframes from '../keyframes';
 
 export const StyledButton = styled.button`
 	position: relative;
@@ -33,16 +16,25 @@ export const StyledButton = styled.button`
 	white-space: nowrap;
 	font-size: 14px;
 	line-height: 14px;
-	padding: 8px 16px;
-	margin: 8px 16px;
+	padding: 10px 20px;
+	margin: 10px 20px;
 	background: ${colors.bgColorLight};
 	border: 1px solid ${colors.primaryColor};
 	border-radius: 2px;
 	color: ${colors.linkColor};
 	
-	&:focus {
-		outline: 0;
-		animation: ${effect} 0.8s ease-out;
+	&.clicked:after {
+		content: '';
+		position: absolute;
+		top: -1px;
+		left: -1px;
+		bottom: -1px;
+		right: -1px;
+		border-radius: inherit;
+		border: 0 solid ${colors.primaryColor};
+		opacity: 0.4;
+		animation: ${keyframes.buttonEffect} .4s;
+		display: block;
 	}
 
 	${props => props.primary && css`

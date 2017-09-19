@@ -1,8 +1,7 @@
 import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
 
-import { StyledButton, AnimeDiv } from './styles';
-import Anime from './../Anime';
+import { StyledButton } from './styles';
 
 /**
  * Button indicates possible user actions
@@ -41,12 +40,34 @@ class Button extends Component {
 
 	static defaultProps = {
 		primary: false,
-		secondary: false
+		secondary: false,
+		clicked: false
 	};
 
+	_handleClick = (event) => {
+		this.setState({
+			clicked: true
+		});
+
+		clearTimeout(this.timeout);
+		this.timeout = setTimeout(() => this.setState({ clicked: false }), 500);
+
+		const onClick = this.props.onClick;
+		if (onClick) {
+			onClick(event);
+		}
+	}
+
+	componentWillUnmount() {
+		if (this.timeout) {
+			clearTimeout(this.timeout);
+		}
+	}
+
 	render() {
+		const clicked = this.state.clicked ? 'clicked' : '';
 		return (
-			<StyledButton {...this.props}>
+			<StyledButton {...this.props} onClick={this._handleClick} className={clicked}>
 				{this.props.children}
 			</StyledButton>
 		);
