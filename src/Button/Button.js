@@ -21,6 +21,11 @@ class Button extends Component {
 		size: PropTypes.oneOf(['small', 'normal', 'large']),
 
 		/**
+		 * If true, the button will be rounded corners
+		 */
+		rounded: PropTypes.bool,
+
+		/**
 		 * If true, the button will use the theme's primary color
 		 */
 		primary: PropTypes.bool,
@@ -66,9 +71,11 @@ class Button extends Component {
 
 	render() {
 		const clicked = this.state.clicked ? 'clicked' : '';
+		const {badge='', loading=false} = this.props;
 		return (
-			<StyledButton {...this.props} onClick={this._handleClick} className={clicked}>
+			<StyledButton {...this.props} onClick={this._handleClick} className={`${clicked} ${loading && 'loading'}`}>
 				{this.props.children}
+				<span className={`${badge && 'badge'}`}>{badge && badge.value}</span>
 			</StyledButton>
 		);
 	}
