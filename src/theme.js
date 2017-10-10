@@ -20,7 +20,7 @@ function shadeColor (color, percent) {
 	return '#'+RR+GG+BB;
 };
 
-const primaryColor  = '#1072B5';
+const primaryColor  = '#0058a2';
 const secondaryColor = '#1A9EDC';
 const linkColor = primaryColor;
 const darkColor = '#454d5d';

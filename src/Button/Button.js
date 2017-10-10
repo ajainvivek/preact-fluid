@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import { StyledButton } from './styles';
 
 /**
- * Button indicates possible user actions
+ * This button is used to add dimension to mostly flat layouts and emphasizes important functions on your page.
+ *
+ * @example ./../../docs/components/Button.md
  */
 class Button extends Component {
 

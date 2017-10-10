@@ -1,4 +1,4 @@
-Buttons with different variations:
+Examples:
 
 ```js
 <Button>Default Button</Button>

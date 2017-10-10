@@ -6,12 +6,20 @@ var path = require('path');
 module.exports = {
 	title: '(P)react Fluid',
 	sections: [{
-		name: 'Button', content: './docs/components/Button.md', components: function() {
+		name: 'Components', content: './docs/Components.md', components: function() {
 			return [
-				'./src/Button/Button.js'
+				'./src/Button/Button.js',
+				'./src/AppBar/AppBar.js'
 			];
 		}
 	}],
+	theme: {
+		baseBackground: '#fdfdfc',
+		link: '#274e75',
+		linkHover: '#90a7bf',
+		border: '#e0d2de',
+		font: ['Helvetica', 'sans-serif'],
+	},
 	template: './docs/template.html',
 	showUsage: true,
 	serverPort: 3013,
@@ -30,7 +38,7 @@ module.exports = {
 
 		return {
 			module: {
-				loaders: [babel]
+				loaders: [babel],
 			},
 			resolve: {
 				extensions: ['.jsx', '.js', '.json', '.less'],

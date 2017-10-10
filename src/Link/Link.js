@@ -1,4 +1,4 @@
-import { Component } from 'preact';
+import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 import { StyledLink } from './styles';

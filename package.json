@@ -1,8 +1,8 @@
 {
   "name": "preact-fluid",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "eslint . && preact test",
     "styleguide": "styleguidist server",
@@ -26,18 +26,19 @@
     "eslint-config-synacor": "^1.0.1",
     "if-env": "^1.0.0",
     "react": "^15.6.1",
+    "preact": "^8.2.0",
+    "preact-compat": "^3.16.0",
+    "preact-router": "^2.5.4",
+    "prop-types": "^15.5.10",
     "react-dom": "^15.6.1",
     "react-styleguidist": "^6.0.21",
     "sass-resources-loader": "^1.3.0",
     "webpack": "^3.5.5"
   },
   "dependencies": {
+    "preact": "^8.2.5",
     "animejs": "^2.0.2",
     "lodash": "^4.17.4",
-    "preact": "^8.2.0",
-    "preact-compat": "^3.16.0",
-    "preact-router": "^2.5.4",
-    "prop-types": "^15.5.10",
     "styled-components": "^2.1.2"
   }
 }
