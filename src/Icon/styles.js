@@ -1,18 +1,25 @@
 import styled, { css } from 'styled-components';
 
-import colors from '../theme';
 import keyframes from '../keyframes';
 
-export const StyledIcon = styled.span`
+const size = {
+	xsmall: 8,
+	small: 16,
+	normal: 24,
+	large: 32,
+	xlarge: 64
+};
+
+export const StyledIcon = styled.i`
 	position: relative;
-    z-index: 0;
-    display: inline-block;
-    padding: 22px;
-    width: 42px;
-    border-radius: 4px;
-    list-style: none;
-    text-align: center;
-    font-weight: normal;
-    font-size: 32px;
     cursor: pointer;
+    padding: 5px;
+    
+    ${props => props.size && css`
+		font-size: ${size[props.size]}px;
+	`}
+	
+	${props => props.color && css`
+		color: ${props.color};
+	`}
 `;

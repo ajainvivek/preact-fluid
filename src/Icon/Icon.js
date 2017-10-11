@@ -4,15 +4,27 @@ import PropTypes from 'prop-types';
 import { StyledIcon } from './styles';
 
 /**
- * Button indicates possible user actions
+ * This button is used to add dimension to mostly flat layouts and emphasizes important functions on your page.
+ *
+ * @example ./../../docs/components/Icon.md
  */
-class Button extends Component {
+class Icon extends Component {
 
 	static propTypes = {
 		/**
+		 * The name of the icon - refer font awesome for list of supported icons
+		 */
+		name: PropTypes.string.isRequired,
+
+		/**
+		 * Custom icon color
+		 */
+		color: PropTypes.string,
+
+		/**
 		 * The size of the Button
 		 */
-		size: PropTypes.oneOf(['small', 'normal', 'large']),
+		size: PropTypes.oneOf(['xsmall', 'small', 'normal', 'large', 'xlarge']),
 
 		/**
 		 * Gets called when the user clicks on the button
@@ -23,16 +35,16 @@ class Button extends Component {
 	};
 
 	static defaultProps = {
-		clicked: false
 	};
 
 	render() {
+		const { name } = this.props;
 		return (
-			<StyledIcon {...this.props}>
+			<StyledIcon {...this.props} className={`fa fa-${name}`} aria-hidden="true">
 				{}
 			</StyledIcon>
 		);
 	}
 }
 
-export default Button;
+export default Icon;

@@ -17,6 +17,11 @@ export const StyledHeader = styled.header`
 		background: ${colors.primaryColor};
 		color: ${colors.lightColor};
 	`}
+	
+	${props => props.secondary && css`
+		background: ${colors.secondaryColor};
+		color: ${colors.lightColor};
+	`}
 `;
 
 
