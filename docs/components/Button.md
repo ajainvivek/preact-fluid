@@ -1,4 +1,4 @@
-Examples:
+<b>Examples:</b>
 
 ```js
 <Button>Default Button</Button>

@@ -9,7 +9,7 @@ module.exports = {
 		name: 'Components', content: './docs/Components.md', components: function() {
 			return [
 				'./src/Button/Button.js',
-				'./src/Link/Link.js',
+				'./src/Link/Card.js',
 				'./src/Icon/Icon.js',
 				'./src/AppBar/AppBar.js'
 			];

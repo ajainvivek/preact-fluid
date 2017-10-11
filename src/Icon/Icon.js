@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { StyledIcon } from './styles';
 
 /**
- * This button is used to add dimension to mostly flat layouts and emphasizes important functions on your page.
+ * This component will render any icon defined in any included in your project, or served from a public Content Delivery Network.
  *
  * @example ./../../docs/components/Icon.md
  */

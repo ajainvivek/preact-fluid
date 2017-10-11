@@ -7,7 +7,7 @@ import { StyledLink } from './styles';
  *
  * @example ./../../docs/components/Link.md
  */
-class Link extends Component {
+class Card extends Component {
 	static propTypes = {
 		/**
 		 * Anchor link
@@ -47,4 +47,4 @@ class Link extends Component {
 	}
 }
 
-export default Link;
+export default Card;

@@ -28,7 +28,6 @@
     "react": "^15.6.1",
     "preact": "^8.2.0",
     "preact-compat": "^3.16.0",
-    "preact-router": "^2.5.4",
     "prop-types": "^15.5.10",
     "react-dom": "^15.6.1",
     "react-styleguidist": "^6.0.21",
@@ -37,6 +36,7 @@
   },
   "dependencies": {
     "preact": "^8.2.5",
+    "preact-router": "^2.5.4",
     "animejs": "^2.0.2",
     "lodash": "^4.17.4",
     "styled-components": "^2.1.2"
