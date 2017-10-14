@@ -5,13 +5,22 @@ var path = require('path');
 
 module.exports = {
 	title: '(P)react Fluid',
+	styleguideComponents: {
+		Aniamted: path.join(__dirname, './src/Animated/Animated.js')
+	},
 	sections: [{
 		name: 'Components', content: './docs/Components.md', components: function() {
 			return [
 				'./src/Button/Button.js',
-				'./src/Link/Card.js',
+				'./src/Link/Link.js',
 				'./src/Icon/Icon.js',
 				'./src/AppBar/AppBar.js'
+			];
+		}
+	}, {
+		name: 'Animations', content: './docs/Animations.md', components: function() {
+			return [
+				'./src/Animated/Animated.js'
 			];
 		}
 	}],

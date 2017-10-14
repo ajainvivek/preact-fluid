@@ -73,9 +73,9 @@ class Button extends Component {
 
 	render() {
 		const clicked = this.state.clicked ? 'clicked' : '';
-		const {badge='', loading=false} = this.props;
+		const {badge='', loading=false, className} = this.props;
 		return (
-			<StyledButton {...this.props} onClick={this._handleClick} className={`${clicked} ${loading && 'loading'}`}>
+			<StyledButton {...this.props} onClick={this._handleClick} className={`${clicked} ${loading && 'loading'} ${className}`}>
 				{this.props.children}
 				<span className={`${badge && 'badge'}`}>{badge && badge.value}</span>
 			</StyledButton>

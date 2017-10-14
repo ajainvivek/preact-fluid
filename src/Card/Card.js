@@ -10,11 +10,6 @@ import { StyledLink } from './styles';
 class Card extends Component {
 	static propTypes = {
 		/**
-		 * Anchor link
-		 */
-		href: PropTypes.string,
-
-		/**
 		 * Custom styles
 		 */
 		style: PropTypes.object,
@@ -32,17 +27,8 @@ class Card extends Component {
 		onClick: PropTypes.func
 	};
 	render() {
-		const { type = 'default', style = {}, url = '#', target = '', onClick } = this.props;
 		return (
-			<StyledLink
-				type={type}
-				style={style}
-				href={url}
-				target={target}
-			    onClick={onClick}
-			>
-				{this.props.children}
-			</StyledLink>
+			<div></div>
 		);
 	}
 }
