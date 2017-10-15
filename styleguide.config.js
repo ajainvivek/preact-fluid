@@ -5,9 +5,6 @@ var path = require('path');
 
 module.exports = {
 	title: '(P)react Fluid',
-	styleguideComponents: {
-		Aniamted: path.join(__dirname, './src/Animated/Animated.js')
-	},
 	sections: [{
 		name: 'Components', content: './docs/Components.md', components: function() {
 			return [
@@ -40,12 +37,11 @@ module.exports = {
 			test: /\.js?$/,
 			include: dir,
 			loader: 'babel-loader'
-		};
-		if (env !== 'production') {
-			babel.query = {
-				presets: ['es2015', 'stage-0', 'react']
-			};
 		}
+
+		babel.query = {
+			presets: ['es2015', 'stage-0', 'react']
+		};
 
 		return {
 			module: {

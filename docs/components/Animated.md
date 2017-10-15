@@ -29,7 +29,7 @@ const AnimatedButton = <Button onClick={() => {
 	duration: '3s',
 	iterationCount: 'infinite',
 	timingFunction: 'linear',
-	active: state.toggleAnimation 
+	active: state.toggleAnimation
 }} />
 ```
 

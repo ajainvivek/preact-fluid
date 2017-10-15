@@ -5,8 +5,18 @@
   "main": "src/index.js",
   "scripts": {
     "test": "eslint . && preact test",
+    "gh-pages": "./node_modules/.bin/gh-pages -d styleguide",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "styleguide-build": "NODE_ENV=production styleguidist build",
+    "publish-docs": "npm run styleguide-build && npm run gh-pages",
+    "publish-patch": "npm test && npm run build && npm version patch && npm publish",
+    "publish-minor": "npm test && npm run build && npm version minor && npm publish",
+    "publish-major": "npm test && npm run build && npm version major && npm publish"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atsocialdotme/preact-fluid.git"
   },
   "keywords": [],
   "author": "",

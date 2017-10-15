@@ -1,4 +1,5 @@
-import React from 'preact';
+import React, {Component, cloneElement} from 'preact';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import Animations from './../Animations';
 
@@ -7,41 +8,82 @@ import Animations from './../Animations';
  *
  * @example ./../../docs/components/Animated.md
  */
-const Animated = ({component, animation}) => {
+class Animated extends Component {
 
-	const {
-		duration = '500ms',
-		timingFunction = 'linear',
-		delay = '0s',
-		iterationCount = 0,
-		direction = '',
-		fillMode = '',
-		playState = '',
-		active = true
-	} = animation;
+	static propTypes = {
 
-	const name = Animations[animation.name] || '';
+		/**
+		 * Component to be animated
+		 */
+		component: PropTypes.element.isRequired,
 
-	const AnimatedComponent = ({className}) => React.cloneElement(component, {
-		className
-	});
+		/**
+		 * Animation properties
+		 */
+		animation: PropTypes.shape({
+			active: PropTypes.bool,
+			duration: PropTypes.number,
+			timingFunction: PropTypes.string,
+			delay: PropTypes.string,
+			iterationCount: PropTypes.number,
+			direction: PropTypes.string,
+			fillMode: PropTypes.string,
+			playState: PropTypes.string
+		}),
 
-	const StyledComponent = styled(AnimatedComponent)`
-        ${active && css`
-            animation-name: ${name};
-            animation-duration: ${duration};
-            animation-timing-function: ${timingFunction};
-            animation-delay: ${delay};
-            animation-iteration-count: ${iterationCount};
-            animation-direction: ${direction};
-            animation-fill-mode: ${fillMode};
-            animation-play-state: ${playState};
-        `}
-     `;
+		/**
+		 * Element attributes
+		 */
+		attrs: PropTypes.object
+	};
 
-    return (
-        <StyledComponent />
-    );
+	static defaultProps = {
+		animation: {},
+		attrs: {}
+	};
+
+	componentWillMount() {
+		const {component} = this.props;
+		this.component = (props) => cloneElement(component, {
+			...props
+		});
+	}
+
+	render() {
+		const {animation, attrs={}} = this.props;
+
+		const {
+			duration = '500ms',
+			timingFunction = 'linear',
+			delay = '0s',
+			iterationCount = 0,
+			direction = '',
+			fillMode = '',
+			playState = '',
+			active = true
+		} = animation;
+
+		const name = Animations[animation.name] || '';
+
+		const AnimatedComponent = styled(this.component).attrs({
+			...attrs
+		})`
+	        ${active && css`
+	            animation-name: ${name};
+	            animation-duration: ${duration};
+	            animation-timing-function: ${timingFunction};
+	            animation-delay: ${delay};
+	            animation-iteration-count: ${iterationCount};
+	            animation-direction: ${direction};
+	            animation-fill-mode: ${fillMode};
+	            animation-play-state: ${playState};
+	        `}
+	     `;
+
+		return (
+			<AnimatedComponent />
+		);
+	}
 };
 
 
