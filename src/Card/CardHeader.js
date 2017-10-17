@@ -1,34 +1,27 @@
 import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
-import { StyledCard } from './styles';
+import { StyledHeader } from './styles';
 
 /**
  * Cards are content containers to display information
  *
  * @example ./../../docs/components/Card.md
  */
-class Card extends Component {
+class CardHeader extends Component {
 	static propTypes = {
 		/**
 		 * Custom styles
 		 */
-		style: PropTypes.object,
-
-		/**
-		 * Gets called when the user clicks on the button
-		 *
-		 * @param {SyntheticEvent} event The react `SyntheticEvent`
-		 */
-		onClick: PropTypes.func
+		style: PropTypes.object
 	};
 	render() {
 		const {style, children} = this.props;
 		return (
-			<StyledCard style={{style}}>
+			<StyledHeader style={{style}}>
 				{children}
-			</StyledCard>
+			</StyledHeader>
 		);
 	}
 }
 
-export default Card;
+export default CardHeader;

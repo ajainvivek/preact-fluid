@@ -10,8 +10,10 @@ module.exports = {
 			return [
 				'./src/Button/Button.js',
 				'./src/Link/Link.js',
-				'./src/Icon/Icon.js',
-				'./src/AppBar/AppBar.js'
+				'./src/AppBar/AppBar.js',
+				'./src/Card/Card.js',
+				'./src/Card/CardHeader.js',
+				'./src/Icon/Icon.js'
 			];
 		}
 	}, {
