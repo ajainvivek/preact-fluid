@@ -12,7 +12,6 @@ module.exports = {
 				'./src/Link/Link.js',
 				'./src/AppBar/AppBar.js',
 				'./src/Card/Card.js',
-				'./src/Card/CardHeader.js',
 				'./src/Icon/Icon.js'
 			];
 		}
@@ -33,6 +32,9 @@ module.exports = {
 	template: './docs/template.html',
 	showUsage: true,
 	serverPort: 3013,
+	require: [
+		path.resolve(__dirname, 'styleguide/setup.js')
+	],
 	webpackConfig: function(env) {
 		var dir = path.join(__dirname, 'src');
 		var babel = {

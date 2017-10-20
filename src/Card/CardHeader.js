@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import { StyledHeader } from './styles';
 
 /**
- * Cards are content containers to display information
- *
- * @example ./../../docs/components/Card.md
+ * Cards header displays title information
  */
 class CardHeader extends Component {
 	static propTypes = {
