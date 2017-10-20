@@ -16,11 +16,17 @@ export const StyledCard = styled.div`
 	&:hover {
 		text-decoration: none;
 	}
+	
+	${props => props.style && css`
+		${props.style}
+	`}
 `;
 
-export const StyledHeader = styled.div`
+export const StyledHeader = styled.h1`
 	padding: 20px;
     padding-bottom: 0;
+    margin: 0;
+    font-weight: bold;
 
     &:last-child {
       padding-bottom: 20px;

@@ -13,9 +13,9 @@ class CardHeader extends Component {
 		style: PropTypes.object
 	};
 	render() {
-		const {style, children} = this.props;
+		const { style, children } = this.props;
 		return (
-			<StyledHeader style={{style}}>
+			<StyledHeader style={{ style }}>
 				{children}
 			</StyledHeader>
 		);

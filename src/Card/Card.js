@@ -12,7 +12,7 @@ class Card extends Component {
 		/**
 		 * Custom styles
 		 */
-		style: PropTypes.object,
+		style: PropTypes.string,
 
 		/**
 		 * Gets called when the user clicks on the button
@@ -22,9 +22,9 @@ class Card extends Component {
 		onClick: PropTypes.func
 	};
 	render() {
-		const {style, children} = this.props;
+		const { style, children } = this.props;
 		return (
-			<StyledCard style={{style}}>
+			<StyledCard style={style}>
 				{children}
 			</StyledCard>
 		);
