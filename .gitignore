@@ -1,6 +1,7 @@
 node_modules
 /build
-/styleguide
+/styleguide/*
+!/styleguide/setup.js
 /*.log
 yarn.lock
 /.idea
