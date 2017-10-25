@@ -10,6 +10,7 @@ module.exports = {
 			return [
 				'./src/Button/Button.js',
 				'./src/Link/Link.js',
+				'./src/Image/Image.js',
 				'./src/AppBar/AppBar.js',
 				'./src/Card/Card.js',
 				'./src/Icon/Icon.js'
@@ -35,6 +36,7 @@ module.exports = {
 	require: [
 		path.resolve(__dirname, 'styleguide/setup.js')
 	],
+	assetsDir: './assets',
 	webpackConfig: function(env) {
 		var dir = path.join(__dirname, 'src');
 		var babel = {
