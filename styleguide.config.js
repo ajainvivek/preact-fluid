@@ -17,6 +17,12 @@ module.exports = {
 			];
 		}
 	}, {
+		name: 'Layout', content: './docs/Layout.md', components: function() {
+			return [
+				'./src/Layout/Grid.js'
+			];
+		}
+	}, {
 		name: 'Animations', content: './docs/Animations.md', components: function() {
 			return [
 				'./src/Animated/Animated.js'

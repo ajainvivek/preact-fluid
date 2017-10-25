@@ -55,12 +55,4 @@ export const StyledImageWrapper = styled.div`
 	&:last-child {
       padding-top: 16px;
     }
-    
-    img {
-        display: block;
-        height: auto;
-        width: 100%;
-        margin: 0 auto;
-        object-fit: cover;
-    }
 `;

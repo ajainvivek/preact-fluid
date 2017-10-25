@@ -5,5 +5,6 @@ export Image from './Image';
 export Animation from './Animations';
 export Card from './Card';
 export CardHeader from './Card/CardHeader';
-// export { Container, Columns, Col } from './Layout';
+export Grid from './Layout/Grid';
+export Cell from './Layout/Cell';
 

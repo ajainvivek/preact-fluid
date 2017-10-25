@@ -1,7 +1,7 @@
 import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
 import Image from './../Image';
-import { StyledImageWrapper, StyledImage} from './styles';
+import { StyledImageWrapper} from './styles';
 
 /**
  * Cards header displays title information
@@ -13,11 +13,6 @@ class CardImage extends Component {
 		 */
 		style: PropTypes.object
 	};
-	renderResponsiveImages(images=[]) {
-		return images.map((image) => {
-			return <source srcset={image.src} media={image.media} />
-		});
-	}
 	render() {
 		const { style, src, responsive, placeholder } = this.props;
 		return (
