@@ -38,9 +38,9 @@ class Icon extends Component {
 	};
 
 	render() {
-		const { name } = this.props;
+		const { name, className } = this.props;
 		return (
-			<StyledIcon {...this.props} className={`fa fa-${name}`} aria-hidden="true">
+			<StyledIcon {...this.props} className={`fa fa-${name} ${className}`} aria-hidden="true">
 				{}
 			</StyledIcon>
 		);

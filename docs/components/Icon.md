@@ -3,7 +3,7 @@
 1. Icon Sizes:
 
 ```js
-<div>
+<div className="icon-wrapper">
     <Icon
         name="bath"
         size="xsmall"
@@ -30,7 +30,7 @@
 2. Icon Custom Colors:
 
 ```js
-<div>
+<div className="icon-wrapper">
     <Icon
         name="bullhorn"
         size="xsmall"

@@ -13,7 +13,6 @@ const size = {
 export const StyledIcon = styled.i`
 	position: relative;
     cursor: pointer;
-    padding: 5px;
     
     ${props => props.size && css`
 		font-size: ${size[props.size]}px;

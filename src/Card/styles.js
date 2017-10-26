@@ -38,14 +38,22 @@ export const StyledTitle = styled.h1`
 	font-weight: 500;
     color: ${colors.darkColor};
     margin: 0;
+    
+    ${props => props.style && css`
+		${props.style}
+	`}
 `;
 
 export const StyledSubTitle = styled.h2`
-	font-size: 16px;
-	line-height: 28px;
+	font-size: 14px;
+	line-height: 18px;
 	font-weight: 300;
     color: ${colors.grayColor};
     margin: 0;
+    
+    ${props => props.style && css`
+		${props.style}
+	`}
 `;
 
 export const StyledImageWrapper = styled.div`
@@ -55,4 +63,39 @@ export const StyledImageWrapper = styled.div`
 	&:last-child {
       padding-top: 16px;
     }
+    
+    ${props => props.style && css`
+		${props.style}
+	`}
+`;
+
+export const StyledBody = styled.div`
+	font-size: 16px;
+	line-height: 24px;
+	padding: 16px;
+    padding-bottom: 0;
+    margin: 0;
+    color: ${colors.darkColor};
+
+    &:last-child {
+      padding-bottom: 16px;
+    }
+    
+    ${props => props.style && css`
+		${props.style}
+	`}
+`;
+
+export const StyledFooter = styled.div`
+	padding: 16px;
+    padding-bottom: 0;
+    margin: 0;
+
+    &:last-child {
+      padding-bottom: 16px;
+    }
+    
+    ${props => props.style && css`
+		${props.style}
+	`}
 `;

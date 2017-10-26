@@ -59,10 +59,10 @@ class Image extends Component {
 		return '';
 	}
 	render() {
-		const { responsive, placeholder='' } = this.props;
+		const { responsive, placeholder='', className } = this.props;
 		const { placeholderHeight = 0,  placeholderWidth = 0 } = this.state;
 		return (
-			<div style={{position: 'relative', overflow: 'hidden'}}>
+			<div style={{position: 'relative', overflow: 'hidden'}} className={className}>
 				<div style={{height: placeholderHeight + 'px', width: placeholderWidth + 'px'}}></div>
 				<picture>
 					{this.renderResponsiveImages(responsive)}

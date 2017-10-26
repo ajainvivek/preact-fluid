@@ -81,6 +81,14 @@ export const StyledButton = styled.button`
 	    z-index: 1;
 	}
 	
+	.item-left {
+		padding-right: 8px;
+	}
+	
+	.item-right {
+		padding-left: 8px;
+	}
+	
 	${props => props.rounded && css`
 		border-radius: 20px;
 	`}

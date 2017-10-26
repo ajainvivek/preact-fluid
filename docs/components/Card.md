@@ -5,9 +5,12 @@
     <Cell width={1}>
         <Card>
             <CardHeader 
-                title="Card title" 
-                subtitle="Card subtitle"
+                title="Irish Girl lyrics" 
+                subtitle="The Trees and the Wild"
              />
+             <CardBody>
+                 Irish girl and Irish boy. Is all you need to break toys. That's all you need. That's all you want. That's all you need. Inside this grief.
+              </CardBody>
              <CardImage
                 src="https://placeimg.com/320/240/animals"
              />
@@ -16,28 +19,38 @@
     <Cell width={1}>
         <Card>
             <CardImage
-                src="https://placeimg.com/320/240/any"
+                src="https://placeimg.com/320/240/arch/5"
              />
             <CardHeader 
-                title="Card title" 
-                subtitle="Card subtitle"
+                title="Irish Girl lyrics" 
+                subtitle="The Trees and the Wild"
              />
         </Card>
     </Cell>
     <Cell width={1}>
         <Card>
             <CardHeader 
-                title="Card title" 
-                subtitle="Card subtitle"
+                title="Irish Girl lyrics" 
+                subtitle="The Trees and the Wild"
              />
-             <CardImage
-                responsive={[
-                    {
-                        src: "https://placeimg.com/640/480/nature",
-                        media: "(min-width: 320px)"
-                    }
-                ]}
-                src="https://placeimg.com/320/240/nature"
+             <CardBody>
+                Irish girl and Irish boy. Is all you need to break toys. That's all you need. That's all you want. That's all you need. Inside this grief.
+             </CardBody>
+             <CardFooter
+                left={
+                	<Button>Share</Button>
+                }
+                right={
+                	<Button 
+                	    primary
+                	    left={
+                	    	<Icon
+                                name="play-circle"
+                                size="small"
+                            />
+                	    }
+                	>Play</Button>
+                }
              />
         </Card>
     </Cell>

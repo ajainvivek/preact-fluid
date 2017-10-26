@@ -1,4 +1,6 @@
 - [Button](#button)
 - [Link](#link)
-- [Icon](#icon)
+- [Image](#image)
 - [AppBar](#appbar)
+- [Card](#card)
+- [Icon](#icon)

@@ -1,4 +1,6 @@
 import shake from './shake';
+import slideIn from './slideIn';
+import slideOut from './slideOut';
 import slideDown from './slideDown';
 import slideLeft from './slideLeft';
 import slideRight from './slideRight';
@@ -41,6 +43,8 @@ export default {
 	shimmyShake,
 	pop,
 	popDownwards,
-	popUpwards
+	popUpwards,
+	slideIn,
+	slideOut
 };
 

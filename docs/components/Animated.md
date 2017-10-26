@@ -85,3 +85,67 @@ const AnimatedButton = <Button secondary onClick={() => {
 	active: state.toggleAnimation 
 }} />
 ```
+
+```js
+initialState = { 
+	toggleAnimation: true,
+	animation: 'slideIn'
+};
+const AnimatedCard = (image) => {
+	return (
+		<Card>
+          <CardHeader 
+              title="Irish Girl lyrics" 
+              subtitle="The Trees and the Wild"
+           />
+           <CardBody>
+               Irish girl and Irish boy. Is all you need to break toys. That's all you need. That's all you want. That's all you need. Inside this grief.
+            </CardBody>
+           <CardImage
+              src={`https://placeimg.com/320/240/any/${image}`}
+           />
+       </Card>
+	);
+};
+    
+<Grid columns={3} gap="8px">
+    <Cell width={3}>
+        <Button onClick={() => {
+        	setState({
+        	    toggleAnimation: true,
+        	    animation: state.animation === 'slideIn' ? 'slideOut' : 'slideIn'
+        	})
+        }}>Play Animation</Button>
+    </Cell>
+    <Cell width={1}>
+        <Animated component={AnimatedCard(1)} animation={{
+        	name: state.animation,
+        	duration: '500ms',
+        	iterationCount: 1,
+        	timingFunction: 'linear',
+        	fillMode: 'forwards',
+        	active: state.toggleAnimation 
+        }} />
+    </Cell>
+    <Cell width={1}>
+        <Animated component={AnimatedCard(2)} animation={{
+            name: state.animation,
+            duration: '500ms',
+            iterationCount: 1,
+            timingFunction: 'linear',
+            fillMode: 'forwards',
+            active: state.toggleAnimation 
+        }} />
+    </Cell>
+    <Cell width={1}>
+        <Animated component={AnimatedCard(3)} animation={{
+            name: state.animation,
+            duration: '500ms',
+            iterationCount: 1,
+            timingFunction: 'linear',
+            fillMode: 'forwards',
+            active: state.toggleAnimation 
+        }} />
+    </Cell>
+</Grid>       
+```

@@ -16,6 +16,30 @@
 <Button secondary>Secondary Button</Button>
 ```
 
+```js
+<Button 
+    secondary
+    left={
+    	<Icon
+            name="envelope-o"
+            size="small"
+        />
+    }
+>Email</Button>
+```
+
+```js
+<Button 
+    secondary
+    right={
+    	<Icon
+            name="chevron-down"
+            size="small"
+        />
+    }
+>Choose Country</Button>
+```
+
 Badge
 
 ```js

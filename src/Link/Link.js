@@ -20,11 +20,6 @@ class Link extends Component {
 		style: PropTypes.object,
 
 		/**
-		 * Link type
-		 */
-		type: PropTypes.oneOf(['default']),
-
-		/**
 		 * Gets called when the user clicks on the button
 		 *
 		 * @param {SyntheticEvent} event The react `SyntheticEvent`
@@ -32,14 +27,14 @@ class Link extends Component {
 		onClick: PropTypes.func
 	};
 	render() {
-		const { type = 'default', style = {}, url = '#', target = '', onClick } = this.props;
+		const { type = 'default', style = {}, url = '#', target = '', onClick, className } = this.props;
 		return (
 			<StyledLink
-				type={type}
 				style={style}
 				href={url}
 				target={target}
 			    onClick={onClick}
+				className={className}
 			>
 				{this.props.children}
 			</StyledLink>

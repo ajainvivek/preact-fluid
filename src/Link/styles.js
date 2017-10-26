@@ -3,6 +3,7 @@ import styled, {css} from 'styled-components';
 import colors from './../theme';
 
 export const StyledLink = styled.a`
+	color: ${colors.linkColor};
 	appearance: none;
 	cursor: pointer;
 	display: inline-block;
@@ -14,7 +15,6 @@ export const StyledLink = styled.a`
 	white-space: nowrap;
 	font-size: 14px;
 	line-height: 14px;
-	margin: 5px 10px;
 	
 	&:focus {
 		text-decoration: none;
@@ -24,7 +24,7 @@ export const StyledLink = styled.a`
 		text-decoration: none;
 	}
 	
-	${props => (props.type === 'default') && css`
-		color: ${colors.linkColor}
+	${props => props.style && css`
+		${props.style}
 	`}
 `;

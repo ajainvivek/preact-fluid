@@ -22,9 +22,9 @@ class Card extends Component {
 		onClick: PropTypes.func
 	};
 	render() {
-		const { style, children } = this.props;
+		const { style, children, className } = this.props;
 		return (
-			<StyledCard style={style}>
+			<StyledCard style={style} className={className}>
 				{children}
 			</StyledCard>
 		);
