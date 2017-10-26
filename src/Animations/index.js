@@ -13,6 +13,12 @@ import puffOut from './puffOut';
 import vanishIn from './vanishIn';
 import vanishOut from './vanishOut';
 import rotate from './rotate';
+import pulseShadow from './pulseShadow';
+import fadeInPulse from './fadeInPulse';
+import shimmyShake from './shimmyShake';
+import pop from './pop';
+import popDownwards from './popDownwards';
+import popUpwards from './popUpwards';
 
 export default {
 	shake,
@@ -29,6 +35,12 @@ export default {
 	puffOut,
 	vanishIn,
 	vanishOut,
-	rotate
+	rotate,
+	pulseShadow,
+	fadeInPulse,
+	shimmyShake,
+	pop,
+	popDownwards,
+	popUpwards
 };
 

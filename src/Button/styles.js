@@ -111,4 +111,8 @@ export const StyledButton = styled.button`
 	        border-top-color: ${colors.primaryColor};
 		}
 	`}
+	
+	${props => props.style && css`
+		${props.style}
+	`}
 `;

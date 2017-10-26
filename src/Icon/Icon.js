@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { StyledIcon } from './styles';
 
 /**
- * This component will render any icon defined in any included in your project, or served from a public Content Delivery Network.
+ * This component will render font awesome icons only, include font awesome in your project.
  *
  * @example ./../../docs/components/Icon.md
  */
