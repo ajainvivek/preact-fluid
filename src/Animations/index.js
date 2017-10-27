@@ -21,6 +21,12 @@ import shimmyShake from './shimmyShake';
 import pop from './pop';
 import popDownwards from './popDownwards';
 import popUpwards from './popUpwards';
+import flip from './flip';
+import moveUp from './moveUp';
+import fadeIn from './fadeIn';
+import scaleUp from './scaleUp';
+import fallPerspective from './fallPerspective';
+import helix from './helix';
 
 export default {
 	shake,
@@ -45,6 +51,12 @@ export default {
 	popDownwards,
 	popUpwards,
 	slideIn,
-	slideOut
+	slideOut,
+	flip,
+	moveUp,
+	fadeIn,
+	scaleUp,
+	fallPerspective,
+	helix
 };
 

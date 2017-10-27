@@ -115,14 +115,14 @@ const AnimatedCard = (image) => {
         	    toggleAnimation: true,
         	    animation: state.animation === 'slideIn' ? 'slideOut' : 'slideIn'
         	})
-        }}>Play Animation</Button>
+        }}>{state.animation === 'slideIn' ? 'Slide Out' : 'Slide In'}</Button>
     </Cell>
     <Cell width={1}>
         <Animated component={AnimatedCard(1)} animation={{
         	name: state.animation,
-        	duration: '500ms',
+        	duration: '800ms',
         	iterationCount: 1,
-        	timingFunction: 'linear',
+        	timingFunction: 'ease-in-out',
         	fillMode: 'forwards',
         	active: state.toggleAnimation 
         }} />
@@ -130,9 +130,9 @@ const AnimatedCard = (image) => {
     <Cell width={1}>
         <Animated component={AnimatedCard(2)} animation={{
             name: state.animation,
-            duration: '500ms',
+            duration: '800ms',
             iterationCount: 1,
-            timingFunction: 'linear',
+            timingFunction: 'ease-in-out',
             fillMode: 'forwards',
             active: state.toggleAnimation 
         }} />
@@ -140,9 +140,74 @@ const AnimatedCard = (image) => {
     <Cell width={1}>
         <Animated component={AnimatedCard(3)} animation={{
             name: state.animation,
-            duration: '500ms',
+            duration: '800ms',
             iterationCount: 1,
-            timingFunction: 'linear',
+            timingFunction: 'ease-in-out',
+            fillMode: 'forwards',
+            active: state.toggleAnimation 
+        }} />
+    </Cell>
+</Grid>       
+```
+
+```js
+initialState = { 
+	toggleAnimation: true,
+	animation: 'moveUp'
+};
+const AnimatedCard = (image) => {
+	return (
+		<Card>
+          <CardHeader 
+              title="Irish Girl lyrics" 
+              subtitle="The Trees and the Wild"
+           />
+           <CardBody>
+               Irish girl and Irish boy. Is all you need to break toys. That's all you need. That's all you want. That's all you need. Inside this grief.
+            </CardBody>
+           <CardImage
+              src={`https://placeimg.com/320/240/any/${image}`}
+           />
+       </Card>
+	);
+};
+    
+<Grid columns={3} gap="8px">
+    <Cell width={3}>
+        <Button onClick={() => {
+        	setState({
+        	    toggleAnimation: true,
+        	    animation: lodash.sample(['fadeIn', 'fallPerspective', 'flip', 'helix', 'moveUp', 'scaleUp', 'vanishIn'])
+        	})
+        }}>Random Animation</Button>
+        <span> ========>  Name --> {state.animation}</span>
+    </Cell>
+    <Cell width={1}>
+        <Animated component={AnimatedCard(1)} animation={{
+        	name: state.animation,
+        	duration: '800ms',
+        	iterationCount: 1,
+        	timingFunction: 'ease-in-out',
+        	fillMode: 'forwards',
+        	active: state.toggleAnimation 
+        }} />
+    </Cell>
+    <Cell width={1}>
+        <Animated component={AnimatedCard(2)} animation={{
+            name: state.animation,
+            duration: '800ms',
+            iterationCount: 1,
+            timingFunction: 'ease-in-out',
+            fillMode: 'forwards',
+            active: state.toggleAnimation 
+        }} />
+    </Cell>
+    <Cell width={1}>
+        <Animated component={AnimatedCard(3)} animation={{
+            name: state.animation,
+            duration: '800ms',
+            iterationCount: 1,
+            timingFunction: 'ease-in-out',
             fillMode: 'forwards',
             active: state.toggleAnimation 
         }} />

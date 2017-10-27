@@ -39,6 +39,10 @@ export const StyledTitle = styled.h1`
     color: ${colors.darkColor};
     margin: 0;
     
+    ${props => props.light && css`
+		color: ${colors.lightColor};
+	`}
+    
     ${props => props.style && css`
 		${props.style}
 	`}
@@ -51,17 +55,33 @@ export const StyledSubTitle = styled.h2`
     color: ${colors.grayColor};
     margin: 0;
     
+    ${props => props.light && css`
+		color: ${colors.lightColor};
+	`}
+    
     ${props => props.style && css`
 		${props.style}
 	`}
 `;
 
 export const StyledImageWrapper = styled.div`
+	position: relative;
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
 	
-	&:last-child {
+	&:not(:first-child):last-child {
       padding-top: 16px;
+    }
+    
+    .image-overlay {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 16px;
+        text-align: right;
+        background: rgba(0, 0, 0, 0.4);
+        width: 100%;
     }
     
     ${props => props.style && css`

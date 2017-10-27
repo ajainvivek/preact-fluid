@@ -18,4 +18,4 @@ render(
 
 | Supported Animations  |
 | ------------- |
-| slideUp, slideDown, slideLeft, slideRight, shake, rotate, puffIn, puffOut, perspectiveDown, perspectiveUp, perspectiveLeft, perspectiveRight, vanishIn, vanishOut, fadeInPulse, pop, popDownwards, popUpwards, pulseShadow, shimmyShake  |
+| slideUp, slideDown, slideLeft, slideRight, shake, rotate, puffIn, puffOut, perspectiveDown, perspectiveUp, perspectiveLeft, perspectiveRight, vanishIn, vanishOut, fadeInPulse, pop, popDownwards, popUpwards, pulseShadow, shimmyShake, fadeIn, fallPerspective, flip, helix, moveUp, scaleUp  |

@@ -54,5 +54,16 @@
              />
         </Card>
     </Cell>
+    <Cell width={1}>
+        <Card>
+            <CardImage
+                src="https://i.pinimg.com/564x/04/11/f9/0411f9b687c4e6a6d7fc6dd9b83a8418.jpg"
+                overlay={{
+                	title: 'Sydney',
+                	subtitle: 'Australia'
+                }}
+             />
+        </Card>
+    </Cell>
 </Grid>
 ```
