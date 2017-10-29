@@ -17,6 +17,12 @@ module.exports = {
 			];
 		}
 	}, {
+		name: 'Form', content: './docs/Form.md', components: function() {
+			return [
+				'./src/Form/FormInput.js'
+			];
+		}
+	}, {
 		name: 'Layout', content: './docs/Layout.md', components: function() {
 			return [
 				'./src/Layout/Grid.js'
