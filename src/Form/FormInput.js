@@ -1,6 +1,6 @@
 import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
-import { StyledInput } from './styles';
+import { StyledFormGroup, StyledInput } from './styles';
 
 /**
  * FormInput allow users to input text.
@@ -17,9 +17,10 @@ class FormInput extends Component {
 	render() {
 		const { style, className } = this.props;
 		return (
-			<div>
-				<StyledInput style={style} className={className} />
-			</div>
+			<StyledFormGroup style={style}>
+				<label for="username">Username</label>
+				<StyledInput className={className} />
+			</StyledFormGroup>
 		);
 	}
 }

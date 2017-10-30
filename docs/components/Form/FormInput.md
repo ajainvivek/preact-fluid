@@ -1,9 +1,9 @@
 <b>Examples:</b>
 
 ```js
-<Grid columns={2}>
-    <Cell width={1} gap="8px">
-        <FormInput />
+<Grid columns={1}>
+    <Cell width={1}>
+        <FormInput style={`width: 80%;`}/>
     </Cell>
 </Grid>
 ```

@@ -2,6 +2,19 @@ import styled, {css} from 'styled-components';
 
 import colors from './../theme';
 
+export const StyledFormGroup = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	color: ${colors.darkColor};
+	-webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    
+    ${props => props.style && css`
+		${props.style}
+	`}
+`;
+
 export const StyledInput = styled.input`
 	-webkit-appearance: none;
     color: ${colors.darkColor};

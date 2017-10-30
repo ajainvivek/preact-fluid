@@ -11,4 +11,5 @@ export CardFooter from './Card/CardFooter';
 export CardImage from './Card/CardImage';
 export Grid from './Layout/Grid';
 export Cell from './Layout/Cell';
+export FormInput from './Form/FormInput';
 
