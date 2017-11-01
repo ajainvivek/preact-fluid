@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled, { css } from 'styled-components';
 
-const autoRows = ({ minRowHeight = "20px" }) => `minmax(${minRowHeight}, auto)`;
+const autoRows = ({ minRowHeight = '20px' }) => `minmax(${minRowHeight}, auto)`;
 
 const columns = ({ columns = 12 }) =>
-	typeof columns === "number" ? `repeat(${columns}, 1fr)` : columns;
+	typeof columns === 'number' ? `repeat(${columns}, 1fr)` : columns;
 
-const gap = ({ gap = "8px" }) => `${gap} ${gap}`;
+const gap = ({ gap = '8px' }) => `${gap} ${gap}`;
 
-const flow = ({ flow = "row" }) => flow;
+const flow = ({ flow = 'row' }) => flow;
 
-const formatAreas = areas => areas.map(area => `"${area}"`).join(" ");
+const formatAreas = areas => areas.map(area => `"${area}"`).join(' ');
 
 export const StyledGrid = styled.div`
   display: grid;
@@ -21,6 +21,14 @@ export const StyledGrid = styled.div`
   ${({ areas }) => areas && `grid-template-areas: ${formatAreas(areas)}`};
   ${({ justifyContent }) => justifyContent && `justify-content: ${justifyContent}`};
   ${({ alignContent }) => alignContent && `align-content: ${alignContent}`};
+  ${({ alignItems }) => alignItems && css`
+    align-items: ${alignItems};
+    -webkit-box-align: ${alignItems};
+    -ms-flex-align: ${alignItems};
+  `};
+  ${({ style }) => style && css`
+    ${style}
+  `};
 `;
 
 export const StyledCell = styled.section`
@@ -35,10 +43,13 @@ export const StyledCell = styled.section`
   ${({ center }) => center && `text-align: center`};
   ${({ area }) => area && `grid-area: ${area}`};
   ${
-	({ middle }) => middle && `
+	({ middle }) => middle && css`
     display: inline-flex;
     flex-flow: column wrap;
     justify-content: center;
     justify-self: stretch;
+  `};
+  ${({ style }) => style && css`
+    ${style}
   `};
 `;

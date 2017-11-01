@@ -1,6 +1,8 @@
 import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
-import { StyledFormGroup, StyledInput } from './styles';
+import Grid from '../Layout/Grid';
+import Cell from '../Layout/Cell';
+import { StyledInput } from './styles';
 
 /**
  * FormInput allow users to input text.
@@ -9,18 +11,35 @@ import { StyledFormGroup, StyledInput } from './styles';
  */
 class FormInput extends Component {
 	static propTypes = {
+
 		/**
 		 * Custom styles
 		 */
-		style: PropTypes.string
+		style: PropTypes.string,
+
+		/**
+		 * onChange
+		 */
+		onChange: PropTypes.func
 	};
+	onChange = (input) => {
+		console.log('****************', input.data);
+	}
 	render() {
-		const { style, className } = this.props;
+		const { className, style, grid={}, cell={} } = this.props;
 		return (
-			<StyledFormGroup style={style}>
-				<label for="username">Username</label>
-				<StyledInput className={className} />
-			</StyledFormGroup>
+			<Grid {...grid}>
+				<Cell {...cell}>
+					<label for="username">Username</label>
+				</Cell>
+				<Cell {...cell}>
+					<StyledInput
+						className={className}
+						style={style}
+						onChange={this.onChange}
+					/>
+				</Cell>
+			</Grid>
 		);
 	}
 }
