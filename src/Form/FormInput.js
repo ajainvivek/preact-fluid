@@ -2,7 +2,7 @@ import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
 import Grid from '../Layout/Grid';
 import Cell from '../Layout/Cell';
-import { StyledInput } from './styles';
+import { StyledInput, StyledBorder } from './styles';
 
 /**
  * FormInput allow users to input text.
@@ -26,18 +26,26 @@ class FormInput extends Component {
 		console.log('****************', input.data);
 	}
 	render() {
-		const { className, style, grid={}, cell={} } = this.props;
+		const { className, style, grid={}, cell={}, effect='', label='', placeholder='' } = this.props;
 		return (
 			<Grid {...grid}>
 				<Cell {...cell}>
-					<label for="username">Username</label>
+					<label for={label}>{label}</label>
 				</Cell>
-				<Cell {...cell}>
+				<Cell {...cell} style={`position: relative;`}>
 					<StyledInput
+						effect={effect}
 						className={className}
 						style={style}
+						placeholder={placeholder}
 						onChange={this.onChange}
 					/>
+					<StyledBorder
+						className="focus-border"
+						effect={effect}
+					>
+						<i></i>
+					</StyledBorder>
 				</Cell>
 			</Grid>
 		);

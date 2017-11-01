@@ -127,26 +127,6 @@ const AnimatedCard = (image) => {
         	active: state.toggleAnimation 
         }} />
     </Cell>
-    <Cell width={1}>
-        <Animated component={AnimatedCard(2)} animation={{
-            name: state.animation,
-            duration: '800ms',
-            iterationCount: 1,
-            timingFunction: 'ease-in-out',
-            fillMode: 'forwards',
-            active: state.toggleAnimation 
-        }} />
-    </Cell>
-    <Cell width={1}>
-        <Animated component={AnimatedCard(3)} animation={{
-            name: state.animation,
-            duration: '800ms',
-            iterationCount: 1,
-            timingFunction: 'ease-in-out',
-            fillMode: 'forwards',
-            active: state.toggleAnimation 
-        }} />
-    </Cell>
 </Grid>       
 ```
 
@@ -174,13 +154,19 @@ const AnimatedCard = (image) => {
     
 <Grid columns={3} gap="8px">
     <Cell width={3}>
-        <Button onClick={() => {
-        	setState({
-        	    toggleAnimation: true,
-        	    animation: lodash.sample(['fadeIn', 'fallPerspective', 'flip', 'helix', 'moveUp', 'scaleUp', 'vanishIn'])
-        	})
-        }}>Random Animation</Button>
-        <span> ========>  Name --> {state.animation}</span>
+        <Grid columns={2}>
+            <Cell width={1}>
+                <Button onClick={() => {
+                    setState({
+                        toggleAnimation: true,
+                        animation: lodash.sample(['fadeIn', 'fallPerspective', 'flip', 'helix', 'moveUp', 'scaleUp', 'vanishIn'])
+                    })
+                }}>Random Animation</Button>
+            </Cell>
+            <Cell width={1} center middle style={{background: "#ccc"}}>
+                <span style={{color: '#e85600', fontWeight: 'bold'}}>{state.animation}</span>
+            </Cell>
+        </Grid>
     </Cell>
     <Cell width={1}>
         <Animated component={AnimatedCard(1)} animation={{

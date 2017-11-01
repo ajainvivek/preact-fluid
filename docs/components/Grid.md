@@ -5,9 +5,9 @@
 ```js
 <div className="layout-example">
     <Grid columns={2} gap="2px">
-        <Cell>foo</Cell>
-        <Cell height={2}>bar</Cell>
-        <Cell width={2}>baz</Cell>
+        <Cell center middle>foo</Cell>
+        <Cell center middle height={2}>bar</Cell>
+        <Cell center middle width={2}>baz</Cell>
     </Grid>
 </div>
 ```
@@ -18,7 +18,7 @@
 const rows = counts =>
   lodash.flatMap(counts, number =>
     lodash.range(number).map(i =>
-      <Cell width={12 / number} key={`${number}_${i}`}>
+      <Cell center middle width={12 / number} key={`${number}_${i}`}>
         {i + 1}/{number}
       </Cell>
     )
