@@ -103,6 +103,13 @@ export const StyledInput = styled.input`
 	`}
 `;
 
+export const StyledLabel = styled.label`
+	font-size: 16px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+`;
+
 export const StyledBorder = styled.span`
 	${props => props.effect === 'line' && css`
 		position: absolute; 
