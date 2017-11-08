@@ -110,6 +110,11 @@ export const StyledLabel = styled.label`
 	text-overflow: ellipsis;
 `;
 
+export const StyledIcon = styled.span`
+	position: absolute;
+	right: 8px;
+`;
+
 export const StyledBorder = styled.span`
 	${props => props.effect === 'line' && css`
 		position: absolute; 
