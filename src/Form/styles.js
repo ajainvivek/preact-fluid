@@ -26,14 +26,35 @@ export const StyledInput = styled.input`
         border-width: 2px;
         box-shadow: rgba(87, 85, 217, 0.2) 0px 0px 0px 2px;
         border-color: ${colors.primaryColor};
-    }
+	}
+
+	${props => props.disabled && css`
+		color: rgba(0, 0, 0, 0.3);
+		cursor: not-allowed;
+		border-style: dashed;
+
+		&::placeholder {
+			color: rgba(0, 0, 0, 0.3);
+		}
+	`}
+
+	${props => props.errorText && css`
+		border-color: ${colors.controlErrorColor};
+	`}
     
     ${props => props.effect === 'line' && css`
         border-radius: 0;
         border: 0; 
-        border-width: 2px;
         border-bottom: 1px solid ${colors.grayColorDark};
-        padding: 7px 0;
+		padding: 7px 0;
+		
+		${props => props.disabled && css`
+			border-bottom: 1px dashed ${colors.grayColorDark}; 
+		`}
+
+		${props => props.errorText && css`
+			border-bottom: 1px dashed ${colors.controlErrorColor}; 
+		`}
         
         &:focus {
 	        box-shadow: none;
@@ -49,9 +70,12 @@ export const StyledInput = styled.input`
     ${props => props.effect === 'lineOutwards' && css`
         border-radius: 0;
         border: 0; 
-        border-width: 2px;
         border-bottom: 1px solid ${colors.grayColorDark};
-        padding: 7px 0;
+		padding: 7px 0;
+		
+		${props => props.disabled && css`
+			border-bottom: 1px dashed ${colors.grayColorDark};
+		`}	
         
         &:focus {
 	        box-shadow: none;
@@ -62,14 +86,18 @@ export const StyledInput = styled.input`
 	        width: 100%; 
 	        transition: 0.4s; 
 	        left: 0;
-	    }
+		}
     `}
     
     
     ${props => props.effect === 'border' && css`
         border: 1px solid ${colors.grayColorDark}; 
         padding: 7px 14px 9px; 
-        transition: 0.4s;
+		transition: 0.4s;
+		
+		${props => props.disabled && css`
+			border: 1px dashed ${colors.grayColorDark}; 
+		`}
         
         &:focus {
 	        box-shadow: none;
@@ -95,12 +123,25 @@ export const StyledInput = styled.input`
 			height: 100%; 
 			transition: 0.4s;
 		}
-    `}
+	`}
+
+	${props => props.errorText && css`
+		border-color: ${colors.controlErrorColor};
+		&:focus {
+			border-color: ${colors.controlErrorColor};
+		}
+	`}
     
 	
 	${props => props.style && css`
 		${props.style}
 	`}
+`;
+
+export const StyledMessage = styled.span`
+	font-size: 12px;
+	padding: 5px;
+	color: ${colors.controlErrorColor};
 `;
 
 export const StyledLabel = styled.label`
@@ -124,6 +165,10 @@ export const StyledBorder = styled.span`
 		height: 2px; 
 		background-color: ${colors.primaryColor}; 
 		transition: 0.4s;
+
+		${props => props.errorText && css`
+			background-color: ${colors.controlErrorColor}; 
+		`}
 	`}
 	
 	${props => props.effect === 'lineOutwards' && css`
@@ -134,6 +179,10 @@ export const StyledBorder = styled.span`
 		height: 2px; 
 		background-color: ${colors.primaryColor}; 
 		transition: 0.4s;
+
+		${props => props.errorText && css`
+			background-color: ${colors.controlErrorColor}; 
+		`}
 	`}
 	
 	${props => props.effect === 'border' && css`
@@ -147,6 +196,10 @@ export const StyledBorder = styled.span`
 			height: 2px; 
 			background-color: ${colors.primaryColor}; 
 			transition: 0.3s;
+
+			${props => props.errorText && css`
+				background-color: ${colors.controlErrorColor}; 
+			`}
 		}
 		
 		&:after {
@@ -166,6 +219,10 @@ export const StyledBorder = styled.span`
 			height: 0; 
 			background-color: ${colors.primaryColor}; 
 			transition: 0.4s;
+
+			${props => props.errorText && css`
+				background-color: ${colors.controlErrorColor}; 
+			`}
 		}
 		
 		i:after{
