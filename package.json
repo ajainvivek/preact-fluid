@@ -9,9 +9,9 @@
     "styleguide": "styleguidist server",
     "styleguide-build": "NODE_ENV=production styleguidist build",
     "publish-docs": "npm run styleguide-build && npm run gh-pages",
-    "publish-patch": "npm run build && npm version patch && npm publish",
-    "publish-minor": "npm run build && npm version minor && npm publish",
-    "publish-major": "npm run build && npm version major && npm publish"
+    "publish-patch": "npm version patch && npm publish",
+    "publish-minor": "npm version minor && npm publish",
+    "publish-major": "npm version major && npm publish"
   },
   "repository": {
     "type": "git",
