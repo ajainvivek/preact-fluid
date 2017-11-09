@@ -154,6 +154,7 @@ export const StyledLabel = styled.label`
 export const StyledIcon = styled.span`
 	position: absolute;
 	right: 8px;
+	bottom: 8px;
 `;
 
 export const StyledBorder = styled.span`
