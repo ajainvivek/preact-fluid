@@ -33,6 +33,7 @@ const controlWarningColor = '#ffb700';
 const controlErrorColor = '#e85600';
 const codeColor = '#e06870';
 const highlightColor = '#ffe9b3';
+const notifyBgColor = '#ececec';
 
 export default {
 	primaryColor,
@@ -46,8 +47,8 @@ export default {
 	darkColor,
 	lightColor,
 	grayColor,
-	grayColorDark: shadeColor(grayColor, 20),
-	grayColorLight: shadeColor(grayColor, -20),
+	grayColorLight: shadeColor(grayColor, 20),
+	grayColorDark: shadeColor(grayColor, -50),
 	borderColor,
 	borderColorDark: shadeColor(borderColor, 15),
 	bgColor: shadeColor(darkColor, -66),
@@ -57,6 +58,7 @@ export default {
 	controlWarningColor,
 	controlErrorColor,
 	codeColor,
-	highlightColor
+	highlightColor,
+	notifyBgColor
 };
 

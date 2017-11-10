@@ -1,6 +1,7 @@
 export AppBar from './AppBar';
 export Button from './Button';
 export Link from './Link';
+export Notify from './Notify';
 export Image from './Image';
 export Animation from './Animations';
 export Animated from './Animated';

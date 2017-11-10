@@ -13,7 +13,8 @@ module.exports = {
 				'./src/Image/Image.js',
 				'./src/AppBar/AppBar.js',
 				'./src/Card/Card.js',
-				'./src/Icon/Icon.js'
+				'./src/Icon/Icon.js',
+				'./src/Notify/Notify.js'
 			];
 		}
 	}, {

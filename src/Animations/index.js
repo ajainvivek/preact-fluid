@@ -4,6 +4,7 @@ import slideOut from './slideOut';
 import slideDown from './slideDown';
 import slideLeft from './slideLeft';
 import slideRight from './slideRight';
+import slideInRight from './slideInRight';
 import slideRightLeft from './slideRightLeft';
 import slideUp from './slideUp';
 import perspectiveDown from './perspectiveDown';
@@ -34,6 +35,7 @@ export default {
 	slideLeft,
 	slideRight,
 	slideRightLeft,
+	slideInRight,
 	slideUp,
 	perspectiveDown,
 	perspectiveLeft,

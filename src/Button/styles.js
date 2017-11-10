@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 import colors from '../theme';
 import keyframes from '../keyframes';
+import animations from '../animations';
 
 export const StyledButton = styled.button`
 	position: relative;
@@ -60,7 +61,7 @@ export const StyledButton = styled.button`
 	
 	&.loading {
 		color: transparent !important;
-        pointer-events: none;
+		pointer-events: none;
 	}
 	
 	&.loading:after {
