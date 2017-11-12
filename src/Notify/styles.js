@@ -4,7 +4,7 @@ import colors from './../theme';
 import animations from './../Animations';
 
 export const StyledNotifyWrapper = styled.div`
-    display: block;
+    display: grid;
     margin: 5px;
 `;
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import NotifyPortal from './NotifyPortal';
 import Icon from './../Icon';
 import colors from './../theme';
+import NotifyPanel from './NotifyPanel';
 import { StyledNotify } from './styles';
 
 
@@ -23,40 +24,51 @@ class Notify extends Component {
 		 * Unique id
 		 */
         id: PropTypes.string.required
+
     };
-    constructor (props) {
-        super(props);
-        this.notifications = [];
-    }
-    renderMessage = () => {
-        const { style, className, title='', type='info', children } = this.props;
-        this.notifications.push(this.props);
-        return (
-            this.notifications.map((notification, i) => {
-                return (
-                    <StyledNotify key={i} type={notification.type} style={notification.style}>
-                        <div className="notification-icon">
-                            <Icon
-                                name="bell-o"
-                                size="large"
-                                color={colors.grayColorDark}
-                            />
-                        </div>
-                        <div className="notification-body">
-                            <div className="notification-close"></div>
-                            <h1 className="notification-title">{notification.title}</h1>
-                            <p className="notification-message">{notification.children}</p>
-                        </div>  
-                    </StyledNotify>
-                );
-            })
-        );
-    }
+
+	constructor (props) {
+		super(props);
+		this.state =  {
+			notifications: []
+		};
+	}
+
+	get guid () {
+
+	}
+
+	add  = (notification) => {
+		const notifications = this.state.notifications;
+		notifications.push(notification);
+		this.setState({
+			notifications
+		}, () => {
+			this.setState({
+				notifications: []
+			});
+		});
+	}
+
+	remove = () => {
+
+	}
+
+	dismiss = () => {
+
+	}
+
+	renderNotification = () => {
+		return this.state.notifications.map((notification, i) => (
+			<NotifyPanel key={i} {...notification}></NotifyPanel>
+		));
+	}
+
 	render() {
-		const { style, title='', type='info', id } = this.props;
+		const { id } = this.props;
 		return (
             <NotifyPortal portalId={id}>
-                {this.renderMessage()}
+	            {this.renderNotification()}
             </NotifyPortal>
 		);
 	}
