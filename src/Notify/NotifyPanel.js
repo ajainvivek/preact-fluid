@@ -78,6 +78,12 @@ class NotifyPanel extends Component {
 		}
 	}
 
+	onClick = () => {
+		if (typeof this.props.onClick === 'function') {
+			this.props.onClick();
+		}
+	}
+
 	render() {
 		const { 
 			style, 
@@ -92,7 +98,7 @@ class NotifyPanel extends Component {
 		} = this.props;
 
 		return (
-			<StyledNotify type={type} style={style} className={className} id={guid}>
+			<StyledNotify type={type} style={style} className={className} id={guid} onClick={this.onClick}>
 				<div className="notification-icon">
 					<Icon
 						name={iconName}
