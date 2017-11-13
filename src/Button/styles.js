@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import colors from '../theme';
 import keyframes from '../keyframes';
-import animations from '../animations';
+import animations from '../Animations';
 
 export const StyledButton = styled.button`
 	position: relative;

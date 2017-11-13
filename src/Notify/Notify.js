@@ -1,6 +1,7 @@
 import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
 import NotifyPortal from './NotifyPortal';
+import lodash from 'lodash';
 import Icon from './../Icon';
 import colors from './../theme';
 import NotifyPanel from './NotifyPanel';
@@ -14,16 +15,11 @@ import { StyledNotify } from './styles';
  */
 class Notify extends Component {
 	static propTypes = {
-
-		/**
-		 * Custom styles
-		 */
-        style: PropTypes.object,
         
         /**
-		 * Unique id
+		 * Unique id for the notification wrapper
 		 */
-        id: PropTypes.string.required
+		id: PropTypes.string.required
 
     };
 
@@ -35,27 +31,43 @@ class Notify extends Component {
 	}
 
 	get guid () {
-
+		return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+			const r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+			return v.toString(16);
+		});
 	}
 
 	add  = (notification) => {
 		const notifications = this.state.notifications;
-		notifications.push(notification);
+		notifications.push(Object.assign(notification, {
+			guid: this.guid,
+			close: () => {
+				this.dismiss(notification);
+			}
+		}));
 		this.setState({
 			notifications
 		}, () => {
+			const {autoDismiss = 5} = notification;
+			if (autoDismiss !== 0 && typeof autoDismiss === 'number') {
+				setTimeout(() => {
+					this.dismiss(notification);
+				}, autoDismiss * 1000);
+			}
 			this.setState({
 				notifications: []
 			});
 		});
 	}
 
-	remove = () => {
-
-	}
-
-	dismiss = () => {
-
+	dismiss = (notification) => {
+		const { id } = this.props;
+		const notifyWrapper = document.getElementById(id);
+		const notificationElement = document.getElementById(notification.guid);
+		notificationElement.classList.add('close');
+		setTimeout(() => {
+			notifyWrapper.removeChild(notificationElement.parentNode);
+		}, 500);
 	}
 
 	renderNotification = () => {

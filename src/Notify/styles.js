@@ -20,6 +20,10 @@ export const StyledNotify = styled.div`
     cursor: pointer;
     animation: ${animations.slideInRight} 500ms ease-in;
 
+    &.close {
+        animation: ${animations.slideRight} 500ms ease-in forwards;
+    }
+
     .notification-icon {
         animation: ${animations.shake} 1s linear;
         height: 100%;

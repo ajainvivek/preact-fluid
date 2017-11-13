@@ -28,6 +28,9 @@ class NotifyPortal extends Component {
 		document.body.removeChild(this.portal);
 	}
 	componentDidUpdate () {
+		if (!this.props.children.length) {
+			return;
+		}
 		React.render(<StyledNotifyWrapper {...this.props}>{this.props.children}</StyledNotifyWrapper>, this.portal);
 	}
 	render = () => null
