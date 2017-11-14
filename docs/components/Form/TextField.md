@@ -72,11 +72,10 @@
     <TextField
         placeholder="Full Width Input"
         effect="lineOutwards" 
-        grid={{
-            columns: '0fr 1fr'
-        }} 
+        hideLabel
         cell={{
-            middle: true
+            middle: true,
+            width: 12
         }}
     />
 </div>
