@@ -4,16 +4,16 @@
 
 ```js
     initialState = {
-        selectedValue: 'male'
+        checked: true
     };
     const toggleSelection = () => {
         setState({
-            selectedValue: state.selectedValue === 'male' ? 'female' : 'male'
+            checked: !state.checked
         });
     };
     <div>
         <Radio
-            selectedValue={state.selectedValue}
+            checked={state.checked}
             value="male"
             label="Simple Radio Button"
             onChange={toggleSelection}
@@ -25,16 +25,16 @@
 
 ```js
     initialState = {
-        selectedValue: 'male'
-    };
-    const toggleSelection = () => {
-        setState({
-            selectedValue: state.selectedValue === 'male' ? 'female' : 'male'
-        });
-    };
-    <div>
-        <Radio
-            selectedValue={state.selectedValue}
+            checked: true
+        };
+        const toggleSelection = () => {
+            setState({
+                checked: !state.checked
+            });
+        };
+        <div>
+            <Radio
+                checked={state.checked}
             value="male"
             label="Circle Effect Radio Button"
             onChange={toggleSelection}
@@ -47,20 +47,20 @@
 
 ```js
     initialState = {
-        selectedValue: 'male'
-    };
-    const toggleSelection = () => {
-        setState({
-            selectedValue: state.selectedValue === 'male' ? 'female' : 'male'
-        });
-    };
-    <div>
-        <Radio
-            selectedValue={state.selectedValue}
-            value="male"
-            label="Drop Effect Radio Button"
-            onChange={toggleSelection}
-            effect="drop"
-        />
-    </div>
+            checked: true
+        };
+        const toggleSelection = () => {
+            setState({
+                checked: !state.checked
+            });
+        };
+        <div>
+             <Radio
+                checked={state.checked}
+                value="male"
+                label="Drop Effect Radio Button"
+                onChange={toggleSelection}
+                effect="drop"
+            />
+        </div>
 ```

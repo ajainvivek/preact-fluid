@@ -18,25 +18,26 @@ render(
 1. Simple Component Animation:
 
 ```js
-initialState = { animate: false };
-const toggleAnimation = (animate) => {
-	setState({
-	    animate
-	});
-}
-const AnimatedButton = <Button onMouseEnter={() => {
-	if (!state.animate) {
-	    toggleAnimation(true);	
-	}
-}} onMouseOut={() => {
-	toggleAnimation(false);
-}}>Hover Animated Button</Button>;
+const AnimatedButton = <Button 
+    rounded 
+    style={
+    `
+        padding: 10px;
+        height: 60px;
+        width: 60px;
+    `
+    }
+>
+    <Icon
+        name="thumbs-o-up"
+        size="normal"
+    />
+</Button>;
 <Animate component={AnimatedButton} animation={{
 	name: 'pulseShadow',
 	duration: '3s',
 	iterationCount: 'infinite',
-	timingFunction: 'linear',
-	active: state.animate
+	timingFunction: 'linear'
 }} />
 ```
 
@@ -66,14 +67,14 @@ const AnimatedButton = <Button secondary onClick={() => {
 }} style={
 	`
 	    padding: 10px;
-	    border-radius: 100%;
-	    height: 80px;
-	    width: 80px;
+	    border-radius: 50%;
+	    height: 60px;
+	    width: 60px;
 	`
 }>
     <Icon
         name="hand-peace-o"
-        size="large"
+        size="normal"
     />
 </Button>;
 <Animate component={AnimatedButton} animation={{

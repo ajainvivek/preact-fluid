@@ -58,6 +58,9 @@ export const StyledRadio = styled.span`
             background: ${colors.primaryColor};
             border-color: ${colors.primaryColor}!important;
             animation-delay: .2s;
+            border: 3px solid;
+            width: 30px;
+            height: 30px;
             ${props => props.bgColor && css`
                 background: ${props.bgColor};
                 border-color: ${props.bgColor}!important;
@@ -66,11 +69,8 @@ export const StyledRadio = styled.span`
 
         &.circle:checked + label {
             background: ${colors.lightColor};
-            border: 3px solid;
             box-shadow: inset rgba(0, 0, 0, 0.117647) 0 0 1px 0, inset rgba(0, 0, 0, 0.239216) 0 1px 2px 0;
             transition: all .2s;
-            height: 24px;
-            width: 24px;
             ${props => props.highlightColor && css`
                 background: ${props.highlightColor};
             `}
@@ -122,8 +122,8 @@ export const StyledRadio = styled.span`
 
     label {
         display: inline-block;
-        width: 30px;
-        height: 30px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
         cursor: pointer;
 

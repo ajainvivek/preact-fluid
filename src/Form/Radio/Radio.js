@@ -5,7 +5,7 @@ import Cell from '../../Layout/Cell';
 import { StyledRadio, StyledLabel } from './styles';
 
 /**
- * Radio are switches used for selection from multiple options
+ * Radio are switches used for selection
  *
  * @example ./../../../docs/components/Form/Radio.md
  */
@@ -36,12 +36,14 @@ class Radio extends Component {
 
     static defaultProps = {
         grid :{
-            columns: '40px 2fr'
+            columns: '36px 2fr',
+	        gap: '15px'
         }, 
         cell : {
             middle: true
         },
-        effect: 'default'
+        effect: 'default',
+	    checked: false
     };
     
     get label () {
@@ -74,24 +76,15 @@ class Radio extends Component {
             className,
             value='',
             disabled=false,
-            grid={
-                columns: '50px 2fr'
-            }, 
-            cell={
-                middle: true
-            },
-            selectedValue='',
-            effect
+            grid,
+            cell,
+            effect,
+	        checked
         } = this.props;
-        let checked = false;
-
-        if (selectedValue === value) {
-            checked = true;
-        }
         
 		return (
             <Grid {...grid} alignContent="space-around">
-                <Cell>
+                <Cell {...cell}>
                     <StyledRadio className={className} onClick={() => {this.handleOptionChange(this.radioBtn)}}>
                         <input
                             className={`radio ${effect}`}
