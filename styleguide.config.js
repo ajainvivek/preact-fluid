@@ -20,7 +20,8 @@ module.exports = {
 	}, {
 		name: 'Form', content: './docs/Form.md', components: function() {
 			return [
-				'./src/Form/TextField/TextField.js'
+				'./src/Form/TextField/TextField.js',
+				'./src/Form/Radio/Radio.js'
 			];
 		}
 	}, {
