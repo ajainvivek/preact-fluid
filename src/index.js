@@ -4,7 +4,7 @@ export Link from './Link';
 export Notify from './Notify';
 export Image from './Image';
 export Animation from './Animations';
-export Animated from './Animated';
+export Animate from './Animate';
 export Card from './Card';
 export CardHeader from './Card/CardHeader';
 export CardBody from './Card/CardBody';

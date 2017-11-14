@@ -6,9 +6,9 @@ import Animations from './../Animations';
 /**
  * Wrapper for animating the external component
  *
- * @example ./../../docs/components/Animated.md
+ * @example ./../../docs/components/Animate.md
  */
-class Animated extends Component {
+class Animate extends Component {
 
 	static propTypes = {
 
@@ -87,4 +87,4 @@ class Animated extends Component {
 };
 
 
-export default Animated;
+export default Animate;

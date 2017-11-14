@@ -6,7 +6,7 @@ Usage:
 const AnimatedButton = <Button>Animate Button</Button>;
 
 render(
-  <Animated component={AnimatedButton} animation={{
+  <Animate component={AnimatedButton} animation={{
         name: 'rotate',
         duration: '3s',
         iterationCount: 'infinite',
@@ -31,7 +31,7 @@ const AnimatedButton = <Button onMouseEnter={() => {
 }} onMouseOut={() => {
 	toggleAnimation(false);
 }}>Hover Animated Button</Button>;
-<Animated component={AnimatedButton} animation={{
+<Animate component={AnimatedButton} animation={{
 	name: 'pulseShadow',
 	duration: '3s',
 	iterationCount: 'infinite',
@@ -47,7 +47,7 @@ const AnimatedButton = <Button onClick={() => {
 	   toggleAnimation: true
 	})
 }}>Shake Me</Button>;
-<Animated component={AnimatedButton} animation={{
+<Animate component={AnimatedButton} animation={{
 	name: 'shake',
 	duration: '500ms',
 	iterationCount: 1,
@@ -76,7 +76,7 @@ const AnimatedButton = <Button secondary onClick={() => {
         size="large"
     />
 </Button>;
-<Animated component={AnimatedButton} animation={{
+<Animate component={AnimatedButton} animation={{
 	name: 'pop',
 	duration: '500ms',
 	iterationCount: 1,
@@ -118,7 +118,7 @@ const AnimatedCard = (image) => {
         }}>{state.animation === 'slideIn' ? 'Slide Out' : 'Slide In'}</Button>
     </Cell>
     <Cell width={1}>
-        <Animated component={AnimatedCard(1)} animation={{
+        <Animate component={AnimatedCard(1)} animation={{
         	name: state.animation,
         	duration: '800ms',
         	iterationCount: 1,
@@ -169,7 +169,7 @@ const AnimatedCard = (image) => {
         </Grid>
     </Cell>
     <Cell width={1}>
-        <Animated component={AnimatedCard(1)} animation={{
+        <Animate component={AnimatedCard(1)} animation={{
         	name: state.animation,
         	duration: '800ms',
         	iterationCount: 1,
@@ -179,7 +179,7 @@ const AnimatedCard = (image) => {
         }} />
     </Cell>
     <Cell width={1}>
-        <Animated component={AnimatedCard(2)} animation={{
+        <Animate component={AnimatedCard(2)} animation={{
             name: state.animation,
             duration: '800ms',
             iterationCount: 1,
@@ -189,7 +189,7 @@ const AnimatedCard = (image) => {
         }} />
     </Cell>
     <Cell width={1}>
-        <Animated component={AnimatedCard(3)} animation={{
+        <Animate component={AnimatedCard(3)} animation={{
             name: state.animation,
             duration: '800ms',
             iterationCount: 1,
