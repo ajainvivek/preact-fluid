@@ -43,6 +43,9 @@ export const StyledRadio = styled.span`
         &.default + label {
             background: ${colors.primaryColor};
             animation-delay: 0s;
+            ${props => props.bgColor && css`
+                background: ${props.bgColor};
+            `}
         }
 
         &.default + label:before {

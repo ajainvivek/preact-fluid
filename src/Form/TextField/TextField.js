@@ -22,6 +22,16 @@ class TextField extends Component {
 		 */
 		onChange: PropTypes.func
 	};
+	static defaultProps = {
+		style: {},
+		grid :{
+            columns: '1fr 2fr'
+        }, 
+        cell : {
+            middle: true
+		},
+		hideLabel: false
+	};
 	get label () {
 		const {
 			label='', 
@@ -57,8 +67,8 @@ class TextField extends Component {
 		const { 
 			className, 
 			style, 
-			grid={}, 
-			cell={}, 
+			grid, 
+			cell, 
 			effect='',
 			placeholder='', 
 			icon='', 

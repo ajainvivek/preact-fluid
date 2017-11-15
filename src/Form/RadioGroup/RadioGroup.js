@@ -1,6 +1,6 @@
 import React, { Component, cloneElement } from 'preact';
 import PropTypes from 'prop-types';
-import { StyledRadioGroup } from './styles';
+import { StyledRadioGroup, StyledLabel } from './styles';
 
 /**
  * Radio are switches used for selection from multiple options
@@ -20,8 +20,47 @@ class RadioGroup extends Component {
 		 */
 		defaultSelected: PropTypes.string,
 
-		onChange: PropTypes.func
+		onChange: PropTypes.func,
+
+		horizontal: PropTypes.bool,
+		
+		grid: PropTypes.object,
+		
+		cell: PropTypes.object,
+
+		hideLabel: PropTypes.bool
 	};
+
+	static defaultProps = {
+		defaultSelected: null,
+		style: {},
+		horizontal: false,
+		grid :{
+            columns: '1fr 2fr'
+        }, 
+        cell : {
+            middle: true
+		},
+		hideLabel: false
+	};
+
+	get label () {
+		const {
+			label='', 
+			hideLabel=false,
+			cell={}
+		} = this.props;
+
+		if (hideLabel) {
+			return '';
+		}
+
+		return (
+			<Cell {...cell}>
+				<StyledLabel for={label}>{label}</StyledLabel>
+			</Cell>
+		);
+    }
 
 	get selectedValue () {
 		const { defaultSelected } = this.props;
@@ -55,18 +94,25 @@ class RadioGroup extends Component {
 	}
 
 	render() {
-		const { style = {}, className, children } = this.props;
+		const { style = {}, className, children, horizontal, grid, cell } = this.props;
+		
 		return (
-			<StyledRadioGroup
-				style={style}
-				className={className}
-			>
-				{
-					children.map((child, index) => {
-						return (<div className="radio-item">{this.renderRadio(child, index)}</div>)
-					})
-				}
-			</StyledRadioGroup>
+			<Grid {...grid} alignContent="space-around">
+				{this.label} 
+				<Cell {...cell}>
+					<StyledRadioGroup
+						style={style}
+						className={className}
+						horizontal={horizontal}
+					>
+						{
+							children.map((child, index) => {
+								return (<div className="radio-item">{this.renderRadio(child, index)}</div>)
+							})
+						}
+					</StyledRadioGroup>
+				</Cell>
+			</Grid>
 		);
 	}
 }

@@ -7,60 +7,30 @@
     <TextField 
         label="Default Input"
         placeholder="Placeholder"
-        grid={{
-            columns: '1fr 2fr'
-        }} 
-        cell={{
-            middle: true
-        }}
     />
     
     <TextField
         label="Animate Border"
         placeholder="Placeholder"
         effect="border" 
-        grid={{
-            columns: '1fr 2fr'
-        }} 
-        cell={{
-            middle: true
-        }}
     />
     
     <TextField
         label="Animate Line Input"
         placeholder="Placeholder"
         effect="line" 
-        grid={{
-            columns: '1fr 2fr'
-        }} 
-        cell={{
-            middle: true
-        }}
     />
     
     <TextField
         label="Animate Line Outwards Input"
         placeholder="Placeholder"
         effect="lineOutwards" 
-        grid={{
-            columns: '1fr 2fr'
-        }} 
-        cell={{
-            middle: true
-        }}
     />
 
     <TextField
         label="Input with Icon"
         placeholder="Placeholder"
         effect="lineOutwards" 
-        grid={{
-            columns: '1fr 2fr'
-        }} 
-        cell={{
-            middle: true
-        }}
         icon={
             <Icon
                 name="search"
@@ -88,24 +58,12 @@
     <TextField
         label="Disabled Hint Text"
         placeholder="Placeholder"
-        grid={{
-            columns: '1fr 2fr'
-        }} 
-        cell={{
-            middle: true
-        }}
         disabled
     />
 
     <TextField
         label="Disabled Value"
         value="Value"
-        grid={{
-            columns: '1fr 2fr'
-        }} 
-        cell={{
-            middle: true
-        }}
         disabled
     />
 
@@ -113,12 +71,6 @@
         label="Disabled Line Input"
         placeholder="Placeholder"
         effect="lineOutwards" 
-        grid={{
-            columns: '1fr 2fr'
-        }} 
-        cell={{
-            middle: true
-        }}
         disabled
     />
 </div>
@@ -131,12 +83,6 @@
     <TextField
         label="Default Input"
         placeholder="Error Message"
-        grid={{
-            columns: '1fr 2fr'
-        }} 
-        cell={{
-            middle: true
-        }}
         errorText="This field is required"
     />
 
@@ -144,12 +90,6 @@
         label="Input Line Outwards"
         placeholder="Error Message"
         effect="lineOutwards" 
-        grid={{
-            columns: '1fr 2fr'
-        }} 
-        cell={{
-            middle: true
-        }}
         errorText="This field is required"
     />
 </div>
@@ -171,11 +111,5 @@
         placeholder="Enter Your Name"
         value={state.value}
         onChange={handleChange}
-        grid={{
-            columns: '1fr 2fr'
-        }} 
-        cell={{
-            middle: true
-        }}
     />
 ```

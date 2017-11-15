@@ -85,7 +85,7 @@ class Radio extends Component {
 		return (
             <Grid {...grid} alignContent="space-around">
                 <Cell {...cell}>
-                    <StyledRadio className={className} onClick={() => {this.handleOptionChange(this.radioBtn)}}>
+                    <StyledRadio className={className} onClick={() => {this.handleOptionChange(this.radioBtn)}} {...this.props}>
                         <input
                             className={`radio ${effect}`}
                             style={style}
