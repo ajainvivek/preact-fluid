@@ -46,7 +46,7 @@ const addNotification = () => {
         message: "You have received a mail!",
         type: "info",
         iconName: 'envelope',
-        iconSize: 'medium',
+        iconSize: 'xsmall',
         iconColor: '#1D9C72'
     });	
 };

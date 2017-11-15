@@ -94,7 +94,7 @@ class NotifyPanel extends Component {
 			guid, 
 			iconColor=this.iconColor, 
 			iconName="bell-o", 
-			iconSize="large" 
+			iconSize="small" 
 		} = this.props;
 
 		return (

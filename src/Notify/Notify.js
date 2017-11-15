@@ -86,7 +86,7 @@ class Notify extends Component {
 		autoDismiss: 5,
 		iconName: 'bell-o',
 		iconColor: 'dark gray',
-		iconSize: 'large'
+		iconSize: 'xsmall'
 	};
 
 	constructor (props) {
