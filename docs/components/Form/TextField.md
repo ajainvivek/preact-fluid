@@ -34,7 +34,7 @@
         icon={
             <Icon
                 name="search"
-                size="small"
+                size="xsmall"
             />
         }
     />

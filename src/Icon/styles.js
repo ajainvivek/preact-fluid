@@ -3,11 +3,11 @@ import styled, { css } from 'styled-components';
 import keyframes from '../keyframes';
 
 const size = {
-	xsmall: 8,
-	small: 16,
-	normal: 24,
-	large: 32,
-	xlarge: 64
+	xsmall: 16,
+	small: 32,
+	medium: 40,
+	large: 48,
+	xlarge: 72
 };
 
 export const StyledIcon = styled.i`

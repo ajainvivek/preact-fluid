@@ -5,23 +5,23 @@
 ```js
 <div className="icon-wrapper">
     <Icon
-        name="bath"
+        name="smile-o"
         size="xsmall"
     />
     <Icon
-        name="bath"
+        name="smile-o"
         size="small"
     />
     <Icon
-        name="bath"
-        size="normal"
+        name="smile-o"
+        size="medium"
     />
     <Icon
-        name="bath"
+        name="smile-o"
         size="large"
     />
     <Icon
-        name="bath"
+        name="smile-o"
         size="xlarge"
     />
 </div>
@@ -32,27 +32,27 @@
 ```js
 <div className="icon-wrapper">
     <Icon
-        name="bullhorn"
+        name="github"
         size="xsmall"
         color="#454d5d"
     />
     <Icon
-        name="bullhorn"
+        name="github"
         size="small"
         color="#32b643"
     />
     <Icon
-        name="bullhorn"
-        size="normal"
+        name="github"
+        size="medium"
         color="#ffb700"
     />
     <Icon
-        name="bullhorn"
+        name="github"
         size="large"
         color="#e85600"
     />
     <Icon
-        name="bullhorn"
+        name="github"
         size="xlarge"
         color="#e06870"
     />

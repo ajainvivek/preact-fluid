@@ -23,15 +23,15 @@ const AnimatedButton = <Button
     style={
     `
         padding: 10px;
-        height: 60px;
-        width: 60px;
+        height: 64px;
+        width: 64px;
         border-radius: 50%;
     `
     }
 >
     <Icon
         name="thumbs-o-up"
-        size="normal"
+        size="small"
     />
 </Button>;
 <Animate component={AnimatedButton} animation={{
@@ -69,13 +69,13 @@ const AnimatedButton = <Button secondary onClick={() => {
 	`
 	    padding: 10px;
 	    border-radius: 50%;
-	    height: 60px;
-	    width: 60px;
+	    height: 64px;
+	    width: 64px;
 	`
 }>
     <Icon
         name="hand-peace-o"
-        size="normal"
+        size="small"
     />
 </Button>;
 <Animate component={AnimatedButton} animation={{

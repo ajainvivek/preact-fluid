@@ -22,7 +22,7 @@
     left={
     	<Icon
             name="envelope-o"
-            size="small"
+            size="xsmall"
         />
     }
 >Email</Button>
@@ -34,7 +34,7 @@
     right={
     	<Icon
             name="chevron-down"
-            size="small"
+            size="xsmall"
         />
     }
 >Choose Country</Button>
