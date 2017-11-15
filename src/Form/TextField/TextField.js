@@ -20,10 +20,15 @@ class TextField extends Component {
 		/**
 		 * onChange
 		 */
-		onChange: PropTypes.func
+		onChange: PropTypes.func,
+
+		grid: PropTypes.object,
+		
+		cell: PropTypes.object
+
 	};
 	static defaultProps = {
-		style: {},
+		style: '',
 		grid :{
             columns: '1fr 2fr'
         }, 

@@ -22,7 +22,8 @@ module.exports = {
 			return [
 				'./src/Form/TextField/TextField.js',
 				'./src/Form/Radio/Radio.js',
-				'./src/Form/RadioGroup/RadioGroup.js'
+				'./src/Form/RadioGroup/RadioGroup.js',
+				'./src/Form/Checkbox/Checkbox.js'
 			];
 		}
 	}, {

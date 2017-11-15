@@ -15,7 +15,7 @@ class Radio extends Component {
 		/**
 		 * Custom styles
 		 */
-        style: PropTypes.object,
+        style: PropTypes.string,
         
         /**
 		 * onChange

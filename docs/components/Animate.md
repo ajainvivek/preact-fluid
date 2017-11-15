@@ -25,6 +25,7 @@ const AnimatedButton = <Button
         padding: 10px;
         height: 60px;
         width: 60px;
+        border-radius: 50%;
     `
     }
 >

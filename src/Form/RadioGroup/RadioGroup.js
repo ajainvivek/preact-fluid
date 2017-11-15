@@ -13,7 +13,7 @@ class RadioGroup extends Component {
 		/**
 		 * Custom styles
 		 */
-		style: PropTypes.object,
+		style: PropTypes.string,
 
 		/**
 		 * Default selected value
@@ -35,7 +35,7 @@ class RadioGroup extends Component {
 
 	static defaultProps = {
 		defaultSelected: null,
-		style: {},
+		style: '',
 		horizontal: false,
 		grid :{
             columns: '1fr 2fr'

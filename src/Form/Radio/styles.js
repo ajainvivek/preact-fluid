@@ -1,8 +1,5 @@
-import styled, { css } from 'styled-components';
-
+import styled, { css, keyframes } from 'styled-components';
 import colors from './../../theme';
-
-import { keyframes } from 'styled-components';
 
 const checkedDrop = keyframes`
     0% {

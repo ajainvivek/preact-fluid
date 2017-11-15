@@ -91,7 +91,7 @@ export const StyledButton = styled.button`
 	}
 	
 	${props => props.rounded && css`
-		border-radius: 50%;
+		border-radius: 20px;
 	`}
 
 	${props => props.primary && css`
