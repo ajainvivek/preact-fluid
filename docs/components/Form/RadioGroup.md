@@ -57,3 +57,22 @@
         />
     </RadioGroup>
 ```
+
+* Radio Group - Disabled
+
+```js
+    <RadioGroup 
+        label="Choose Gender" 
+        horizontal
+        disabled
+    >
+        <Radio
+            value="male"
+            label="Male"
+        />
+        <Radio
+            value="female"
+            label="Female"
+        />
+    </RadioGroup>
+```

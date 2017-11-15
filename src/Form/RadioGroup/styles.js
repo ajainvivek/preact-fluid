@@ -12,7 +12,11 @@ export const StyledRadioGroup = styled.div`
 	
 	${props => props.style && css`
         ${props.style}
-    `}
+	`}
+	
+	${props => props.disabled && css`
+		cursor: not-allowed;
+	`}
 `;
 
 export const StyledLabel = styled.label`

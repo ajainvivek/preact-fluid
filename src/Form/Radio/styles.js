@@ -175,6 +175,14 @@ export const StyledRadio = styled.span`
     ${props => props.style && css`
         ${props.style}
     `}
+
+    ${props => props.disabled && css`
+        pointer-events: none;
+        cursor: not-allowed;
+        opacity: 0.65;
+        filter: alpha(opacity=65);
+        box-shadow: none;
+    `}
 `;
 
 export const StyledLabel = styled.label`

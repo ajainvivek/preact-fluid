@@ -28,7 +28,9 @@ class RadioGroup extends Component {
 		
 		cell: PropTypes.object,
 
-		hideLabel: PropTypes.bool
+		hideLabel: PropTypes.bool,
+
+		disabled: PropTypes.bool
 	};
 
 	static defaultProps = {
@@ -41,7 +43,8 @@ class RadioGroup extends Component {
         cell : {
             middle: true
 		},
-		hideLabel: false
+		hideLabel: false,
+		disabled: false
 	};
 
 	get label () {
@@ -89,12 +92,13 @@ class RadioGroup extends Component {
 			checked: selectedValue ? child.props.value === selectedValue : index === 0,
 			key: index,
 			onChange: this.handleOnChange,
+			disabled: this.props.disabled,
 			...child.props
 		});
 	}
 
 	render() {
-		const { style = {}, className, children, horizontal, grid, cell } = this.props;
+		const { style = {}, className, children, horizontal, grid, cell, disabled } = this.props;
 		
 		return (
 			<Grid {...grid} alignContent="space-around">
@@ -104,6 +108,7 @@ class RadioGroup extends Component {
 						style={style}
 						className={className}
 						horizontal={horizontal}
+						disabled={disabled}
 					>
 						{
 							children.map((child, index) => {
