@@ -96,16 +96,16 @@ initialState = {
 const AnimatedCard = (image) => {
 	return (
 		<Card>
+		  <CardImage
+             src={`https://placeimg.com/320/240/any/${image}`}
+          />
           <CardHeader 
               title="Irish Girl lyrics" 
               subtitle="The Trees and the Wild"
            />
            <CardBody>
                Irish girl and Irish boy. Is all you need to break toys. That's all you need. That's all you want. That's all you need. Inside this grief.
-            </CardBody>
-           <CardImage
-              src={`https://placeimg.com/320/240/any/${image}`}
-           />
+           </CardBody>
        </Card>
 	);
 };
@@ -140,6 +140,9 @@ initialState = {
 const AnimatedCard = (image) => {
 	return (
 		<Card>
+		  <CardImage
+              src={`https://placeimg.com/320/240/any/${image}`}
+          />
           <CardHeader 
               title="Irish Girl lyrics" 
               subtitle="The Trees and the Wild"
@@ -147,9 +150,6 @@ const AnimatedCard = (image) => {
            <CardBody>
                Irish girl and Irish boy. Is all you need to break toys. That's all you need. That's all you want. That's all you need. Inside this grief.
             </CardBody>
-           <CardImage
-              src={`https://placeimg.com/320/240/any/${image}`}
-           />
        </Card>
 	);
 };

@@ -46,7 +46,7 @@
                 	    left={
                 	    	<Icon
                                 name="play-circle"
-                                size="small"
+                                size="xsmall"
                             />
                 	    }
                 	>Play</Button>

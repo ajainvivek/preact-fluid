@@ -5,10 +5,11 @@ import colors from './../theme';
 export const StyledCard = styled.div`
 	background: ${colors.lightColor};
 	border: 1px solid ${colors.borderColor};
-	border-radius: 2px;
+	border-radius: 3px;
 	display: flex;
 	flex-direction: column;
-	
+	box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.1);
+
 	&:focus {
 		text-decoration: none;
 	}
