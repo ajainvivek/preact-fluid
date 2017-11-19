@@ -16,8 +16,8 @@ class NotifyPortal extends Component {
 			portal = document.createElement('div');
             portal.id = this.props.portalId;
             portal.style.position = 'fixed';
-            portal.style.bottom = '10px';
-            portal.style.right = 0;
+            portal.style[this.props.position] = '10px';
+            portal.style.right = '10px';
             portal.style.overflow = 'hidden'; 
 			document.body.appendChild(portal);
 		}

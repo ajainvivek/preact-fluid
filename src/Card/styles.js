@@ -83,6 +83,7 @@ export const StyledImageWrapper = styled.div`
         text-align: right;
         background: rgba(0, 0, 0, 0.4);
         width: 100%;
+        object-fit: cover;
     }
     
     ${props => props.style && css`

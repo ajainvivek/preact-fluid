@@ -10,10 +10,11 @@ module.exports = {
 			return [
 				'./src/Button/Button.js',
 				'./src/Link/Link.js',
+				'./src/Icon/Icon.js',
 				'./src/Image/Image.js',
 				'./src/AppBar/AppBar.js',
 				'./src/Card/Card.js',
-				'./src/Icon/Icon.js',
+				'./src/List/List.js',
 				'./src/Notify/Notify.js'
 			];
 		}

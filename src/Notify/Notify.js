@@ -160,9 +160,9 @@ class Notify extends Component {
 	}
 
 	render() {
-		const { id } = this.props;
+		const { id, position = 'bottom' } = this.props;
 		return (
-            <NotifyPortal portalId={id}>
+            <NotifyPortal portalId={id} position={position}>
 	            {this.renderNotification()}
             </NotifyPortal>
 		);
