@@ -12,9 +12,12 @@ const size = {
 
 export const StyledIcon = styled.i`
 	position: relative;
-    cursor: pointer;
+	cursor: pointer;
+	text-align: center;
     
-    ${props => props.size && css`
+	${props => props.size && css`
+		height: ${size[props.size]}px;
+		width: ${size[props.size]}px;
 		font-size: ${size[props.size]}px;
 	`}
 	

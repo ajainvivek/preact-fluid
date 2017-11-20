@@ -1,6 +1,6 @@
 import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
-import { StyledHeader } from './styles';
+import { StyledHeader, StyledTitle, StyledSubTitle } from './styles';
 
 /**
  * List header
@@ -13,6 +13,22 @@ class ListHeader extends Component {
 		 */
 		style: PropTypes.object
 	};
+	get content () {
+		const { custom, title='', subtitle='' } = this.props;
+		
+		if (custom && custom.nodeName) { // if node exists
+			return (
+				custom
+			);
+		}
+
+		return (
+			<div>
+				<StyledTitle>{title}</StyledTitle>
+				<StyledSubTitle>{subtitle}</StyledSubTitle>
+			</div>	
+		);
+	}
 	render() {
 		const { style = '', className } = this.props;
 		return (
@@ -20,7 +36,7 @@ class ListHeader extends Component {
 				style={style}
 				className={className}
 			>
-				ListHeader
+				{this.content}
 			</StyledHeader>
 		);
 	}

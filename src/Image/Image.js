@@ -1,6 +1,6 @@
 import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
-import { StyledImage } from './styles';
+import { StyledImageWrapper, StyledImage } from './styles';
 
 /**
  * Progressive Image Loading with a blur effect option to reduce the page load time
@@ -59,17 +59,17 @@ class Image extends Component {
 		return '';
 	}
 	render() {
-		const { responsive, placeholder='', className } = this.props;
+		const { responsive, placeholder='', className, inline } = this.props;
 		const { placeholderHeight = 0,  placeholderWidth = 0 } = this.state;
 		return (
-			<div style={{position: 'relative', overflow: 'hidden'}} className={className}>
+			<StyledImageWrapper inline={inline} className={className}>
 				<div style={{height: placeholderHeight + 'px', width: placeholderWidth + 'px'}}></div>
 				<picture>
 					{this.renderResponsiveImages(responsive)}
 					<StyledImage {...this.props} handleImageLoaded={this.handleImageLoaded} handleImageErrored={this.handleImageErrored} />
 				</picture>
 				{this.renderPlaceholder(placeholder)}
-			</div>
+			</StyledImageWrapper>
 		);
 	}
 }

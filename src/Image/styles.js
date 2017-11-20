@@ -1,5 +1,17 @@
 import styled, {css} from 'styled-components';
 
+export const StyledImageWrapper = styled.div`
+	position: 'relative'; 
+	overflow: 'hidden';
+
+	${props => props.inline && css`
+		display: inline-flex;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+	`}
+`;
+
 export const StyledImage = styled.img.attrs({
 	src: props => props.src || '',
 	onLoad: props => props.handleImageLoaded,
@@ -10,7 +22,11 @@ export const StyledImage = styled.img.attrs({
     width: 100%;
     margin: 0 auto;
     object-fit: cover;
-    
+	
+	${props => props.rounded && css`
+		border-radius: 50%;
+	`}
+
     ${props => props.style && css`
 		${props.style}
 	`}

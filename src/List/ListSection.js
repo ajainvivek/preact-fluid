@@ -14,13 +14,13 @@ class ListSection extends Component {
 		style: PropTypes.object
 	};
 	render() {
-		const { style = '', className } = this.props;
+		const { style = '', className, children } = this.props;
 		return (
 			<StyledSection
 				style={style}
 				className={className}
 			>
-				ListSection
+				{children}
 			</StyledSection>
 		);
 	}

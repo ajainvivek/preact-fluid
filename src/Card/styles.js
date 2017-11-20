@@ -109,7 +109,7 @@ export const StyledBody = styled.div`
 `;
 
 export const StyledFooter = styled.div`
-	padding: 16px;
+		padding: 16px;
     padding-bottom: 0;
     margin: 0;
 
@@ -118,6 +118,6 @@ export const StyledFooter = styled.div`
     }
     
     ${props => props.style && css`
-		${props.style}
-	`}
+			${props.style}
+		`}
 `;

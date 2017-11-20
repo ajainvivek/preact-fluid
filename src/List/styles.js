@@ -24,7 +24,8 @@ export const StyledList = styled.div`
 `;
 
 export const StyledHeader = styled.div`
-	padding: 20px;
+	padding: 15px 20px;
+	border-bottom: 1px solid ${colors.borderColor};
 	
 	${props => props.style && css`
 		${props.style}
@@ -32,18 +33,71 @@ export const StyledHeader = styled.div`
 `;
 
 export const StyledSection = styled.ul`
+	padding: 0;
+	margin: 0;
+
+	&:not(:last-child) {
+		border-bottom: 1px solid ${colors.borderColor};
+	}
+
 	${props => props.style && css`
 		${props.style}
 	`}
 `;
 
 export const StyledItem = styled.li`
+	padding: 0 20px;
+	color: ${colors.grayColorDark};
+	height: 42px;
+	line-height: 42px;
+
+	&:hover {
+		cursor: pointer;
+		background: ${colors.listActiveColor};
+	}
+
+	.list-item-left {
+		display: inline-flex;
+		height: 100%;
+		padding-right: 15px;
+		float: left;
+		justify-content: center;
+		align-items: center;
+
+		i {
+			color: ${colors.grayColorDark};
+		}
+	}
+
+	.list-item-right {
+		display: inline-flex;
+		height: 100%;
+		padding-left: 15px;
+		float: right;
+		justify-content: center;
+		align-items: center;
+
+		i {
+			color: ${colors.grayColorDark};
+		}
+	}
+
+	${props => props.active && css`
+		background: ${colors.listActiveColor};
+	`}
+
 	${props => props.style && css`
 		${props.style}
 	`}
 `;
 
 export const StyledFooter = styled.div`
+	padding: 15px 20px;
+
+	&:not(:last-child) {
+		border-top: 1px solid ${colors.borderColor};
+	}
+
 	${props => props.style && css`
 		${props.style}
 	`}
