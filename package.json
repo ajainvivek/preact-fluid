@@ -47,7 +47,6 @@
   "dependencies": {
     "preact": "^8.2.5",
     "preact-router": "^2.5.4",
-    "animejs": "^2.0.2",
     "lodash": "^4.17.4",
     "styled-components": "^2.1.2"
   }
