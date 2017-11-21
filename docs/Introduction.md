@@ -23,7 +23,7 @@ Here is a quick example to get you started, it's all you need:
 
 ```jsx static
 import { render } from 'preact';
-import Button from 'preact-fluid';
+import { Button } from 'preact-fluid';
 
 function App() {
   return (
