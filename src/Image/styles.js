@@ -1,8 +1,8 @@
 import styled, {css} from 'styled-components';
 
 export const StyledImageWrapper = styled.div`
-	position: 'relative'; 
-	overflow: 'hidden';
+	position: relative; 
+	overflow: hidden;
 
 	${props => props.inline && css`
 		display: inline-flex;

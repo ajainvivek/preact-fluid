@@ -14,7 +14,7 @@
 Preact Fluid is available as an [npm package](https://www.npmjs.com/package/preact-fluid).
 
 ```sh
-npm install preact-fluid
+npm install preact-fluid --save
 ```
 
 ## Usage
@@ -28,8 +28,8 @@ import Button from 'preact-fluid';
 function App() {
   return (
     <Button>
-      Hello World
-    </Button>
+            Hello World
+        </Button>
   );
 }
 
