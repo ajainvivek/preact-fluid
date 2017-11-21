@@ -77,7 +77,7 @@ const listSections = () => {
     });
 };
 
-<Grid columns={3} gap="8px">
+<Grid columns="repeat(auto-fit, minmax(250px, 1fr))" gap="20px">
     <Cell width={1}>
         <List>
             <ListHeader title="Title" subtitle="Sub Title"/>

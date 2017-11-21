@@ -1,7 +1,7 @@
 <b>Examples:</b>
 
 ```js
-<Grid columns={3} gap="8px">
+<Grid columns="repeat(auto-fit, minmax(250px, 1fr))" gap="8px" >
     <Cell width={1}>
         <Card>
             <CardHeader 
