@@ -20,4 +20,5 @@ export Cell from './Layout/Cell';
 export TextField from './Form/TextField';
 export Radio from './Form/Radio';
 export RadioGroup from './Form/RadioGroup';
+export Checkbox from './Form/Checkbox';
 
