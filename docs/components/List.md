@@ -30,9 +30,10 @@ const customHeaderProfile = (
         <Image
             src="https://avatars1.githubusercontent.com/u/1182600?s=460&v=4"
             style={`height: 60px; width: 60px;float: left; margin-right: 20px;`}
+            inline
             rounded
         />
-        <h3 style={{float: 'left'}}>Ajain Vivek</h3>
+        <h3 style={{display: 'inline'}}>Ajain Vivek</h3>
     </div>
 );
 

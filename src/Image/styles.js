@@ -21,9 +21,9 @@ export const StyledImage = styled.img.attrs({
     height: auto;
     width: 100%;
     margin: 0 auto;
+    object-fit: cover;
 	
 	${props => props.rounded && css`
-		object-fit: cover;
 		border-radius: 50%;
 	`}
 
