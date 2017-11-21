@@ -5,7 +5,11 @@ var path = require('path');
 
 module.exports = {
 	title: '(P)react Fluid',
-	sections: [{
+	sections: [
+	{
+		name: 'Introduction', content: './docs/Introduction.md'
+	},
+	{
 		name: 'Components', content: './docs/Components.md', components: function() {
 			return [
 				'./src/Button/Button.js',
