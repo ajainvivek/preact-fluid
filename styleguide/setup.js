@@ -8,6 +8,7 @@ import ListSection from './../src/List/ListSection';
 import ListItem from './../src/List/ListItem';
 import ListFooter from './../src/List/ListFooter';
 import Cell from './../src/Layout/Cell';
+import ThemeProvider from './../src/ThemeProvider/ThemeProvider';
 import lodash from 'lodash';
 
 global.lodash = lodash;
@@ -20,3 +21,4 @@ global.ListSection = ListSection;
 global.ListItem = ListItem;
 global.ListFooter = ListFooter;
 global.Cell = Cell;
+global.ThemeProvider = ThemeProvider;

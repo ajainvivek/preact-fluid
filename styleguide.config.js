@@ -43,6 +43,8 @@ module.exports = {
 				'./src/Animate/Animate.js'
 			];
 		}
+	}, {
+		name: 'Theme', content: './docs/Theme.md'
 	}],
 	theme: {
 		baseBackground: '#fdfdfc',

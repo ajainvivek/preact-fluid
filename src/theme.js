@@ -34,7 +34,6 @@ const controlErrorColor = '#e85600';
 const codeColor = '#e06870';
 const highlightColor = '#ffe9b3';
 const notifyBgColor = '#ececec';
-const listActiveColor = '#f0f3f5';
 
 export default {
 	primaryColor,
@@ -60,7 +59,6 @@ export default {
 	controlErrorColor,
 	codeColor,
 	highlightColor,
-	notifyBgColor,
-	listActiveColor
+	notifyBgColor
 };
 

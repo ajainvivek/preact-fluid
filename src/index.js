@@ -1,3 +1,4 @@
+export ThemeProvider from './ThemeProvider';
 export AppBar from './AppBar';
 export Button from './Button';
 export Link from './Link';
