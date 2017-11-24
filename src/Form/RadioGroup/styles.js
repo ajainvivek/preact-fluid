@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 
-export const StyledRadioGroup = styled.div`
+const StyledRadioGroup = styled.div`
 	.radio-item {
 		margin: 10px 0;
 
@@ -19,9 +19,14 @@ export const StyledRadioGroup = styled.div`
 	`}
 `;
 
-export const StyledLabel = styled.label`
+const StyledLabel = styled.label`
 	font-size: 16px;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 `;
+
+export {
+	StyledRadioGroup,
+	StyledLabel
+};

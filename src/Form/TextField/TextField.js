@@ -27,6 +27,7 @@ class TextField extends Component {
 		cell: PropTypes.object
 
 	};
+
 	static defaultProps = {
 		style: '',
 		grid :{
@@ -37,6 +38,11 @@ class TextField extends Component {
 		},
 		hideLabel: false
 	};
+
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
 	get label () {
 		const {
 			label='', 
@@ -60,6 +66,7 @@ class TextField extends Component {
 			this.props.onChange(input);
 		}
 	}
+
 	renderErrorMessage = (errorText) => {
 		if (!errorText) {
 			return '';
@@ -68,6 +75,7 @@ class TextField extends Component {
 			<StyledMessage>{errorText}</StyledMessage>
 		);
 	}
+
 	render() {
 		const { 
 			className, 
@@ -81,6 +89,7 @@ class TextField extends Component {
 			value='',
 			errorText=''
 		} = this.props;
+		const { theme } = this.context;
 
 		return (
 			<Grid {...grid} alignContent="space-around">
@@ -96,12 +105,14 @@ class TextField extends Component {
 							disabled={disabled}
 							value={value}
 							errorText={errorText}
+						    theme={theme}
 						/>
 						<StyledIcon>{icon}</StyledIcon>
 						<StyledBorder
 							className="focus-border"
 							effect={effect}
 							errorText={errorText}
+							theme={theme}
 						>
 							<i></i>
 						</StyledBorder>

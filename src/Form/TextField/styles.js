@@ -1,10 +1,9 @@
 import styled, { css } from 'styled-components';
+import defaultTheme from '../../theme';
 
-import colors from './../../theme';
-
-export const StyledInput = styled.input`
+const StyledInput = styled.input`
 	-webkit-appearance: none;
-    color: ${colors.darkColor};
+    color: ${props => props.theme.darkColor};
     display: block;
     font-size: 16px;
     height: 30px;
@@ -15,7 +14,7 @@ export const StyledInput = styled.input`
     border-width: 1px;
     border-style: solid;
     border-radius: 2px;
-    border-color: ${colors.grayColor};
+    border-color: ${props => props.theme.grayColor};
     border-image: initial;
     outline: none;
     padding: 7px 8px;
@@ -25,7 +24,7 @@ export const StyledInput = styled.input`
     &:focus {
         border-width: 2px;
         box-shadow: rgba(87, 85, 217, 0.2) 0px 0px 0px 2px;
-        border-color: ${colors.primaryColor};
+        border-color: ${props => props.theme.primaryColor};
 	}
 
 	${props => props.disabled && css`
@@ -39,26 +38,26 @@ export const StyledInput = styled.input`
 	`}
 
 	${props => props.errorText && css`
-		border-color: ${colors.controlErrorColor};
+		border-color: ${props => props.theme.controlErrorColor};
 	`}
     
     ${props => props.effect === 'line' && css`
         border-radius: 0;
         border: 0; 
-        border-bottom: 1px solid ${colors.grayColor};
+        border-bottom: 1px solid ${props => props.theme.grayColor};
 		padding: 7px 0;
 		
 		${props => props.disabled && css`
-			border-bottom: 1px dashed ${colors.grayColor}; 
+			border-bottom: 1px dashed ${props => props.theme.grayColor}; 
 		`}
 
 		${props => props.errorText && css`
-			border-bottom: 1px dashed ${colors.controlErrorColor}; 
+			border-bottom: 1px dashed ${props => props.theme.controlErrorColor}; 
 		`}
         
         &:focus {
 	        box-shadow: none;
-	        border-color: ${colors.grayColor};
+	        border-color: ${props => props.theme.grayColor};
 	    }
 	    
 	    &:focus ~ .focus-border {
@@ -70,16 +69,16 @@ export const StyledInput = styled.input`
     ${props => props.effect === 'lineOutwards' && css`
         border-radius: 0;
         border: 0; 
-        border-bottom: 1px solid ${colors.grayColor};
+        border-bottom: 1px solid ${props => props.theme.grayColor};
 		padding: 7px 0;
 		
 		${props => props.disabled && css`
-			border-bottom: 1px dashed ${colors.grayColor};
+			border-bottom: 1px dashed ${props => props.theme.grayColor};
 		`}	
         
         &:focus {
 	        box-shadow: none;
-	        border-color: ${colors.grayColor};
+	        border-color: ${props => props.theme.grayColor};
 	    }
 	    
 	    &:focus ~ .focus-border {
@@ -91,17 +90,17 @@ export const StyledInput = styled.input`
     
     
     ${props => props.effect === 'border' && css`
-        border: 1px solid ${colors.grayColor}; 
+        border: 1px solid ${props => props.theme.grayColor}; 
         padding: 7px 14px 9px; 
 		transition: 0.4s;
 		
 		${props => props.disabled && css`
-			border: 1px dashed ${colors.grayColor}; 
+			border: 1px dashed ${props => props.theme.grayColor}; 
 		`}
         
         &:focus {
 	        box-shadow: none;
-	        border-color: ${colors.grayColor};
+	        border-color: ${props => props.theme.grayColor};
 	    }
 	    
 	    &:focus ~ .focus-border:after{
@@ -126,9 +125,9 @@ export const StyledInput = styled.input`
 	`}
 
 	${props => props.errorText && css`
-		border-color: ${colors.controlErrorColor};
+		border-color: ${props => props.theme.controlErrorColor};
 		&:focus {
-			border-color: ${colors.controlErrorColor};
+			border-color: ${props => props.theme.controlErrorColor};
 		}
 	`}
     
@@ -138,37 +137,37 @@ export const StyledInput = styled.input`
 	`}
 `;
 
-export const StyledMessage = styled.span`
+const StyledMessage = styled.span`
 	font-size: 12px;
 	padding: 5px;
-	color: ${colors.controlErrorColor};
+	color: ${props => props.theme.controlErrorColor};
 `;
 
-export const StyledLabel = styled.label`
+const StyledLabel = styled.label`
 	font-size: 16px;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 `;
 
-export const StyledIcon = styled.span`
+const StyledIcon = styled.span`
 	position: absolute;
 	right: 8px;
 	bottom: 8px;
 `;
 
-export const StyledBorder = styled.span`
+const StyledBorder = styled.span`
 	${props => props.effect === 'line' && css`
 		position: absolute; 
 		bottom: 0; 
 		left: 0; 
 		width: 0; 
 		height: 2px; 
-		background-color: ${colors.primaryColor}; 
+		background-color: ${props => props.theme.primaryColor}; 
 		transition: 0.4s;
 
 		${props => props.errorText && css`
-			background-color: ${colors.controlErrorColor}; 
+			background-color: ${props => props.theme.controlErrorColor}; 
 		`}
 	`}
 	
@@ -178,11 +177,11 @@ export const StyledBorder = styled.span`
 		left: 50%; 
 		width: 0; 
 		height: 2px; 
-		background-color: ${colors.primaryColor}; 
+		background-color: ${props => props.theme.primaryColor}; 
 		transition: 0.4s;
 
 		${props => props.errorText && css`
-			background-color: ${colors.controlErrorColor}; 
+			background-color: ${props => props.theme.controlErrorColor}; 
 		`}
 	`}
 	
@@ -195,11 +194,11 @@ export const StyledBorder = styled.span`
 			left: 0; 
 			width: 0; 
 			height: 2px; 
-			background-color: ${colors.primaryColor}; 
+			background-color: ${props => props.theme.primaryColor}; 
 			transition: 0.3s;
 
 			${props => props.errorText && css`
-				background-color: ${colors.controlErrorColor}; 
+				background-color: ${props => props.theme.controlErrorColor}; 
 			`}
 		}
 		
@@ -218,11 +217,11 @@ export const StyledBorder = styled.span`
 			left: 0; 
 			width: 2px; 
 			height: 0; 
-			background-color: ${colors.primaryColor}; 
+			background-color: ${props => props.theme.primaryColor}; 
 			transition: 0.4s;
 
 			${props => props.errorText && css`
-				background-color: ${colors.controlErrorColor}; 
+				background-color: ${props => props.theme.controlErrorColor}; 
 			`}
 		}
 		
@@ -234,3 +233,31 @@ export const StyledBorder = styled.span`
 		}
 	`}
 `;
+
+StyledInput.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledMessage.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledLabel.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledIcon.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledBorder.defaultProps = {
+	theme: defaultTheme
+};
+
+export {
+	StyledInput,
+	StyledMessage,
+	StyledLabel,
+	StyledIcon,
+	StyledBorder
+}
