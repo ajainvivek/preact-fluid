@@ -12,8 +12,8 @@
 2. Primary AppBar:
 
 ```js
-const logoutBtn = <Button>Logout</Button>;
-const welcomeBtn = <Button>Welcome</Button>;
+const logoutBtn = <Button secondary>Logout</Button>;
+const welcomeBtn = <Button secondary>Welcome</Button>;
 <AppBar
     title="Preact Fluid"
     titleStyle={{color: 'white', padding: '0 10px'}}
