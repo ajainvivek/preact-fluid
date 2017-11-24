@@ -45,6 +45,10 @@ class Radio extends Component {
         effect: 'default',
 	    checked: false
     };
+
+	static contextTypes = {
+		theme: PropTypes.object
+	};
     
     get label () {
 		const {
@@ -81,6 +85,7 @@ class Radio extends Component {
             effect,
 	        checked
         } = this.props;
+		const { theme } = this.context;
         
 		return (
             <Grid {...grid} alignContent="space-around">
@@ -92,6 +97,7 @@ class Radio extends Component {
                             type="radio"
                             value={value}
                             checked={checked}
+                            theme={theme}
                             ref={(input) => { this.radioBtn = input; }}
                         />
                         <label></label>

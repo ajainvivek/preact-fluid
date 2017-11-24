@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import colors from './../../theme';
+import defaultTheme from '../../theme';
 
 const checkedDrop = keyframes`
     0% {
@@ -23,7 +23,7 @@ const uncheckedDrop = keyframes`
     }
 `;
 
-export const StyledRadio = styled.span`
+const StyledRadio = styled.span`
     position: relative;
     display: inline-flex;
     cursor: pointer;
@@ -38,7 +38,7 @@ export const StyledRadio = styled.span`
         }
 
         &.default + label {
-            background: ${colors.primaryColor};
+            background: ${props => props.theme.primaryColor};
             animation-delay: 0s;
             ${props => props.bgColor && css`
                 background: ${props.bgColor};
@@ -55,8 +55,8 @@ export const StyledRadio = styled.span`
         }
 
         &.circle + label {
-            background: ${colors.primaryColor};
-            border-color: ${colors.primaryColor}!important;
+            background: ${props => props.theme.primaryColor};
+            border-color: ${props => props.theme.primaryColor}!important;
             animation-delay: .2s;
             border: 3px solid;
             width: 30px;
@@ -68,7 +68,7 @@ export const StyledRadio = styled.span`
         }
 
         &.circle:checked + label {
-            background: ${colors.lightColor};
+            background: ${props => props.theme.lightColor};
             box-shadow: inset rgba(0, 0, 0, 0.117647) 0 0 1px 0, inset rgba(0, 0, 0, 0.239216) 0 1px 2px 0;
             transition: all .2s;
             ${props => props.highlightColor && css`
@@ -79,7 +79,7 @@ export const StyledRadio = styled.span`
         &.circle:checked + label:before {
             width: 15px;
             height: 15px;
-            background: ${colors.primaryColor};
+            background: ${props => props.theme.primaryColor};
             transition: all .4s;
             ${props => props.bgColor && css`
                 background: ${props.bgColor};
@@ -89,7 +89,7 @@ export const StyledRadio = styled.span`
         &.circle:not(:checked) + label:before {
             width: 16px;
             height: 16px;
-            background: ${colors.primaryColor};
+            background: ${props => props.theme.primaryColor};
             box-shadow: none;
             ${props => props.bgColor && css`
                 background: ${props.bgColor};
@@ -97,7 +97,7 @@ export const StyledRadio = styled.span`
         }
 
         &.drop + label {
-            background: ${colors.primaryColor};
+            background: ${props => props.theme.primaryColor};
             animation-delay: .4s;
             ${props => props.bgColor && css`
                 background: ${props.bgColor};
@@ -145,7 +145,7 @@ export const StyledRadio = styled.span`
             position: absolute;
             width: 15px;
             height: 15px;
-            background: ${colors.lightColor};
+            background: ${props => props.theme.lightColor};
             border-radius: 50%;
             box-shadow: rgba(0, 0, 0, 0.117647) 0 0 2px 0, rgba(0, 0, 0, 0.239216) 0 2px 2px 0;
             transition: all .2s;
@@ -182,9 +182,22 @@ export const StyledRadio = styled.span`
     `}
 `;
 
-export const StyledLabel = styled.label`
+const StyledLabel = styled.label`
     font-size: 16px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 `;
+
+StyledRadio.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledLabel.defaultProps = {
+	theme: defaultTheme
+};
+
+export {
+	StyledRadio,
+	StyledLabel
+};
