@@ -1,0 +1,39 @@
+import React, { Component } from 'preact';
+import PropTypes from 'prop-types';
+import { Styled{{ properCase name }} } from './styles';
+
+/**
+ * Description
+ *
+ * @example ./../../docs/components/{{ properCase name }}.md
+ */
+class {{ properCase name }} extends Component {
+	static propTypes = {
+		/**
+		 * Custom styles
+		 */
+		style: PropTypes.object
+
+	};
+
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
+	render() {
+		const { style = {}, className } = this.props;
+		const { theme } = this.context;
+
+		return (
+			<Styled{{ properCase name }}
+				style={style}
+				className={className}
+				theme={theme}
+			>
+				{{ properCase name }} Component
+			</Styled{{ properCase name }}>
+		);
+	}
+}
+
+export default {{ properCase name }};

@@ -4,6 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "start": "npm run styleguide",
+    "generate-component": "plop component",
     "test": "eslint . && preact test",
     "gh-pages": "./node_modules/.bin/gh-pages -d styleguide",
     "styleguide": "styleguidist server",
@@ -35,6 +37,7 @@
     "eslint-config-synacor": "^1.0.1",
     "gh-pages": "^1.0.0",
     "if-env": "^1.0.0",
+    "plop": "^1.9.0",
     "preact": "^8.2.0",
     "preact-compat": "^3.16.0",
     "prop-types": "^15.5.10",
