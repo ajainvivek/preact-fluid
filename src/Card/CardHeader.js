@@ -12,12 +12,18 @@ class CardHeader extends Component {
 		 */
 		style: PropTypes.object
 	};
+
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
 	render() {
 		const { style, title, subtitle } = this.props;
+		const { theme } = this.context;
 		return (
-			<StyledHeader style={{ style }}>
-				<StyledTitle>{title}</StyledTitle>
-				<StyledSubTitle>{subtitle}</StyledSubTitle>
+			<StyledHeader style={{ style }} theme={theme}>
+				<StyledTitle theme={theme}>{title}</StyledTitle>
+				<StyledSubTitle theme={theme}>{subtitle}</StyledSubTitle>
 			</StyledHeader>
 		);
 	}

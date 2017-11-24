@@ -14,10 +14,16 @@ class CardFooter extends Component {
 		 */
 		style: PropTypes.object
 	};
+
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
 	render() {
 		const { style, left, right } = this.props;
+		const { theme } = this.context;
 		return (
-			<StyledFooter style={{ style }}>
+			<StyledFooter style={{ style }} theme={theme}>
 				<Grid columns={2}>
 					<Cell width={1} style={{textAlign: 'left'}}>
 						{left}

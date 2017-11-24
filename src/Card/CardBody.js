@@ -12,10 +12,16 @@ class CardBody extends Component {
 		 */
 		style: PropTypes.object
 	};
+
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
 	render() {
 		const { style, children } = this.props;
+		const { theme } = this.context;
 		return (
-			<StyledBody style={{ style }}>
+			<StyledBody style={{ style }} theme={theme}>
 				{children}
 			</StyledBody>
 		);

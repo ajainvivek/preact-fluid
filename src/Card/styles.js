@@ -1,10 +1,9 @@
 import styled, {css} from 'styled-components';
+import defaultTheme from '../theme';
 
-import colors from './../theme';
-
-export const StyledCard = styled.div`
-	background: ${colors.lightColor};
-	border: 1px solid ${colors.borderColor};
+const StyledCard = styled.div`
+	background: ${props => props.theme.lightColor};
+	border: 1px solid ${props => props.theme.borderColor};
 	border-radius: 3px;
 	display: flex;
 	flex-direction: column;
@@ -23,7 +22,7 @@ export const StyledCard = styled.div`
 	`}
 `;
 
-export const StyledHeader = styled.div`
+const StyledHeader = styled.div`
 	padding: 16px;
     padding-bottom: 0;
     margin: 0;
@@ -33,15 +32,15 @@ export const StyledHeader = styled.div`
     }
 `;
 
-export const StyledTitle = styled.h1`
+const StyledTitle = styled.h1`
 	font-size: 20px;
 	line-height: 32px;
 	font-weight: 500;
-    color: ${colors.darkColor};
+    color: ${props => props.theme.darkColor};
     margin: 0;
     
     ${props => props.light && css`
-		color: ${colors.lightColor};
+		color: ${props => props.theme.lightColor};
 	`}
     
     ${props => props.style && css`
@@ -49,15 +48,15 @@ export const StyledTitle = styled.h1`
 	`}
 `;
 
-export const StyledSubTitle = styled.h2`
+const StyledSubTitle = styled.h2`
 	font-size: 14px;
 	line-height: 18px;
 	font-weight: 300;
-    color: ${colors.grayColor};
+    color: ${props => props.theme.grayColor};
     margin: 0;
     
     ${props => props.light && css`
-		color: ${colors.lightColor};
+		color: ${props => props.theme.lightColor};
 	`}
     
     ${props => props.style && css`
@@ -65,7 +64,7 @@ export const StyledSubTitle = styled.h2`
 	`}
 `;
 
-export const StyledImageWrapper = styled.div`
+const StyledImageWrapper = styled.div`
 	position: relative;
 	padding: 0;
 	margin: 0;
@@ -91,13 +90,13 @@ export const StyledImageWrapper = styled.div`
 	`}
 `;
 
-export const StyledBody = styled.div`
+const StyledBody = styled.div`
 	font-size: 16px;
 	line-height: 24px;
 	padding: 16px;
     padding-bottom: 0;
     margin: 0;
-    color: ${colors.darkColor};
+    color: ${props => props.theme.darkColor};
 
     &:last-child {
       padding-bottom: 16px;
@@ -108,8 +107,8 @@ export const StyledBody = styled.div`
 	`}
 `;
 
-export const StyledFooter = styled.div`
-		padding: 16px;
+const StyledFooter = styled.div`
+	padding: 16px;
     padding-bottom: 0;
     margin: 0;
 
@@ -118,6 +117,44 @@ export const StyledFooter = styled.div`
     }
     
     ${props => props.style && css`
-			${props.style}
-		`}
+		${props.style}
+	`}
 `;
+
+StyledCard.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledHeader.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledTitle.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledSubTitle.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledImageWrapper.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledBody.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledFooter.defaultProps = {
+	theme: defaultTheme
+};
+
+export {
+	StyledCard,
+	StyledHeader,
+	StyledTitle,
+	StyledSubTitle,
+	StyledImageWrapper,
+	StyledBody,
+	StyledFooter
+};

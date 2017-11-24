@@ -71,11 +71,18 @@ const theme = {
     notifyBgColor: '#ececec'
 };
 <ThemeProvider theme={theme}>
-    <AppBar
-        title="Preact Fluid"
-        icon=""
-        primary
-    />
+    <Card>
+        <CardHeader 
+            title="Irish Girl lyrics" 
+            subtitle="The Trees and the Wild"
+         />
+         <CardBody>
+             Irish girl and Irish boy. Is all you need to break toys. That's all you need. That's all you want. That's all you need. Inside this grief.
+          </CardBody>
+         <CardImage
+            src="https://placeimg.com/320/240/animals"
+         />
+    </Card>
 </ThemeProvider>
 ```
 

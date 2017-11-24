@@ -13,6 +13,11 @@ class CardImage extends Component {
 		 */
 		style: PropTypes.object
 	};
+
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
 	renderOverlay = (overlay) => {
 		if (Object.keys(overlay).length === 0) {
 			return '';
@@ -24,10 +29,12 @@ class CardImage extends Component {
 			</div>
 		);
 	}
+
 	render() {
 		const { style, src, responsive, placeholder, overlay={} } = this.props;
+		const { theme } = this.context;
 		return (
-			<StyledImageWrapper style={style}>
+			<StyledImageWrapper style={style} theme={theme}>
 				<Image
 					responsive={responsive}
 					placeholder={placeholder}

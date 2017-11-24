@@ -21,10 +21,16 @@ class Card extends Component {
 		 */
 		onClick: PropTypes.func
 	};
+
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
 	render() {
 		const { style, children, className } = this.props;
+		const { theme } = this.context;
 		return (
-			<StyledCard style={style} className={className}>
+			<StyledCard style={style} className={className} theme={theme}>
 				{children}
 			</StyledCard>
 		);
