@@ -1,5 +1,5 @@
 import styled, {css, keyframes} from 'styled-components';
-import colors from './../../theme';
+import defaultTheme from '../../theme';
 
 const drawCheckbox = keyframes`
     0% {
@@ -13,7 +13,7 @@ const drawCheckbox = keyframes`
 const height = 36;
 const width = 36;
 
-export const StyledCheckbox= styled.span`
+const StyledCheckbox= styled.span`
     position: relative;
     display: inline-block;
     height: ${height}px;
@@ -36,13 +36,13 @@ export const StyledCheckbox= styled.span`
     }
 
     label {
-        color: ${colors.primaryColor};
+        color: ${props => props.theme.primaryColor};
         line-height: ${height}px;
         cursor: pointer;
         position: relative;
 
         &:active::after {
-            background-color: ${colors.grayColor};
+            background-color: ${props => props.theme.grayColor};
         }
 
         &:after {
@@ -51,7 +51,7 @@ export const StyledCheckbox= styled.span`
             width: ${width - 4}px;
             margin-right: 1rem;
             float: left;
-            border: 2px solid ${colors.primaryColor};
+            border: 2px solid ${props => props.theme.primaryColor};
             border-radius: 3px;
             transition: 0.15s all ease-out;      
         }
@@ -59,7 +59,7 @@ export const StyledCheckbox= styled.span`
 
     svg {
         display: none;
-        stroke: ${colors.primaryColor};
+        stroke: ${props => props.theme.primaryColor};
         stroke-width: 3px;
         height: 0; //Firefox fix
         width: ${height / 2}px;
@@ -74,9 +74,22 @@ export const StyledCheckbox= styled.span`
 	`}
 `;
 
-export const StyledLabel = styled.label`
+const StyledLabel = styled.label`
     font-size: 16px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 `;
+
+StyledCheckbox.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledLabel.defaultProps = {
+	theme: defaultTheme
+};
+
+export {
+	StyledCheckbox,
+	StyledLabel
+};

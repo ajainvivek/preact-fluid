@@ -45,6 +45,10 @@ class Checkbox extends Component {
         }
     };
 
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
     get label () {
 		const {
 			label='', 
@@ -79,6 +83,8 @@ class Checkbox extends Component {
             cell,
             grid
         } = this.props;
+		const { theme } = this.context;
+
 		return (
             <Grid {...grid} alignContent="space-around">
                 <Cell {...cell}>
@@ -86,6 +92,7 @@ class Checkbox extends Component {
                         style={style}
                         onClick={this.handleOptionChange}
                         className={className}
+                        theme={theme}
                         {...this.props}
                     >   
                         <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
