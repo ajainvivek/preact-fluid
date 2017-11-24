@@ -44,11 +44,11 @@ module.exports = {
 			];
 		}
 	}, {
-		name: 'Theme', content: './docs/Theme.md'
+		name: 'Theming', content: './docs/Theming.md'
 	}],
 	theme: {
 		baseBackground: '#fdfdfc',
-		link: '#274e75',
+		link: '#454d5d',
 		linkHover: '#90a7bf',
 		border: '#e0d2de',
 		font: ['Helvetica', 'sans-serif'],
@@ -56,10 +56,10 @@ module.exports = {
 	styles: {
 		Playground: {
 			preview: {
-				paddingLeft: 0,
-				paddingRight: 0,
+				padding: '20px',
 				borderWidth: [[0, 0, 1, 0]],
 				borderRadius: 0,
+				background: '#f7f7f7'
 			},
 		},
 		Markdown: {
@@ -71,6 +71,49 @@ module.exports = {
 				fontSize: 14,
 			},
 		},
+		StyleGuide: {
+			sidebar: {
+				backgroundColor: '#fff',
+				boxShadow: 'rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px',
+				width: '250px'
+			}
+		},
+		ComponentsList: {
+			item: {
+				color: '#454d5d',
+				padding: '5px 2px'
+			}
+		},
+		Link: {
+			link: {
+				'&, &:link, &:visited': {
+					color: '#000'
+				}
+			}
+		},
+		Logo: {
+			logo: {
+				color: '#653ab0',
+				fontSize: '22px',
+				textAlign: 'center'
+			}
+		},
+		SectionHeading: {
+			heading: {
+				fontSize: '24px',
+				fontWeight: 'normal',
+				paddingBottom: '15px',
+				marginBottom: '10px',
+				width: '100%',
+				'&:hover, &:active': {
+					textDecoration: 'none'
+				},
+			},
+			isPrimary: {
+				fontSize: '30px',
+				borderBottom: '1px solid #eee'
+			}
+		}
 	},
 	template: './docs/template.html',
 	showUsage: true,

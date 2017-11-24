@@ -11,7 +11,7 @@ export const StyledInput = styled.input`
     height: 42px;
     max-width: 100%;
     width: 100%;
-    background: none rgb(255, 255, 255);
+    background: transparent;
     border-width: 1px;
     border-style: solid;
     border-radius: 2px;

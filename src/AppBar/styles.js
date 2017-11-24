@@ -1,8 +1,7 @@
 import styled, { css } from 'styled-components';
+import defaultTheme from '../theme';
 
-import colors from '../theme';
-
-export const StyledHeader = styled.header`
+const StyledHeader = styled.header`
 	align-items: stretch;
 	display: flex;
 	flex-wrap: wrap;
@@ -12,20 +11,21 @@ export const StyledHeader = styled.header`
 	z-index: 9999;
 	white-space: nowrap;
 	padding: 0 10px;
+	background: ${props => props.theme.lightColor};
 	
 	${props => props.primary && css`
-		background: ${colors.primaryColor};
-		color: ${colors.lightColor};
+		background: ${props => props.theme.primaryColor};
+		color: ${props => props.theme.lightColor};
 	`}
 	
 	${props => props.secondary && css`
-		background: ${colors.secondaryColor};
-		color: ${colors.lightColor};
+		background: ${props => props.theme.secondaryColor};
+		color: ${props => props.theme.lightColor};
 	`}
 `;
 
 
-export const StyledSection = styled.section`
+const StyledSection = styled.section`
 	align-items: center;
 	display: flex;
 	flex: 1 0 0;
@@ -34,3 +34,12 @@ export const StyledSection = styled.section`
 		justify-content: flex-end;
 	}
 `;
+
+StyledHeader.defaultProps = {
+	theme: defaultTheme
+};
+
+export {
+	StyledHeader,
+	StyledSection
+};

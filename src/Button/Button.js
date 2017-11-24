@@ -51,7 +51,7 @@ class Button extends Component {
 	};
 
 	static contextTypes = {
-		theme: PropTypes.object,
+		theme: PropTypes.object
 	};
 
 	_handleClick = (event) => {
@@ -77,10 +77,10 @@ class Button extends Component {
 	render() {
 		const clicked = this.state.clicked ? 'clicked' : '';
 		const {badge='', loading=false, className, left, right} = this.props;
-		const { theme = {} } = this.context
-		console.log(theme);
+		const { theme } = this.context;
+
 		return (
-			<StyledButton {...this.props} theme={theme} onClick={this._handleClick} className={`${clicked} ${loading && 'loading'} ${className}`}>
+			<StyledButton {...this.props} onClick={this._handleClick} className={`${clicked} ${loading && 'loading'} ${className}`} theme={theme}>
 				<span className="item-left">
 					{left}
 				</span>

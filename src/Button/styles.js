@@ -1,9 +1,8 @@
 import styled, { css } from 'styled-components';
 import keyframes from '../keyframes';
-import animations from '../Animations';
-import theme from '../theme';
+import defaultTheme from '../theme';
 
-export const StyledButton = styled.button`
+const StyledButton = styled.button`
 	position: relative;
 	appearance: none;
 	cursor: pointer;
@@ -17,10 +16,10 @@ export const StyledButton = styled.button`
 	font-size: 14px;
 	line-height: 14px;
 	padding: 10px 20px;
-	background: ${theme.bgColorLight};
-	border: 1px solid ${theme.primaryColor};
+	background: transparent;
+	border: 1px solid ${props => props.theme.primaryColor || context.theme.color};
 	border-radius: 2px;
-	color: ${theme.linkColor};
+	color: ${props => props.theme.linkColor};
 	
 	&.clicked:after {
 		content: '';
@@ -30,7 +29,7 @@ export const StyledButton = styled.button`
 		bottom: -1px;
 		right: -1px;
 		border-radius: inherit;
-		border: 0 solid ${theme.primaryColor};
+		border: 0 solid ${props => props.theme.primaryColor};
 		opacity: 0.4;
 		animation: ${keyframes.buttonEffect} .4s;
 		display: block;
@@ -53,7 +52,7 @@ export const StyledButton = styled.button`
 	    display: inline-block;
 	    font-size: 12px;
 	    ${props => props.badge && css`
-			background: ${props.badge.color ? props.badge.color : theme.primaryColor};
+			background: ${props.badge.color ? props.badge.color : props.theme.primaryColor};
 			padding: ${props.badge.value && props.badge.value.toString().length > 1 ? '3px 8px' : '3px'};
 		`}
 	}
@@ -65,7 +64,7 @@ export const StyledButton = styled.button`
 	
 	&.loading:after {
 		animation: ${keyframes.loading} 500ms infinite linear;
-	    border: 2px solid ${theme.primaryColorDark};
+	    border: 2px solid ${props => props.theme.primaryColorDark};
 	    border-radius: 50%;
 	    border-right-color: transparent;
 	    border-top-color: transparent;
@@ -94,29 +93,29 @@ export const StyledButton = styled.button`
 	`}
 
 	${props => props.primary && css`
-		background: ${theme.primaryColor};
-		border: 1px solid ${theme.primaryColorDark};
+		background: ${props => props.theme.primaryColor};
+		border: 1px solid ${props => props.theme.primaryColorDark};
 		border-radius: 2px;
-		color: ${theme.lightColor};
+		color: ${props => props.theme.lightColor};
 		
 		&.loading:after {
-			border: 2px solid ${theme.lightColor};
-			border-right-color: ${theme.primaryColor};
-	        border-top-color: ${theme.primaryColor};
+			border: 2px solid ${props => props.theme.lightColor};
+			border-right-color: ${props => props.theme.primaryColor};
+	        border-top-color: ${props => props.theme.primaryColor};
 		}
 	`}
 	
 	
 	${props => props.secondary && css`
-		background: ${theme.secondaryColor};
-		border: 1px solid ${theme.secondaryColorDark};
+		background: ${props => props.theme.secondaryColor};
+		border: 1px solid ${props => props.theme.secondaryColorDark};
 		border-radius: 2px;
-		color: ${theme.lightColor};
+		color: ${props => props.theme.lightColor};
 		
 		&.loading:after {
-			border: 2px solid ${theme.lightColor};
-			border-right-color: ${theme.primaryColor};
-	        border-top-color: ${theme.primaryColor};
+			border: 2px solid ${props => props.theme.lightColor};
+			border-right-color: ${props => props.theme.primaryColor};
+	        border-top-color: ${props => props.theme.primaryColor};
 		}
 	`}
 	
@@ -124,3 +123,11 @@ export const StyledButton = styled.button`
 		${props.style}
 	`}
 `;
+
+StyledButton.defaultProps = {
+	theme: defaultTheme
+};
+
+export {
+	StyledButton
+};

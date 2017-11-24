@@ -1,5 +1,6 @@
 import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
+import defaultTheme from '../theme';
 
 /**
  * Custom theme provider for application 
@@ -10,6 +11,9 @@ class ThemeProvider extends Component {
     }
     getChildContext () {
       let { children, ...context } = this.props;
+      if (context && context.theme) {
+         context.theme = Object.assign(defaultTheme, context.theme || {});
+      }
       return context;
     }
     render ({ children }) {

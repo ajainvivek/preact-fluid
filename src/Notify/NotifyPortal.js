@@ -25,7 +25,10 @@ class NotifyPortal extends Component {
 		this.componentDidUpdate();
 	}
 	componentWillUnmount () {
-		document.body.removeChild(this.portal);
+		const element = document.getElementById(this.props.portalId);
+		if (element) {
+			document.body.removeChild(this.portal);
+		}
 	}
 	componentDidUpdate () {
 		if (!this.props.children.length) {

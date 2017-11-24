@@ -18,7 +18,7 @@
 
 ```js
 <Button 
-    secondary
+    primary
     left={
     	<Icon
             name="envelope-o"
@@ -30,7 +30,7 @@
 
 ```js
 <Button 
-    secondary
+    primary
     right={
     	<Icon
             name="chevron-down"
