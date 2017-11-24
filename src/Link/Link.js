@@ -26,8 +26,15 @@ class Link extends Component {
 		 */
 		onClick: PropTypes.func
 	};
+
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
 	render() {
-		const { type = 'default', style = {}, url = '#', target = '', onClick, className } = this.props;
+		const { style = {}, url = '#', target = '', onClick, className } = this.props;
+		const { theme } = this.context;
+
 		return (
 			<StyledLink
 				style={style}
@@ -35,6 +42,7 @@ class Link extends Component {
 				target={target}
 			    onClick={onClick}
 				className={className}
+				theme={theme}
 			>
 				{this.props.children}
 			</StyledLink>

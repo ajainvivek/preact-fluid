@@ -11,7 +11,7 @@ const flow = ({ flow = 'row' }) => flow;
 
 const formatAreas = areas => areas.map(area => `"${area}"`).join(' ');
 
-export const StyledGrid = styled.div`
+const StyledGrid = styled.div`
   display: grid;
   grid-auto-flow: ${flow};
   grid-auto-rows: ${autoRows};
@@ -31,7 +31,7 @@ export const StyledGrid = styled.div`
   `};
 `;
 
-export const StyledCell = styled.section`
+const StyledCell = styled.section`
   height: 100%;
   min-width: 0;
   overflow: hidden;
@@ -53,3 +53,8 @@ export const StyledCell = styled.section`
     ${style}
   `};
 `;
+
+export {
+	StyledGrid,
+	StyledCell
+};

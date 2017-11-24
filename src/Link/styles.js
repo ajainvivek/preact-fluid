@@ -1,9 +1,8 @@
 import styled, {css} from 'styled-components';
+import defaultTheme from '../theme';
 
-import colors from './../theme';
-
-export const StyledLink = styled.a`
-	color: ${colors.linkColor};
+const StyledLink = styled.a`
+	color: ${props => props.theme.linkColor};
 	appearance: none;
 	cursor: pointer;
 	display: inline-block;
@@ -28,3 +27,11 @@ export const StyledLink = styled.a`
 		${props.style}
 	`}
 `;
+
+StyledLink.defaultProps = {
+	theme: defaultTheme
+};
+
+export {
+	StyledLink
+};

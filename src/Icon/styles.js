@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import keyframes from '../keyframes';
-
 const size = {
 	xsmall: 16,
 	small: 32,
@@ -10,7 +8,7 @@ const size = {
 	xlarge: 72
 };
 
-export const StyledIcon = styled.i`
+const StyledIcon = styled.i`
 	position: relative;
 	cursor: pointer;
 	text-align: center;
@@ -25,3 +23,8 @@ export const StyledIcon = styled.i`
 		color: ${props.color};
 	`}
 `;
+
+export {
+	StyledIcon
+};
+

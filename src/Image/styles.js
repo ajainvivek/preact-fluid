@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 
-export const StyledImageWrapper = styled.div`
+const StyledImageWrapper = styled.div`
 	position: relative; 
 	overflow: hidden;
 
@@ -12,7 +12,7 @@ export const StyledImageWrapper = styled.div`
 	`}
 `;
 
-export const StyledImage = styled.img.attrs({
+const StyledImage = styled.img.attrs({
 	src: props => props.src || '',
 	onLoad: props => props.handleImageLoaded,
 	onError: props => props.handleImageErrored
@@ -31,3 +31,8 @@ export const StyledImage = styled.img.attrs({
 		${props.style}
 	`}
 `;
+
+export {
+	StyledImageWrapper,
+	StyledImage
+};
