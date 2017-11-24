@@ -1,10 +1,9 @@
 import styled, {css} from 'styled-components';
+import defaultTheme from '../theme';
 
-import colors from './../theme';
-
-export const StyledList = styled.div`
-	background: ${colors.lightColor};
-	border: 1px solid ${colors.borderColor};
+const StyledList = styled.div`
+	background: ${props => props.theme.lightColor};
+	border: 1px solid ${props => props.theme.borderColor};
 	border-radius: 3px;
 	display: flex;
 	flex-direction: column;
@@ -23,21 +22,21 @@ export const StyledList = styled.div`
 	`}
 `;
 
-export const StyledHeader = styled.div`
+const StyledHeader = styled.div`
 	padding: 15px 20px;
-	border-bottom: 1px solid ${colors.borderColor};
+	border-bottom: 1px solid ${props => props.theme.borderColor};
 	
 	${props => props.style && css`
 		${props.style}
 	`}
 `;
 
-export const StyledSection = styled.ul`
+const StyledSection = styled.ul`
 	padding: 0;
 	margin: 0;
 
 	&:not(:last-child) {
-		border-bottom: 1px solid ${colors.borderColor};
+		border-bottom: 1px solid ${props => props.theme.borderColor};
 	}
 
 	${props => props.style && css`
@@ -45,15 +44,15 @@ export const StyledSection = styled.ul`
 	`}
 `;
 
-export const StyledItem = styled.li`
+const StyledItem = styled.li`
 	padding: 0 20px;
-	color: ${colors.grayColorDark};
+	color: ${props => props.theme.grayColorDark};
 	height: 42px;
 	line-height: 42px;
 
 	&:hover {
 		cursor: pointer;
-		background: ${colors.listActiveColor};
+		background: ${props => props.theme.listActiveColor};
 	}
 
 	.list-item-left {
@@ -65,7 +64,7 @@ export const StyledItem = styled.li`
 		align-items: center;
 
 		i {
-			color: ${colors.grayColorDark};
+			color: ${props => props.theme.grayColorDark};
 		}
 	}
 
@@ -78,12 +77,12 @@ export const StyledItem = styled.li`
 		align-items: center;
 
 		i {
-			color: ${colors.grayColorDark};
+			color: ${props => props.theme.grayColorDark};
 		}
 	}
 
 	${props => props.active && css`
-		background: ${colors.listActiveColor};
+		background: ${props => props.theme.listActiveColor};
 	`}
 
 	${props => props.style && css`
@@ -91,11 +90,11 @@ export const StyledItem = styled.li`
 	`}
 `;
 
-export const StyledFooter = styled.div`
+const StyledFooter = styled.div`
 	padding: 15px 20px;
 
 	&:not(:last-child) {
-		border-top: 1px solid ${colors.borderColor};
+		border-top: 1px solid ${props => props.theme.borderColor};
 	}
 
 	${props => props.style && css`
@@ -103,15 +102,15 @@ export const StyledFooter = styled.div`
 	`}
 `;
 
-export const StyledTitle = styled.h1`
+const StyledTitle = styled.h1`
 	font-size: 20px;
 	line-height: 32px;
 	font-weight: 500;
-    color: ${colors.darkColor};
+    color: ${props => props.theme.darkColor};
     margin: 0;
     
     ${props => props.light && css`
-		color: ${colors.lightColor};
+		color: ${props => props.theme.lightColor};
 	`}
     
     ${props => props.style && css`
@@ -119,18 +118,56 @@ export const StyledTitle = styled.h1`
 	`}
 `;
 
-export const StyledSubTitle = styled.h2`
+const StyledSubTitle = styled.h2`
 	font-size: 14px;
 	line-height: 18px;
 	font-weight: 300;
-    color: ${colors.grayColor};
+    color: ${props => props.theme.grayColor};
     margin: 0;
     
     ${props => props.light && css`
-		color: ${colors.lightColor};
+		color: ${props => props.theme.lightColor};
 	`}
     
     ${props => props.style && css`
 		${props.style}
 	`}
 `;
+
+StyledList.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledHeader.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledSection.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledItem.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledFooter.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledTitle.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledSubTitle.defaultProps = {
+	theme: defaultTheme
+};
+
+export {
+	StyledList,
+	StyledHeader,
+	StyledSection,
+	StyledItem,
+	StyledFooter,
+	StyledTitle,
+	StyledSubTitle
+};

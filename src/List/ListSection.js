@@ -13,12 +13,20 @@ class ListSection extends Component {
 		 */
 		style: PropTypes.object
 	};
+
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
 	render() {
 		const { style = '', className, children } = this.props;
+		const { theme } = this.context;
+
 		return (
 			<StyledSection
 				style={style}
 				className={className}
+				theme={theme}
 			>
 				{children}
 			</StyledSection>

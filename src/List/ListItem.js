@@ -13,6 +13,11 @@ class ListItem extends Component {
 		 */
 		style: PropTypes.object
 	};
+
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
 	get left () {
 		const { left } = this.props;
 
@@ -39,11 +44,14 @@ class ListItem extends Component {
 
 	render() {
 		const { style = '', className, children, active } = this.props;
+		const { theme } = this.context;
+
 		return (
 			<StyledItem
 				style={style}
 				className={className}
 				active={active}
+				theme={theme}
 			>
 				{this.left}
 				{children}

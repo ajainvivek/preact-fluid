@@ -13,8 +13,14 @@ class ListHeader extends Component {
 		 */
 		style: PropTypes.object
 	};
+
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
 	get content () {
 		const { custom, title='', subtitle='' } = this.props;
+		const { theme } = this.context;
 		
 		if (custom && custom.nodeName) { // if node exists
 			return (
@@ -24,17 +30,21 @@ class ListHeader extends Component {
 
 		return (
 			<div>
-				<StyledTitle>{title}</StyledTitle>
-				<StyledSubTitle>{subtitle}</StyledSubTitle>
+				<StyledTitle theme={theme}>{title}</StyledTitle>
+				<StyledSubTitle theme={theme}>{subtitle}</StyledSubTitle>
 			</div>	
 		);
 	}
+
 	render() {
 		const { style = '', className } = this.props;
+		const { theme } = this.context;
+
 		return (
 			<StyledHeader
 				style={style}
 				className={className}
+				theme={theme}
 			>
 				{this.content}
 			</StyledHeader>

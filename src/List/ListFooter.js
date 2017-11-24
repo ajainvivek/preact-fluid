@@ -15,12 +15,20 @@ class ListFooter extends Component {
 		 */
 		style: PropTypes.object
 	};
+
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
 	render() {
 		const { style = '', className, left, right } = this.props;
+		const { theme } = this.context;
+
 		return (
 			<StyledFooter
 				style={style}
 				className={className}
+				theme={theme}
 			>
 				<Grid columns={2}>
 					<Cell width={1} style={{textAlign: 'left'}}>

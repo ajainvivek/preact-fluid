@@ -80,7 +80,13 @@ class Button extends Component {
 		const { theme } = this.context;
 
 		return (
-			<StyledButton {...this.props} onClick={this._handleClick} className={`${clicked} ${loading && 'loading'} ${className}`} theme={theme}>
+			<StyledButton
+				{...this.props}
+				onClick={this._handleClick}
+				className={`${clicked} ${loading && 'loading'}
+				${className}`}
+				theme={theme}
+			>
 				<span className="item-left">
 					{left}
 				</span>
