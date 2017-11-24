@@ -1,16 +1,15 @@
 import styled, {css} from 'styled-components';
-
-import colors from './../theme';
 import animations from './../Animations';
+import defaultTheme from '../theme';
 
-export const StyledNotifyWrapper = styled.div`
+const StyledNotifyWrapper = styled.div`
     display: grid;
     margin: 5px;
 `;
 
-export const StyledNotify = styled.div`
+const StyledNotify = styled.div`
     display: table;
-    background: ${colors.notifyBgColor};
+    background: ${props => props.theme.notifyBgColor};
     border-radius: 4px;
     padding: 3px;
     height: 100%;
@@ -41,7 +40,7 @@ export const StyledNotify = styled.div`
         float: left;
         border-radius: 4px;
         padding: 4px;
-        background-color: ${colors.lightColor};
+        background-color: ${props => props.theme.lightColor};
         box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
     }
 
@@ -54,25 +53,25 @@ export const StyledNotify = styled.div`
     }
     .notification-close:before {
         content: '\00d7';
-        color: ${colors.grayColor};
+        color: ${props => props.theme.grayColor};
     }
 
     .notification-title {
         font-size: 16px;
         padding: 5px;
         margin: 0;
-        color: ${colors.grayColorDark};
+        color: ${props => props.theme.grayColorDark};
 
         ${props => props.type === 'error' && css`
-            color: ${colors.controlErrorColor};
+            color: ${props => props.theme.controlErrorColor};
         `}
 
         ${props => props.type === 'warning' && css`
-            color: ${colors.controlWarningColor};
+            color: ${props => props.theme.controlWarningColor};
         `}
 
         ${props => props.type === 'success' && css`
-            color: ${colors.controlSuccessColor};
+            color: ${props => props.theme.controlSuccessColor};
         `}
     } 
 
@@ -80,10 +79,23 @@ export const StyledNotify = styled.div`
         padding: 0 5px;
         margin: 0;
         font-size: 14px;
-        color: ${colors.grayColorDark};
+        color: ${props => props.theme.grayColorDark};
     }
 
 	${props => props.style && css`
 		${props.style}
 	`}
 `;
+
+StyledNotifyWrapper.defaultProps = {
+	theme: defaultTheme
+};
+
+StyledNotify.defaultProps = {
+	theme: defaultTheme
+};
+
+export {
+	StyledNotifyWrapper,
+	StyledNotify
+};

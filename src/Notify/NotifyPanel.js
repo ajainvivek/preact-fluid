@@ -62,6 +62,10 @@ class NotifyPanel extends Component {
 		type: 'info'
 	};
 
+	static contextTypes = {
+		theme: PropTypes.object
+	};
+
 	get iconColor () {
 		const colorsList = {
 			info: colors.grayColorDark,
@@ -96,9 +100,10 @@ class NotifyPanel extends Component {
 			iconName="bell-o", 
 			iconSize="small" 
 		} = this.props;
+		const { theme } = this.context;
 
 		return (
-			<StyledNotify type={type} style={style} className={className} id={guid} onClick={this.onClick}>
+			<StyledNotify type={type} style={style} className={className} id={guid} onClick={this.onClick} theme={theme}>
 				<div className="notification-icon">
 					<Icon
 						name={iconName}
