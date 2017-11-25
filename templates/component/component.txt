@@ -16,12 +16,15 @@ class {{ properCase name }} extends Component {
 
 	};
 
+	static defaultProps = {
+    };
+
 	static contextTypes = {
 		theme: PropTypes.object
 	};
 
 	render() {
-		const { style = {}, className } = this.props;
+		const { style = {}, className, children } = this.props;
 		const { theme } = this.context;
 
 		return (
@@ -30,7 +33,7 @@ class {{ properCase name }} extends Component {
 				className={className}
 				theme={theme}
 			>
-				{{ properCase name }} Component
+				{children}
 			</Styled{{ properCase name }}>
 		);
 	}

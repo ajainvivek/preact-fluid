@@ -19,7 +19,8 @@ module.exports = {
 				'./src/AppBar/AppBar.js',
 				'./src/Card/Card.js',
 				'./src/List/List.js',
-				'./src/Notify/Notify.js'
+				'./src/Notify/Notify.js',
+				'./src/Tooltip/Tooltip.js'
 			];
 		}
 	}, {

@@ -49,6 +49,11 @@ const StyledCell = styled.section`
     justify-content: center;
     justify-self: stretch;
   `};
+  
+  ${({ overflow }) => overflow && css`
+    overflow: visible;
+  `};
+  
   ${({ style }) => style && css`
     ${style}
   `};
