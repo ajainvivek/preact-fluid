@@ -34,7 +34,8 @@ const theme = {
     controlErrorColor: '#e85600',
     codeColor: '#e06870',
     highlightColor: '#ffe9b3',
-    notifyBgColor: '#ececec'
+    notifyBgColor: '#ececec',
+    listActiveColor: '#f0f3f5'
 };
 
 <ThemeProvider theme={theme}>

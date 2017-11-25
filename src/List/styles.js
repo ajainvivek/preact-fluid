@@ -49,6 +49,7 @@ const StyledItem = styled.li`
 	color: ${props => props.theme.grayColorDark};
 	height: 42px;
 	line-height: 42px;
+	list-style: none;
 
 	&:hover {
 		cursor: pointer;

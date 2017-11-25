@@ -20,7 +20,8 @@ module.exports = {
 				'./src/Card/Card.js',
 				'./src/List/List.js',
 				'./src/Notify/Notify.js',
-				'./src/Tooltip/Tooltip.js'
+				'./src/Tooltip/Tooltip.js',
+				'./src/Dropdown/Dropdown.js'
 			];
 		}
 	}, {

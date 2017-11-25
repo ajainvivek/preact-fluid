@@ -49,6 +49,14 @@ class Animate extends Component {
 		});
 	}
 
+	componentDidMount() {
+	    if (this.comp) {
+	        this.comp.getDOMNode().addEventListener("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", (event) => {
+                console.log(this.component);
+            });
+	    }
+	}
+
 	render() {
 		const {animation, attrs={}} = this.props;
 
@@ -63,7 +71,7 @@ class Animate extends Component {
 			active = true
 		} = animation;
 
-		const name = Animations[animation.name] || '';
+		const name = Animations[animation.name] || animation.name || '';
 
 		const AnimatedComponent = styled(this.component).attrs({
 			...attrs
@@ -81,7 +89,7 @@ class Animate extends Component {
 	     `;
 
 		return (
-			<AnimatedComponent />
+			<AnimatedComponent innerRef={ comp => this.comp = comp } />
 		);
 	}
 };

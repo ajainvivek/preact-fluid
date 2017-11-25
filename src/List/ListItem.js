@@ -42,6 +42,14 @@ class ListItem extends Component {
 		return '';
 	}
 
+	handleClick = () => {
+		const { onClick } = this.props;
+
+		if (typeof onClick === 'function') {
+			onClick(this.item);
+		}
+	}
+
 	render() {
 		const { style = '', className, children, active } = this.props;
 		const { theme } = this.context;
@@ -52,6 +60,8 @@ class ListItem extends Component {
 				className={className}
 				active={active}
 				theme={theme}
+			    onClick={this.handleClick}
+			    innerRef={item => this.item = item}
 			>
 				{this.left}
 				{children}
