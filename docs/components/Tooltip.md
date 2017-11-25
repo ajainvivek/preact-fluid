@@ -6,7 +6,7 @@
 <Tooltip 
     title="Hey there!"
 >
-    <Button primary>Hover me!</Button>
+    <Button>Hover me!</Button>
 </Tooltip>
 ```
 
@@ -20,7 +20,7 @@
             title="Hey there!"
             effect="fade"
         >
-            <Button primary>Hover me!</Button>
+            <Button>Hover me!</Button>
         </Tooltip>
     </Cell>
     <Cell width={1} overflow>
@@ -29,7 +29,7 @@
             title="Hey there!"
             effect="expand"
         >
-            <Button secondary>Hover me!</Button>
+            <Button>Hover me!</Button>
         </Tooltip>
     </Cell>
 </Grid>
@@ -46,7 +46,7 @@
             effect="fade"
             position="top"
         >
-            <Button primary>Hover me!</Button>
+            <Button>Hover me!</Button>
         </Tooltip>
     </Cell>
     <Cell width={1} overflow>
@@ -56,7 +56,7 @@
             effect="fade"
             position="bottom"
         >
-            <Button secondary>Hover me!</Button>
+            <Button>Hover me!</Button>
         </Tooltip>
     </Cell>
     <Cell width={1} overflow>
@@ -66,7 +66,7 @@
             effect="fade"
             position="left"
         >
-            <Button primary>Hover me!</Button>
+            <Button>Hover me!</Button>
         </Tooltip>
     </Cell>
     <Cell width={1} overflow>
@@ -76,7 +76,7 @@
             effect="fade"
             position="right"
         >
-            <Button secondary>Hover me!</Button>
+            <Button>Hover me!</Button>
         </Tooltip>
     </Cell>
 </Grid>
@@ -89,6 +89,6 @@
     title="Irish girl and Irish boy. Is all you need to break toys. That's all you need. That's all you want. That's all you need. Inside this grief."
     width="150px"
 >
-    <Button primary>Hover me!</Button>
+    <Button>Hover me!</Button>
 </Tooltip>
 ```
