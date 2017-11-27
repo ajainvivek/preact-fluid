@@ -35,7 +35,7 @@ class ListItem extends Component {
 
 		if (right && right.nodeName) { // if node exists
 			return (
-				<div className="list-item-right">{left}</div>
+				<div className="list-item-right">{right}</div>
 			);
 		}
 
