@@ -28,7 +28,10 @@ class Animate extends Component {
 			iterationCount: PropTypes.number,
 			direction: PropTypes.string,
 			fillMode: PropTypes.string,
-			playState: PropTypes.string
+			playState: PropTypes.string,
+			onStart: PropTypes.func,
+			onComplete: PropTypes.func,
+			onIteration: PropTypes.func
 		}),
 
 		/**
@@ -51,11 +54,32 @@ class Animate extends Component {
 
 	componentDidMount() {
 	    if (this.comp) {
-	        this.comp.getDOMNode().addEventListener("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", (event) => {
-                console.log(this.component);
-            });
+	        this.comp.getDOMNode().addEventListener('animationstart', this.handleAnimationStart);
+	        this.comp.getDOMNode().addEventListener('animationend', this.handleAnimationComplete);
+	        this.comp.getDOMNode().addEventListener('animationiteration', this.handleAnimationIteration);
 	    }
 	}
+
+	handleAnimationStart = () => {
+	    const { animation } = this.props;
+        if (animation && typeof animation.onStart === 'function') {
+            animation.onStart(this.comp, animation);
+        }
+    }
+
+	handleAnimationComplete = () => {
+	    const { animation } = this.props;
+	    if (animation && typeof animation.onComplete === 'function') {
+            animation.onComplete(this.comp, animation);
+        }
+	}
+
+	handleAnimationIteration = () => {
+	    const { animation } = this.props;
+        if (animation && typeof animation.onIteration === 'function') {
+            animation.onIteration(this.comp, animation);
+        }
+    }
 
 	render() {
 		const {animation, attrs={}} = this.props;

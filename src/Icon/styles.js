@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 const size = {
 	xsmall: 16,
-	small: 32,
+	small: 24,
 	medium: 40,
 	large: 48,
 	xlarge: 72
