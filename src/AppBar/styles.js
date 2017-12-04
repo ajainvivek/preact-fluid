@@ -12,6 +12,12 @@ const StyledHeader = styled.header`
 	white-space: nowrap;
 	padding: 0 10px;
 	background: ${props => props.theme.lightColor};
+
+	.header-link {
+		align-items: center;
+		display: inline-flex;
+		justify-content: center;
+	}
 	
 	${props => props.primary && css`
 		background: ${props => props.theme.primaryColor};
@@ -26,10 +32,8 @@ const StyledHeader = styled.header`
 
 
 const StyledLogo = styled.img`
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	height: 48px;
+	display: inline-flex;
+	padding: 0 3px;
 `;
 
 

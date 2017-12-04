@@ -83,7 +83,7 @@ class AppBar extends Component {
 		return (
 			<StyledHeader {...this.props} theme={theme}>
 				<StyledSection>
-					<Link style={titleStyle} theme={theme}>
+					<Link style={titleStyle} theme={theme} className="header-link">
 						{this.renderLogo()}
 						{title}
 					</Link>
