@@ -25,6 +25,14 @@ const StyledHeader = styled.header`
 `;
 
 
+const StyledLogo = styled.img`
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	height: 48px;
+`;
+
+
 const StyledSection = styled.section`
 	align-items: center;
 	display: flex;
@@ -41,5 +49,6 @@ StyledHeader.defaultProps = {
 
 export {
 	StyledHeader,
-	StyledSection
+	StyledSection,
+	StyledLogo
 };

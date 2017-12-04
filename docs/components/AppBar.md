@@ -5,7 +5,6 @@
 ```js
 <AppBar
     title="Preact Fluid"
-    icon=""
 />
 ```
 
@@ -17,9 +16,8 @@ const welcomeBtn = <Button secondary>Welcome</Button>;
 <AppBar
     title="Preact Fluid"
     titleStyle={{color: 'white', padding: '0 10px'}}
-    icon=""
-    rightElement={logoutBtn}
-    leftElement={welcomeBtn}
+    rightSection={logoutBtn}
+    leftSection={welcomeBtn}
     primary
 />
 ```

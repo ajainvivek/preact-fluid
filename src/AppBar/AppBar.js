@@ -2,7 +2,7 @@ import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
 import defaultTheme from '../theme';
 
-import { StyledHeader, StyledSection } from './styles';
+import { StyledHeader, StyledSection, StyledLogo } from './styles';
 import { Link } from '../index';
 
 /**
@@ -11,15 +11,71 @@ import { Link } from '../index';
  * @example ./../../docs/components/AppBar.md
  */
 class AppBar extends Component {
+	static propTypes = {
+		/**
+		 * title
+		 */
+		title: PropTypes.string,
+
+		/**
+		 * title style
+		 */
+		titleStyle: PropTypes.object,
+
+		/**
+		 * logo image src
+		 */
+		logo: PropTypes.string,
+
+		/**
+		 * logo style
+		 */
+		logoStyle: PropTypes.object,
+
+		/**
+		 * components on the left side of appbar
+		 */
+		leftSection: PropTypes.element,
+
+		/**
+		 * components on the right side of appbar
+		 */
+		rightSection: PropTypes.element
+	};
+
+	static defaultProps = {
+		title: '',
+		titleStyle: {},
+		logo: null,
+		logoStyle: {},
+		leftSection: '',
+		rightSection: ''
+	};
+
 	static contextTypes = {
 		theme: PropTypes.object
 	};
 
+	renderLogo() {
+		const {
+			logo='',
+			logoStyle={}
+		} = this.props;
+
+		if (logo) {
+			return <StyledLogo src={logo} style={logoStyle} />
+		}
+
+		return '';
+	}
+
 	render() {
 		const {
-			title = '',
-			leftElement = '',
-			rightElement = ''
+			title,
+			titleStyle,
+			logo,
+			leftSection,
+			rightSection
 		} = this.props;
 
 		const { theme } = this.context;
@@ -27,11 +83,14 @@ class AppBar extends Component {
 		return (
 			<StyledHeader {...this.props} theme={theme}>
 				<StyledSection>
-					<Link style={this.props.titleStyle} theme={theme}>{title}</Link>
-					{leftElement}
+					<Link style={titleStyle} theme={theme}>
+						{this.renderLogo()}
+						{title}
+					</Link>
+					{leftSection}
 				</StyledSection>
 				<StyledSection>
-					{rightElement}
+					{rightSection}
 				</StyledSection>
 			</StyledHeader>
 		);
