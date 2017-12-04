@@ -33,7 +33,7 @@ const StyledHeader = styled.header`
 
 const StyledLogo = styled.img`
 	display: inline-flex;
-	padding: 0 3px;
+	padding: 0 5px;
 `;
 
 
