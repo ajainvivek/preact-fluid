@@ -4,6 +4,7 @@ export Button from './Button';
 export Link from './Link';
 export Notify from './Notify';
 export Image from './Image';
+export Icon from './Icon';
 export Animation from './Animations';
 export Animate from './Animate';
 export Card from './Card';
