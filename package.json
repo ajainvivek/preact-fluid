@@ -10,14 +10,18 @@
     "gh-pages": "./node_modules/.bin/gh-pages -d styleguide",
     "styleguide": "styleguidist server",
     "styleguide-build": "NODE_ENV=production styleguidist build",
+    "precommit": "lint-staged",
     "publish-docs": "npm run styleguide-build && npm run gh-pages",
     "publish-patch": "npm version patch && npm publish",
     "publish-minor": "npm version minor && npm publish",
     "publish-major": "npm version major && npm publish"
   },
+  "lint-staged": {
+    "*.{js}": ["prettier --write", "git add"]
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atsocialdotme/preact-fluid.git"
+    "url": "git+https://github.com/ajainvivek/preact-fluid.git"
   },
   "keywords": [],
   "author": "",
@@ -36,10 +40,13 @@
     "eslint": "^4.2.0",
     "eslint-config-synacor": "^1.0.1",
     "gh-pages": "^1.0.0",
+    "husky": "^0.14.3",
     "if-env": "^1.0.0",
+    "lint-staged": "^6.0.0",
     "plop": "^1.9.0",
     "preact": "^8.2.0",
     "preact-compat": "^3.16.0",
+    "prettier": "1.9.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -48,9 +55,9 @@
     "webpack": "^3.5.5"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "preact": "^8.2.5",
     "preact-router": "^2.5.4",
-    "lodash": "^4.17.4",
     "styled-components": "^2.1.2"
   }
 }
