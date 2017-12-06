@@ -11,96 +11,95 @@ import { Link } from '../index';
  * @example ./../../docs/components/AppBar.md
  */
 class AppBar extends Component {
-	static propTypes = {
-		/**
-		 * title
-		 */
-		title: PropTypes.string,
+    static propTypes = {
+        /**
+         * title
+         */
+        title: PropTypes.string,
 
-		/**
-		 * title style
-		 */
-		titleStyle: PropTypes.object,
+        /**
+         * title style
+         */
+        titleStyle: PropTypes.object,
 
-		/**
-		 * logo image src
-		 */
-		logo: PropTypes.string,
+        /**
+         * logo image src
+         */
+        logo: PropTypes.string,
 
-		/**
-		 * logo style
-		 */
-		logoStyle: PropTypes.object,
+        /**
+         * logo style
+         */
+        logoStyle: PropTypes.object,
 
-		/**
-		 * components on the left side of appbar
-		 */
-		leftSection: PropTypes.element,
+        /**
+         * components on the left side of appbar
+         */
+        leftSection: PropTypes.element,
 
-		/**
-		 * components on the right side of appbar
-		 */
-		rightSection: PropTypes.element
-	};
+        /**
+         * components on the right side of appbar
+         */
+        rightSection: PropTypes.element,
+    };
 
-	static defaultProps = {
-		title: '',
-		titleStyle: {},
-		logo: null,
-		logoStyle: {},
-		leftSection: '',
-		rightSection: ''
-	};
+    static defaultProps = {
+        title: '',
+        titleStyle: {},
+        logo: null,
+        logoStyle: {},
+        leftSection: '',
+        rightSection: '',
+    };
 
-	static contextTypes = {
-		theme: PropTypes.object
-	};
+    static contextTypes = {
+        theme: PropTypes.object,
+    };
 
-	renderLogo() {
-		const {
-			logo='',
-			logoStyle={}
-		} = this.props;
+    renderLogo() {
+        const { logo = '', logoStyle = {} } = this.props;
 
-		if (logo) {
-			return <StyledLogo src={logo} style={logoStyle} />
-		}
+        if (logo) {
+            return <StyledLogo src={logo} style={logoStyle} />;
+        }
 
-		return '';
-	}
+        return '';
+    }
 
-	render() {
-		const {
-			title,
-			titleStyle,
-			logo,
-			leftSection,
-			rightSection
-		} = this.props;
+    render() {
+        const {
+            title,
+            titleStyle,
+            logo,
+            leftSection,
+            rightSection,
+        } = this.props;
 
-		const { theme } = this.context;
+        const { theme } = this.context;
 
-		return (
-			<StyledHeader {...this.props} theme={theme}>
-				<StyledSection>
-					<Link style={titleStyle} theme={theme} className="header-link">
-						{this.renderLogo()}
-						{title}
-					</Link>
-					{leftSection}
-				</StyledSection>
-				<StyledSection>
-					{rightSection}
-				</StyledSection>
-			</StyledHeader>
-		);
-	}
+        return (
+            <StyledHeader {...this.props} theme={theme}>
+                <StyledSection>
+                    <Link
+                        style={titleStyle}
+                        theme={theme}
+                        className="header-link"
+                    >
+                        {this.renderLogo()}
+                        {title}
+                    </Link>
+                    {leftSection}
+                </StyledSection>
+                <StyledSection>{rightSection}</StyledSection>
+            </StyledHeader>
+        );
+    }
 }
 
 AppBar.propTypes = {
-	title: PropTypes.string,
-	left: PropTypes.array,
-	titleStyle: PropTypes.object
+    title: PropTypes.string,
+    left: PropTypes.array,
+    titleStyle: PropTypes.object,
 };
 AppBar.defaultProps = {};
 

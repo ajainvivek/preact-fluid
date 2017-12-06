@@ -8,6 +8,7 @@
 [![PeerDependencies](https://img.shields.io/david/peer/ajainvivek/preact-fluid.svg)](https://david-dm.org/ajainvivek/preact-fluid#info=peerDependencies&view=list)
 [![Dependencies](https://img.shields.io/david/ajainvivek/preact-fluid.svg)](https://david-dm.org/ajainvivek/preact-fluid)
 [![DevDependencies](https://img.shields.io/david/dev/ajainvivek/preact-fluid.svg)](https://david-dm.org/ajainvivek/preact-fluid#info=devDependencies&view=list)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![HitCount](http://hits.dwyl.io/ajainvivek/preact-fluid.svg)](http://hits.dwyl.io/ajainvivek/preact-fluid)
 
 <iframe src="https://ghbtns.com/github-btn.html?user=ajainvivek&repo=preact-fluid&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>

@@ -8,96 +8,98 @@ import { StyledButton } from './styles';
  * @example ./../../docs/components/Button.md
  */
 class Button extends Component {
+    static propTypes = {
+        /**
+         * Button label.
+         */
+        children: PropTypes.string.isRequired,
 
-	static propTypes = {
+        /**
+         * The size of the Button
+         */
+        size: PropTypes.oneOf(['small', 'normal', 'large']),
 
-		/**
-		 * Button label.
-		 */
-		children: PropTypes.string.isRequired,
+        /**
+         * If true, the button will be rounded corners
+         */
+        rounded: PropTypes.bool,
 
-		/**
-		 * The size of the Button
-		 */
-		size: PropTypes.oneOf(['small', 'normal', 'large']),
+        /**
+         * If true, the button will use the theme's primary color
+         */
+        primary: PropTypes.bool,
 
-		/**
-		 * If true, the button will be rounded corners
-		 */
-		rounded: PropTypes.bool,
+        /**
+         * If true, the button will use the theme's secondary color
+         */
+        secondary: PropTypes.bool,
 
-		/**
-		 * If true, the button will use the theme's primary color
-		 */
-		primary: PropTypes.bool,
+        /**
+         * Gets called when the user clicks on the button
+         *
+         * @param {SyntheticEvent} event The react `SyntheticEvent`
+         */
+        onClick: PropTypes.func,
+    };
 
-		/**
-		 * If true, the button will use the theme's secondary color
-		 */
-		secondary: PropTypes.bool,
+    static defaultProps = {
+        primary: false,
+        secondary: false,
+        clicked: false,
+    };
 
-		/**
-		 * Gets called when the user clicks on the button
-		 *
-		 * @param {SyntheticEvent} event The react `SyntheticEvent`
-		 */
-		onClick: PropTypes.func
-	};
+    static contextTypes = {
+        theme: PropTypes.object,
+    };
 
-	static defaultProps = {
-		primary: false,
-		secondary: false,
-		clicked: false
-	};
+    _handleClick = event => {
+        this.setState({
+            clicked: true,
+        });
 
-	static contextTypes = {
-		theme: PropTypes.object
-	};
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(() => this.setState({ clicked: false }), 500);
 
-	_handleClick = (event) => {
-		this.setState({
-			clicked: true
-		});
+        const onClick = this.props.onClick;
+        if (onClick) {
+            onClick(event);
+        }
+    };
 
-		clearTimeout(this.timeout);
-		this.timeout = setTimeout(() => this.setState({ clicked: false }), 500);
+    componentWillUnmount() {
+        if (this.timeout) {
+            clearTimeout(this.timeout);
+        }
+    }
 
-		const onClick = this.props.onClick;
-		if (onClick) {
-			onClick(event);
-		}
-	}
+    render() {
+        const clicked = this.state.clicked ? 'clicked' : '';
+        const {
+            badge = '',
+            loading = false,
+            className,
+            left,
+            right,
+        } = this.props;
+        const { theme } = this.context;
 
-	componentWillUnmount() {
-		if (this.timeout) {
-			clearTimeout(this.timeout);
-		}
-	}
-
-	render() {
-		const clicked = this.state.clicked ? 'clicked' : '';
-		const {badge='', loading=false, className, left, right} = this.props;
-		const { theme } = this.context;
-
-		return (
-			<StyledButton
-				{...this.props}
-				onClick={this._handleClick}
-				className={`${clicked} ${loading && 'loading'}
+        return (
+            <StyledButton
+                {...this.props}
+                onClick={this._handleClick}
+                className={`${clicked} ${loading && 'loading'}
 				${className}`}
-				theme={theme}
-			>
-				<span className="item-left">
-					{left}
-				</span>
-				{this.props.children}
-				<span className="item-right">
-					{right}
-				</span>
-				<span className={`${badge && 'badge'}`}>{badge && badge.value}</span>
-			</StyledButton>
-		);
-	}
+                theme={theme}
+            >
+                <span className="item-left">{left}</span>
+                {this.props.children}
+                <span className="item-right">{right}</span>
+                <span className={`${badge && 'badge'}`}>
+                    {badge && badge.value}
+                </span>
+            </StyledButton>
+        );
+    }
 }
 
 export default Button;

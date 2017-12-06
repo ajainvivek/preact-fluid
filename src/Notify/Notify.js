@@ -7,166 +7,175 @@ import colors from './../theme';
 import NotifyPanel from './NotifyPanel';
 import { StyledNotify } from './styles';
 
-
 /**
  * Notification system for application with customizable features
  *
  * @example ./../../docs/components/Notify.md
  */
 class Notify extends Component {
-	static propTypes = {
-        
+    static propTypes = {
         /**
-		 * Unique id for the notification wrapper
-		 */
-		id: PropTypes.string.required,
+         * Unique id for the notification wrapper
+         */
+        id: PropTypes.string.required,
 
-		/**
-		 * Custom styles
-		 */
-		style: PropTypes.object,
-		
-		/**
-		 * Title 
-		 */
-		title: PropTypes.string,
+        /**
+         * Custom styles
+         */
+        style: PropTypes.object,
 
-		/**
-		 * Delay in seconds for the notification go away. Set this to 0 to not auto-dismiss the notification.
-		 */
-		autoDismiss: PropTypes.number,
+        /**
+         * Title
+         */
+        title: PropTypes.string,
 
-		/**
-		 * Message 
-		 */
-		message: PropTypes.string,
+        /**
+         * Delay in seconds for the notification go away. Set this to 0 to not auto-dismiss the notification.
+         */
+        autoDismiss: PropTypes.number,
 
-		/**
-		 * Level of the notification
-		 */
-		type: PropTypes.oneOf(['success', 'warning', 'error', 'info']),
+        /**
+         * Message
+         */
+        message: PropTypes.string,
 
-		/**
-		 * Callback function on click of notification
-		 */
-		onClick: PropTypes.func,
+        /**
+         * Level of the notification
+         */
+        type: PropTypes.oneOf(['success', 'warning', 'error', 'info']),
 
-		/**
-		 * Icon name from font awesome - default is bell-o
-		 */
-		iconName: PropTypes.string,
+        /**
+         * Callback function on click of notification
+         */
+        onClick: PropTypes.func,
 
-		/**
-		 * Size of the icon
-		 */
-		iconSize: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+        /**
+         * Icon name from font awesome - default is bell-o
+         */
+        iconName: PropTypes.string,
 
-		/**
-		 * Icon color
-		 */
-		iconColor: PropTypes.string,
+        /**
+         * Size of the icon
+         */
+        iconSize: PropTypes.oneOf([
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+        ]),
 
-		/**
-		 * A callback function that will be called when the notification is successfully added. The first argument is the original notification e.g. `function (notification) { console.log(notification.title + 'was added'); }`
-		 */
-		onAdd: PropTypes.func,
+        /**
+         * Icon color
+         */
+        iconColor: PropTypes.string,
 
-		/**
-		 * A callback function that will be called when the notification is about to be removed. The first argument is the original notification e.g. `function (notification) { console.log(notification.title + 'was removed'); }`
-		 */
-		onDismiss: PropTypes.func
+        /**
+         * A callback function that will be called when the notification is successfully added. The first argument is the original notification e.g. `function (notification) { console.log(notification.title + 'was added'); }`
+         */
+        onAdd: PropTypes.func,
 
-	};
-	
-	static defaultProps = {
-		type: 'info',
-		style: {},
-		title: null,
-		message: null,
-		autoDismiss: 5,
-		iconName: 'bell-o',
-		iconColor: 'dark gray',
-		iconSize: 'xsmall'
-	};
+        /**
+         * A callback function that will be called when the notification is about to be removed. The first argument is the original notification e.g. `function (notification) { console.log(notification.title + 'was removed'); }`
+         */
+        onDismiss: PropTypes.func,
+    };
 
-	constructor (props) {
-		super(props);
-		this.state =  {
-			notifications: []
-		};
-	}
+    static defaultProps = {
+        type: 'info',
+        style: {},
+        title: null,
+        message: null,
+        autoDismiss: 5,
+        iconName: 'bell-o',
+        iconColor: 'dark gray',
+        iconSize: 'xsmall',
+    };
 
-	get guid () {
-		return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-			const r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-			return v.toString(16);
-		});
-	}
+    constructor(props) {
+        super(props);
+        this.state = {
+            notifications: [],
+        };
+    }
 
-	add  = (notification) => {
-		const notifications = this.state.notifications;
-		notifications.push(Object.assign(notification, {
-			guid: this.guid,
-			close: () => {
-				this.dismiss(notification);
-			}
-		}));
+    get guid() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+            const r = (Math.random() * 16) | 0,
+                v = c == 'x' ? r : (r & 0x3) | 0x8;
+            return v.toString(16);
+        });
+    }
 
-		// onAdd callback
-		if (typeof notification.onAdd === 'function') {
-			notification.onAdd(notification);
-		}
+    add = notification => {
+        const notifications = this.state.notifications;
+        notifications.push(
+            Object.assign(notification, {
+                guid: this.guid,
+                close: () => {
+                    this.dismiss(notification);
+                },
+            })
+        );
 
-		// set the state to display the notification
-		this.setState({
-			notifications
-		}, () => {
-			const {autoDismiss = 5} = notification;
-			if (autoDismiss !== 0 && typeof autoDismiss === 'number') {
-				setTimeout(() => {
-					this.dismiss(notification);
-				}, autoDismiss * 1000);
-			}
-			// clear notification state
-			this.setState({
-				notifications: []
-			});
-		});
-	}
+        // onAdd callback
+        if (typeof notification.onAdd === 'function') {
+            notification.onAdd(notification);
+        }
 
-	dismiss = (notification) => {
-		const { id } = this.props;
-		const notifyWrapper = document.getElementById(id);
-		const notificationElement = document.getElementById(notification.guid);
+        // set the state to display the notification
+        this.setState(
+            {
+                notifications,
+            },
+            () => {
+                const { autoDismiss = 5 } = notification;
+                if (autoDismiss !== 0 && typeof autoDismiss === 'number') {
+                    setTimeout(() => {
+                        this.dismiss(notification);
+                    }, autoDismiss * 1000);
+                }
+                // clear notification state
+                this.setState({
+                    notifications: [],
+                });
+            }
+        );
+    };
 
-		// onDismiss callback
-		if (typeof notification.onDismiss === 'function') {
-			notification.onDismiss(notification);
-		}
+    dismiss = notification => {
+        const { id } = this.props;
+        const notifyWrapper = document.getElementById(id);
+        const notificationElement = document.getElementById(notification.guid);
 
-		// close the notitication
-		notificationElement.classList.add('close');
+        // onDismiss callback
+        if (typeof notification.onDismiss === 'function') {
+            notification.onDismiss(notification);
+        }
 
-		// destroy the notification after 500ms 
-		setTimeout(() => {
-			notifyWrapper.removeChild(notificationElement.parentNode);
-		}, 500);
-	}
+        // close the notitication
+        notificationElement.classList.add('close');
 
-	renderNotification = () => {
-		return this.state.notifications.map((notification, i) => (
-			<NotifyPanel key={i} {...notification}></NotifyPanel>
-		));
-	}
+        // destroy the notification after 500ms
+        setTimeout(() => {
+            notifyWrapper.removeChild(notificationElement.parentNode);
+        }, 500);
+    };
 
-	render() {
-		const { id, position = 'bottom' } = this.props;
-		return (
+    renderNotification = () => {
+        return this.state.notifications.map((notification, i) => (
+            <NotifyPanel key={i} {...notification} />
+        ));
+    };
+
+    render() {
+        const { id, position = 'bottom' } = this.props;
+        return (
             <NotifyPortal portalId={id} position={position}>
-	            {this.renderNotification()}
+                {this.renderNotification()}
             </NotifyPortal>
-		);
-	}
+        );
+    }
 }
 
 export default Notify;

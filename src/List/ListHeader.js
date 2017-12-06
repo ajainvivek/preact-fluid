@@ -6,50 +6,44 @@ import { StyledHeader, StyledTitle, StyledSubTitle } from './styles';
  * List header
  */
 class ListHeader extends Component {
-	static propTypes = {
+    static propTypes = {
+        /**
+         * Custom styles
+         */
+        style: PropTypes.object,
+    };
 
-		/**
-		 * Custom styles
-		 */
-		style: PropTypes.object
-	};
+    static contextTypes = {
+        theme: PropTypes.object,
+    };
 
-	static contextTypes = {
-		theme: PropTypes.object
-	};
+    get content() {
+        const { custom, title = '', subtitle = '' } = this.props;
+        const { theme } = this.context;
 
-	get content () {
-		const { custom, title='', subtitle='' } = this.props;
-		const { theme } = this.context;
-		
-		if (custom && custom.nodeName) { // if node exists
-			return (
-				custom
-			);
-		}
+        if (custom && custom.nodeName) {
+            // if node exists
+            return custom;
+        }
 
-		return (
-			<div>
-				<StyledTitle theme={theme}>{title}</StyledTitle>
-				<StyledSubTitle theme={theme}>{subtitle}</StyledSubTitle>
-			</div>	
-		);
-	}
+        return (
+            <div>
+                <StyledTitle theme={theme}>{title}</StyledTitle>
+                <StyledSubTitle theme={theme}>{subtitle}</StyledSubTitle>
+            </div>
+        );
+    }
 
-	render() {
-		const { style = '', className } = this.props;
-		const { theme } = this.context;
+    render() {
+        const { style = '', className } = this.props;
+        const { theme } = this.context;
 
-		return (
-			<StyledHeader
-				style={style}
-				className={className}
-				theme={theme}
-			>
-				{this.content}
-			</StyledHeader>
-		);
-	}
+        return (
+            <StyledHeader style={style} className={className} theme={theme}>
+                {this.content}
+            </StyledHeader>
+        );
+    }
 }
 
 export default ListHeader;

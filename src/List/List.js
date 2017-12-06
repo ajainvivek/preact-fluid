@@ -8,32 +8,27 @@ import { StyledList } from './styles';
  * @example ./../../docs/components/List.md
  */
 class List extends Component {
-	static propTypes = {
+    static propTypes = {
+        /**
+         * Custom styles
+         */
+        style: PropTypes.object,
+    };
 
-		/**
-		 * Custom styles
-		 */
-		style: PropTypes.object
-	};
+    static contextTypes = {
+        theme: PropTypes.object,
+    };
 
-	static contextTypes = {
-		theme: PropTypes.object
-	};
+    render() {
+        const { style = '', className, children } = this.props;
+        const { theme } = this.context;
 
-	render() {
-		const { style = '', className, children } = this.props;
-		const { theme } = this.context;
-
-		return (
-			<StyledList
-				style={style}
-				className={className}
-				theme={theme}
-			>
-				{children}
-			</StyledList>
-		);
-	}
+        return (
+            <StyledList style={style} className={className} theme={theme}>
+                {children}
+            </StyledList>
+        );
+    }
 }
 
 export default List;

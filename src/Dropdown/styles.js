@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import defaultTheme from '../theme';
 
 import { keyframes } from 'styled-components';
@@ -29,30 +29,28 @@ const slideUp = keyframes`
 `;
 
 const StyledDropdown = styled.div`
-	position: relative;
-	display: table;
-	
-	.dropdown {
-		position: absolute;
-		left: 50%;
-		margin-top: 8px;
-		min-width: 200px;
-		transform: translate(-50%, 0%);
-		z-index: 999;
-		visibility: hidden;
-	}
-	
-	${props => props.style && css`
-		${props.style}
-	`}
+    position: relative;
+    display: table;
+
+    .dropdown {
+        position: absolute;
+        left: 50%;
+        margin-top: 8px;
+        min-width: 200px;
+        transform: translate(-50%, 0%);
+        z-index: 999;
+        visibility: hidden;
+    }
+
+    ${props =>
+        props.style &&
+        css`
+            ${props.style};
+        `};
 `;
 
 StyledDropdown.defaultProps = {
-	theme: defaultTheme
+    theme: defaultTheme,
 };
 
-export {
-	StyledDropdown,
-	slideDown,
-	slideUp
-};
+export { StyledDropdown, slideDown, slideUp };

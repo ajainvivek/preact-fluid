@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import animations from './../Animations';
 import defaultTheme from '../theme';
 
@@ -41,7 +41,8 @@ const StyledNotify = styled.div`
         border-radius: 4px;
         padding: 4px;
         background-color: ${props => props.theme.lightColor};
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px,
+            rgba(0, 0, 0, 0.12) 0px 1px 4px;
     }
 
     .notification-close {
@@ -62,18 +63,20 @@ const StyledNotify = styled.div`
         margin: 0;
         color: ${props => props.theme.grayColorDark};
 
-        ${props => props.type === 'error' && css`
-            color: ${props => props.theme.controlErrorColor};
-        `}
-
-        ${props => props.type === 'warning' && css`
-            color: ${props => props.theme.controlWarningColor};
-        `}
-
-        ${props => props.type === 'success' && css`
-            color: ${props => props.theme.controlSuccessColor};
-        `}
-    } 
+        ${props =>
+            props.type === 'error' &&
+            css`
+                color: ${props => props.theme.controlErrorColor};
+            `} ${props =>
+                props.type === 'warning' &&
+                css`
+                    color: ${props => props.theme.controlWarningColor};
+                `} ${props =>
+                props.type === 'success' &&
+                css`
+                    color: ${props => props.theme.controlSuccessColor};
+                `};
+    }
 
     .notification-message {
         padding: 0 5px;
@@ -82,20 +85,19 @@ const StyledNotify = styled.div`
         color: ${props => props.theme.grayColorDark};
     }
 
-	${props => props.style && css`
-		${props.style}
-	`}
+    ${props =>
+        props.style &&
+        css`
+            ${props.style};
+        `};
 `;
 
 StyledNotifyWrapper.defaultProps = {
-	theme: defaultTheme
+    theme: defaultTheme,
 };
 
 StyledNotify.defaultProps = {
-	theme: defaultTheme
+    theme: defaultTheme,
 };
 
-export {
-	StyledNotifyWrapper,
-	StyledNotify
-};
+export { StyledNotifyWrapper, StyledNotify };

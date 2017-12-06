@@ -4,121 +4,127 @@ import Icon from './../Icon';
 import colors from './../theme';
 import { StyledNotify } from './styles';
 
-
 /**
  * Notification panel
  */
 class NotifyPanel extends Component {
-	static propTypes = {
+    static propTypes = {
+        /**
+         * Custom styles
+         */
+        style: PropTypes.object,
 
-		/**
-		 * Custom styles
-		 */
-		style: PropTypes.object,
-		
-		/**
-		 * Title 
-		 */
-		title: PropTypes.string,
+        /**
+         * Title
+         */
+        title: PropTypes.string,
 
-		/**
-		 * Delay in seconds for the notification go away. Set this to 0 to not auto-dismiss the notification.
-		 */
-		autoDismiss: PropTypes.integer,
+        /**
+         * Delay in seconds for the notification go away. Set this to 0 to not auto-dismiss the notification.
+         */
+        autoDismiss: PropTypes.integer,
 
-		/**
-		 * Message 
-		 */
-		message: PropTypes.string,
+        /**
+         * Message
+         */
+        message: PropTypes.string,
 
-		/**
-		 * Level of the notification
-		 */
-		type: PropTypes.oneOf(['success', 'warning', 'error', 'info']),
+        /**
+         * Level of the notification
+         */
+        type: PropTypes.oneOf(['success', 'warning', 'error', 'info']),
 
-		/**
-		 * Callback function on click of notification
-		 */
-		onClick: PropTypes.func,
+        /**
+         * Callback function on click of notification
+         */
+        onClick: PropTypes.func,
 
-		/**
-		 * Icon name from font awesome - default is bell-o
-		 */
-		iconName: PropTypes.string,
+        /**
+         * Icon name from font awesome - default is bell-o
+         */
+        iconName: PropTypes.string,
 
-		/**
-		 * Size of the icon
-		 */
-		iconSize: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+        /**
+         * Size of the icon
+         */
+        iconSize: PropTypes.oneOf([
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+        ]),
 
-		/**
-		 * Icon color
-		 */
-		iconColor: PropTypes.string
+        /**
+         * Icon color
+         */
+        iconColor: PropTypes.string,
+    };
 
-	};
+    static defaultProps = {
+        type: 'info',
+    };
 
-	static defaultProps = {
-		type: 'info'
-	};
+    static contextTypes = {
+        theme: PropTypes.object,
+    };
 
-	static contextTypes = {
-		theme: PropTypes.object
-	};
+    get iconColor() {
+        const colorsList = {
+            info: colors.grayColorDark,
+            success: colors.controlSuccessColor,
+            error: colors.controlErrorColor,
+            warning: colors.controlWarningColor,
+        };
+        return colorsList[this.props.type];
+    }
 
-	get iconColor () {
-		const colorsList = {
-			info: colors.grayColorDark,
-			success: colors.controlSuccessColor,
-			error: colors.controlErrorColor,
-			warning: colors.controlWarningColor
-		};
-		return colorsList[this.props.type];
-	}
+    close = () => {
+        if (typeof this.props.close === 'function') {
+            this.props.close();
+        }
+    };
 
-	close = () => {
-		if (typeof this.props.close === 'function') {
-			this.props.close();
-		}
-	}
+    onClick = () => {
+        if (typeof this.props.onClick === 'function') {
+            this.props.onClick();
+        }
+    };
 
-	onClick = () => {
-		if (typeof this.props.onClick === 'function') {
-			this.props.onClick();
-		}
-	}
+    render() {
+        const {
+            style,
+            className,
+            title = '',
+            type = 'info',
+            message,
+            guid,
+            iconColor = this.iconColor,
+            iconName = 'bell-o',
+            iconSize = 'small',
+        } = this.props;
+        const { theme } = this.context;
 
-	render() {
-		const { 
-			style, 
-			className, 
-			title='', 
-			type='info', 
-			message, 
-			guid, 
-			iconColor=this.iconColor, 
-			iconName="bell-o", 
-			iconSize="small" 
-		} = this.props;
-		const { theme } = this.context;
-
-		return (
-			<StyledNotify type={type} style={style} className={className} id={guid} onClick={this.onClick} theme={theme}>
-				<div className="notification-icon">
-					<Icon
-						name={iconName}
-						size={iconSize}
-						color={iconColor}
-					/>
-				</div>
-				<div className="notification-body">
-					<div className="notification-close" onClick={this.close}></div>
-					<h1 className="notification-title">{title}</h1>
-					<p className="notification-message">{message}</p>
-				</div>
-			</StyledNotify>
-		);
-	}
+        return (
+            <StyledNotify
+                type={type}
+                style={style}
+                className={className}
+                id={guid}
+                onClick={this.onClick}
+                theme={theme}
+            >
+                <div className="notification-icon">
+                    <Icon name={iconName} size={iconSize} color={iconColor} />
+                </div>
+                <div className="notification-body">
+                    <div className="notification-close" onClick={this.close} />
+                    <h1 className="notification-title">{title}</h1>
+                    <p className="notification-message">{message}</p>
+                </div>
+            </StyledNotify>
+        );
+    }
 }
 
 export default NotifyPanel;

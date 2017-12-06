@@ -6,69 +6,66 @@ import { StyledItem } from './styles';
  * List Item
  */
 class ListItem extends Component {
-	static propTypes = {
+    static propTypes = {
+        /**
+         * Custom styles
+         */
+        style: PropTypes.object,
+    };
 
-		/**
-		 * Custom styles
-		 */
-		style: PropTypes.object
-	};
+    static contextTypes = {
+        theme: PropTypes.object,
+    };
 
-	static contextTypes = {
-		theme: PropTypes.object
-	};
+    get left() {
+        const { left } = this.props;
 
-	get left () {
-		const { left } = this.props;
+        if (left && left.nodeName) {
+            // if node exists
+            return <div className="list-item-left">{left}</div>;
+        }
 
-		if (left && left.nodeName) { // if node exists
-			return (
-				<div className="list-item-left">{left}</div>
-			);
-		}
+        return '';
+    }
 
-		return '';
-	}
+    get right() {
+        const { right } = this.props;
 
-	get right () {
-		const { right } = this.props;
+        if (right && right.nodeName) {
+            // if node exists
+            return <div className="list-item-right">{right}</div>;
+        }
 
-		if (right && right.nodeName) { // if node exists
-			return (
-				<div className="list-item-right">{right}</div>
-			);
-		}
+        return '';
+    }
 
-		return '';
-	}
+    handleClick = () => {
+        const { onClick } = this.props;
 
-	handleClick = () => {
-		const { onClick } = this.props;
+        if (typeof onClick === 'function') {
+            onClick(this.item);
+        }
+    };
 
-		if (typeof onClick === 'function') {
-			onClick(this.item);
-		}
-	}
+    render() {
+        const { style = '', className, children, active } = this.props;
+        const { theme } = this.context;
 
-	render() {
-		const { style = '', className, children, active } = this.props;
-		const { theme } = this.context;
-
-		return (
-			<StyledItem
-				style={style}
-				className={className}
-				active={active}
-				theme={theme}
-			    onClick={this.handleClick}
-			    innerRef={item => this.item = item}
-			>
-				{this.left}
-				{children}
-				{this.right}
-			</StyledItem>
-		);
-	}
+        return (
+            <StyledItem
+                style={style}
+                className={className}
+                active={active}
+                theme={theme}
+                onClick={this.handleClick}
+                innerRef={item => (this.item = item)}
+            >
+                {this.left}
+                {children}
+                {this.right}
+            </StyledItem>
+        );
+    }
 }
 
 export default ListItem;

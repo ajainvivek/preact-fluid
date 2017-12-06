@@ -6,18 +6,22 @@
   "scripts": {
     "start": "npm run styleguide",
     "generate-component": "plop component",
-    "test": "eslint . && preact test",
+    "test": "npm run prettier-check && preact test",
     "gh-pages": "./node_modules/.bin/gh-pages -d styleguide",
     "styleguide": "styleguidist server",
     "styleguide-build": "NODE_ENV=production styleguidist build",
     "precommit": "lint-staged",
+    "prettier":
+    "prettier --write src/**/*.js",
+    "prettier-check":
+    "prettier --list-different src/**/*.js",
     "publish-docs": "npm run styleguide-build && npm run gh-pages",
     "publish-patch": "npm version patch && npm publish",
     "publish-minor": "npm version minor && npm publish",
     "publish-major": "npm version major && npm publish"
   },
   "lint-staged": {
-    "*.{js}": ["prettier --write", "git add"]
+    "*.{js}": ["prettier --write src/**/*.js", "git add"]
   },
   "repository": {
     "type": "git",
@@ -26,9 +30,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "eslintConfig": {
-    "extends": "eslint-config-synacor"
-  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",

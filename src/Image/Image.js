@@ -8,45 +8,48 @@ import { StyledImageWrapper, StyledImage } from './styles';
  * @example ./../../docs/components/Image.md
  */
 class Image extends Component {
-	static propTypes = {
-		/**
-		 * Custom styles
-		 */
-		style: PropTypes.string,
+    static propTypes = {
+        /**
+         * Custom styles
+         */
+        style: PropTypes.string,
 
-		/**
-		 * Gets called when the user clicks on the button
-		 *
-		 * @param {SyntheticEvent} event The react `SyntheticEvent`
-		 */
-		onClick: PropTypes.func
-	};
-	handleImageLoaded = () => {
-		this.setState({
-			placeholderHeight: 0,
-			placeholderWidth: 0,
-			imageLoaded: true
-		});
-	}
-	handleImageErrored = () => {
-		// TODO - Should re-fetch the image
-	}
-	renderResponsiveImages = (images=[]) => {
-		return images.map((image) => {
-			return <source srcset={image.src} media={image.media} />
-		});
-	}
-	placeholderOnLoad = (element) => {
-		if (!this.state.imageLoaded) {
-			this.setState({
-				placeholderHeight: element.target.offsetHeight,
-				placeholderWidth: element.target.offsetWidth
-			});
-		}
-	}
-	renderPlaceholder = (placeholder) => {
-		if (placeholder) {
-			return <StyledImage src={placeholder} style={`
+        /**
+         * Gets called when the user clicks on the button
+         *
+         * @param {SyntheticEvent} event The react `SyntheticEvent`
+         */
+        onClick: PropTypes.func,
+    };
+    handleImageLoaded = () => {
+        this.setState({
+            placeholderHeight: 0,
+            placeholderWidth: 0,
+            imageLoaded: true,
+        });
+    };
+    handleImageErrored = () => {
+        // TODO - Should re-fetch the image
+    };
+    renderResponsiveImages = (images = []) => {
+        return images.map(image => {
+            return <source srcset={image.src} media={image.media} />;
+        });
+    };
+    placeholderOnLoad = element => {
+        if (!this.state.imageLoaded) {
+            this.setState({
+                placeholderHeight: element.target.offsetHeight,
+                placeholderWidth: element.target.offsetWidth,
+            });
+        }
+    };
+    renderPlaceholder = placeholder => {
+        if (placeholder) {
+            return (
+                <StyledImage
+                    src={placeholder}
+                    style={`
 				position:absolute;
 				top: 0;
 				left: 0;
@@ -54,24 +57,36 @@ class Image extends Component {
 				filter: blur(5px);
 				transform: scale(1);
 				transition: opacity 1s linear;
-			`} handleImageLoaded={this.placeholderOnLoad} />
-		}
-		return '';
-	}
-	render() {
-		const { responsive, placeholder='', className, inline } = this.props;
-		const { placeholderHeight = 0,  placeholderWidth = 0 } = this.state;
-		return (
-			<StyledImageWrapper inline={inline} className={className}>
-				<div style={{height: placeholderHeight + 'px', width: placeholderWidth + 'px'}}></div>
-				<picture>
-					{this.renderResponsiveImages(responsive)}
-					<StyledImage {...this.props} handleImageLoaded={this.handleImageLoaded} handleImageErrored={this.handleImageErrored} />
-				</picture>
-				{this.renderPlaceholder(placeholder)}
-			</StyledImageWrapper>
-		);
-	}
+			`}
+                    handleImageLoaded={this.placeholderOnLoad}
+                />
+            );
+        }
+        return '';
+    };
+    render() {
+        const { responsive, placeholder = '', className, inline } = this.props;
+        const { placeholderHeight = 0, placeholderWidth = 0 } = this.state;
+        return (
+            <StyledImageWrapper inline={inline} className={className}>
+                <div
+                    style={{
+                        height: placeholderHeight + 'px',
+                        width: placeholderWidth + 'px',
+                    }}
+                />
+                <picture>
+                    {this.renderResponsiveImages(responsive)}
+                    <StyledImage
+                        {...this.props}
+                        handleImageLoaded={this.handleImageLoaded}
+                        handleImageErrored={this.handleImageErrored}
+                    />
+                </picture>
+                {this.renderPlaceholder(placeholder)}
+            </StyledImageWrapper>
+        );
+    }
 }
 
 export default Image;

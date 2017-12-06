@@ -7,11 +7,9 @@ import { StyledCell } from './styles';
  * @example ./../../docs/components/Card.md
  */
 class Cell extends Component {
-	render() {
-		return (
-			<StyledCell {...this.props} />
-		);
-	}
+    render() {
+        return <StyledCell {...this.props} />;
+    }
 }
 
 export default Cell;

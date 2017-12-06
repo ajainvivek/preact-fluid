@@ -7,11 +7,9 @@ import { StyledGrid } from './styles';
  * @example ./../../docs/components/Grid.md
  */
 class Grid extends Component {
-	render() {
-		return (
-			<StyledGrid {...this.props} />
-		);
-	}
+    render() {
+        return <StyledGrid {...this.props} />;
+    }
 }
 
 export default Grid;
