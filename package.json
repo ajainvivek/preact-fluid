@@ -1,6 +1,6 @@
 {
   "name": "preact-fluid-test",
-  "version": "0.0.2",
+  "version": "0.5.7",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -11,17 +11,18 @@
     "styleguide": "styleguidist server",
     "styleguide-build": "NODE_ENV=production styleguidist build",
     "build": "babel src --out-dir lib  --source-maps true",
+    "prebuild": "rimraf ./lib",
     "precommit": "lint-staged",
     "prettier": "prettier --write src/**/*.js",
     "prettier-check": "prettier --list-different src/**/*.js",
     "publish-docs": "npm run styleguide-build && npm run gh-pages",
-    "publish-patch": "npm version patch && npm publish",
-    "publish-minor": "npm version minor && npm publish",
-    "publish-major": "npm version major && npm publish"
+    "publish-patch": "npm run build && npm version patch && npm publish",
+    "publish-minor": "npm run build && npm version minor && npm publish",
+    "publish-major": "npm run build && npm version major && npm publish"
   },
   "lint-staged": {
     "*.{js}": [
-      "prettier --write src/**/*.js",
+      "prettier --write",
       "git add"
     ]
   },
@@ -56,6 +57,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-styleguidist": "^6.0.21",
+    "rimraf": "^2.6.2",
     "sass-resources-loader": "^1.3.0",
     "webpack": "^3.5.5"
   },

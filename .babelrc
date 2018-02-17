@@ -1,3 +1,16 @@
 {
-    "presets": ["env", "es2015", "stage-0", "react"]
+    "presets": ["env", "es2015", "stage-0", "react"],
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "root": ["."],
+                "alias": {
+                    "react": "preact-compat",
+                    "react-dom": "preact-compat",
+                    "create-react-class": "preact-compat/lib/create-react-class"
+                }
+            }
+        ]
+    ]
 }
