@@ -79,7 +79,8 @@ class TextField extends Component {
 	render() {
 		const { 
 			className, 
-			style, 
+			style,
+			type,
 			grid, 
 			cell, 
 			effect='',
@@ -97,6 +98,7 @@ class TextField extends Component {
 				<Cell {...cell} middle>
 					<div style={`position: relative;`}>
 						<StyledInput
+							type={type}
 							effect={effect}
 							className={className}
 							style={style}
