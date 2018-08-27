@@ -8,3 +8,4 @@ yarn.lock
 .idea/workspace.xml
 lib
 .npmrc
+/coverage
