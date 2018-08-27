@@ -1,0 +1,49 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.4.0
+    steps:
+    - checkout
+    - run:
+        name: install
+        command: npm install
+    - run:
+        name: test
+        command: npm test && npm run lint
+  deploy:
+    docker:
+      - image: circleci/node:8.4.0
+    steps:
+    - checkout
+    - run:
+        name: install
+        command: npm install --no-save
+    - run:
+        name: login to npm
+        command: |
+            echo "Adding token"
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+    - run:
+        name: setup git globals
+        command: |
+            git config --global push.default matching
+            git config --global user.email "noreply@preact-fluid.com"
+            git config --global user.name "circleci-preact-fluid"
+    - run:
+        name: patch update and commit package.json
+        command: |
+            echo "doing a patch update!"
+            npm run publish-minor
+            git add .
+            git commit --amend -m 'automated patching [ci skip]'
+            git push
+workflows:
+  version: 2
+  test_and_build:
+    jobs:
+      - build
+      - deploy:
+          filters:
+              branches:
+                only: master

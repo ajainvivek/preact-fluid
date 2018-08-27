@@ -7,3 +7,4 @@ yarn.lock
 /.idea
 .idea/workspace.xml
 lib
+.npmrc
