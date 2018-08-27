@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run styleguide",
     "generate-component": "plop component",
-    "test": "npm run prettier-check && preact test",
+    "test": "npm run prettier-check && jest --coverage",
     "gh-pages": "./node_modules/.bin/gh-pages -d styleguide",
     "styleguide": "styleguidist server",
     "styleguide-build": "NODE_ENV=production styleguidist build",
@@ -48,6 +48,7 @@
     "gh-pages": "^1.0.0",
     "husky": "^0.14.3",
     "if-env": "^1.0.0",
+    "jest": "^23.5.0",
     "lint-staged": "^6.0.0",
     "plop": "^1.9.0",
     "preact": "^8.2.0",
@@ -66,5 +67,24 @@
     "preact": "^8.2.5",
     "preact-router": "^2.5.4",
     "styled-components": "^2.1.2"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy",
+      "^react$": "preact-compat",
+      "^react-dom$": "preact-compat"
+    },
+    "testMatch": ["**/**/*.spec.js"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ]
   }
 }
