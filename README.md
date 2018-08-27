@@ -5,7 +5,7 @@
 </p>
 <p align="center">Minimal <b>UI Kit</b> for Preact, with reusable components.</p>
 
-[![PeerDependencies](https://img.shields.io/david/peer/ajainvivek/preact-fluid.svg)](https://david-dm.org/ajainvivek/preact-fluid#info=peerDependencies&view=list)
+[![Build Status](https://travis-ci.org/ajainvivek/preact-fluid.svg?branch=master)](https://travis-ci.org/ajainvivek/preact-fluid)
 [![Dependencies](https://img.shields.io/david/ajainvivek/preact-fluid.svg)](https://david-dm.org/ajainvivek/preact-fluid)
 [![DevDependencies](https://img.shields.io/david/dev/ajainvivek/preact-fluid.svg)](https://david-dm.org/ajainvivek/preact-fluid#info=devDependencies&view=list)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
