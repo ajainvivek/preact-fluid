@@ -32,7 +32,6 @@ class Modal extends Component {
 	};
 
 	show = content => {
-		console.log('show', content)
 		this.setState({ content })
 	}
 
