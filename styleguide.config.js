@@ -22,6 +22,7 @@ module.exports = {
                     './src/AppBar/AppBar.js',
                     './src/Card/Card.js',
                     './src/List/List.js',
+                    './src/Modal/Modal.js',
                     './src/Notify/Notify.js',
                     './src/Tooltip/Tooltip.js',
                     './src/Dropdown/Dropdown.js',
