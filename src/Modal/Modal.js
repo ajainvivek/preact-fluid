@@ -1,7 +1,7 @@
 import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
 import { StyledModal } from './styles';
-import ModalPortal from './ModalPortal'
+import ModalPortal from './ModalPortal';
 
 /**
  * Description
@@ -9,52 +9,46 @@ import ModalPortal from './ModalPortal'
  * @example ./../../docs/components/Modal.md
  */
 class Modal extends Component {
-	constructor(props) {
-      super(props);
-      this.state = {
-        content: false
-      };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            content: false,
+        };
+    }
 
-	static propTypes = {
-		/**
-		 * Custom styles
-		 */
-		style: PropTypes.object
-
-	};
-
-	static defaultProps = {
+    static propTypes = {
+        /**
+         * Custom styles
+         */
+        style: PropTypes.object,
     };
 
-	static contextTypes = {
-		theme: PropTypes.object
-	};
+    static defaultProps = {};
 
-	show = content => {
-		this.setState({ content })
-	}
+    static contextTypes = {
+        theme: PropTypes.object,
+    };
 
-	hide = () => {
-		this.setState({ content: false })
-	}
+    show = content => {
+        this.setState({ content });
+    };
 
-	render() {
-		const { style = {}, className } = this.props;
-		const { theme } = this.context;
+    hide = () => {
+        this.setState({ content: false });
+    };
 
-		return this.state.content ? (
-			<ModalPortal>
-				<StyledModal
-					style={style}
-					className={className}
-					theme={theme}
-				>
-				{this.state.content}
-				</StyledModal>
-			</ModalPortal>
-		) : null
-	}
+    render() {
+        const { style = {}, className } = this.props;
+        const { theme } = this.context;
+
+        return this.state.content ? (
+            <ModalPortal>
+                <StyledModal style={style} className={className} theme={theme}>
+                    {this.state.content}
+                </StyledModal>
+            </ModalPortal>
+        ) : null;
+    }
 }
 
 export default Modal;

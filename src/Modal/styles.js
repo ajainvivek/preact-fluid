@@ -1,17 +1,16 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import defaultTheme from '../theme';
 
 const StyledModal = styled.div`
-
-	${props => props.style && css`
-		${props.style}
-	`}
+    ${props =>
+        props.style &&
+        css`
+            ${props.style};
+        `};
 `;
 
 StyledModal.defaultProps = {
-	theme: defaultTheme
+    theme: defaultTheme,
 };
 
-export {
-	StyledModal
-};
+export { StyledModal };

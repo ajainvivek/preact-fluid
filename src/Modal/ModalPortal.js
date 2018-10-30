@@ -26,7 +26,7 @@ class ModalPortal extends Component {
             portal.style.display = 'flex';
             portal.style.alignItems = 'center';
             portal.style.justifyContent = 'center';
-            portal.style.backgroundColor='rgba(0, 0, 0, 0.8)';
+            portal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
             document.body.appendChild(portal);
         }
         this.portal = portal;
