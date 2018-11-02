@@ -5,6 +5,10 @@
 ```
 
 ```js
+<Button disabled>Disabled Button</Button>
+```
+
+```js
 <Button rounded>Rounded Button</Button>
 ```
 

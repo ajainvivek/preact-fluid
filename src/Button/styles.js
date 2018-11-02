@@ -88,6 +88,12 @@ const StyledButton = styled.button`
         z-index: 1;
     }
 
+    &:disabled,
+    &[disabled],
+    &.disabled {
+        opacity: 0.5;
+    }
+
     .item-left {
         padding-right: 8px;
     }
