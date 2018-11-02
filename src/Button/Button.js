@@ -35,6 +35,11 @@ class Button extends Component {
         secondary: PropTypes.bool,
 
         /**
+         * If true, the button will be disabled
+         */
+        disabled: PropTypes.bool,
+
+        /**
          * Gets called when the user clicks on the button
          *
          * @param {SyntheticEvent} event The react `SyntheticEvent`
