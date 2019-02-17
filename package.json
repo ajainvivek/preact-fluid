@@ -1,6 +1,6 @@
 {
   "name": "preact-fluid",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -75,7 +75,9 @@
       "^react$": "preact-compat",
       "^react-dom$": "preact-compat"
     },
-    "testMatch": ["**/**/*.spec.js"],
+    "testMatch": [
+      "**/**/*.spec.js"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
