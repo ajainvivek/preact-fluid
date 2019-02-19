@@ -19,8 +19,6 @@ script:
   - npm run build
   - npm run test
 
-before_deploy: npm run build
-
 deploy:
   provider: npm
   email: ajainvivek07@gmail.com
