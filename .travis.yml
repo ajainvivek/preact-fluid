@@ -3,6 +3,9 @@ language: node_js
 node_js:
   - "10"
 
+branches:
+  only: master
+
 cache:
   directories:
     - node_modules
@@ -14,6 +17,8 @@ script:
   - npm run build
   - npm run test
 
+before_deploy: npm run build
+
 deploy:
   provider: npm
   email: ajainvivek07@gmail.com
@@ -22,6 +27,5 @@ deploy:
     secure: $NPM_TOKEN
   on:
     tags: true
-
-branches:
-  only: master
+    branch: master
+    repo: ajainvivek/preact-fluid
