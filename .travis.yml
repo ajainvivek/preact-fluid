@@ -1,30 +1,24 @@
 language: node_js
-
 node_js:
-  - "10"
-
+- '10'
 branches:
-  only: 
-    - master
-    - /^v[0-9](\.[0-9]+)(\.[0-9]+)?$/
-
+  only:
+  - master
+  - "/^v[0-9](\\.[0-9]+)(\\.[0-9]+)?$/"
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 install:
-  - npm install
-
+- npm install
 script:
-  - npm run build
-  - npm run test
-
+- npm run build
+- npm run test
 deploy:
   provider: npm
   email: ajainvivek07@gmail.com
   skip_cleanup: true
-  api_key: 
-    secure: $NPM_API_KEY
+  api_key:
+    secure: Dw3CdQVdpQL9MPdyR5S0i3uP45urabZ9F1xlArJDN/NWZHF1Og0qRh52B0fSIWRc01ZrzjSSTumyaMnEFYzzLdhxQuF7TNRJHd4vzLQM8Jv5QMsx0ieJkpLBLxr7mnmjIBgnLgOQ78aZXjMXnxDx581YgxEWKlvVZgX/nre9fch50DDHlT7ezHfxPB0btUrK9UtXx9o951bW1IgZMHhgxeNHK0GZYtxX4a52YkSKz9qDxDAaSDEKJUt3fIiOnH8KVo+UNomok5Ab6j356AEBT/11T9yWXI3RJwINNawCUD6S38zwNdmsD6LAHlagGjSIkH/zGX6VQ90mrBbW42m3RORTaglLlYBomQYk7QjiPOQlgk5KKYnYDqc811xk7zt5SG88tcaKJSfx9uCHSG9NpuCLnHs1QMDUhynHruklCuT387px4TLsgXLIeT0uHrlcjFLFjDCNZ9Zxl/BontaHBeXz8Y8MVnozbbVvh8BUxxwe0U3U9GsOVlVTdRuO3TiZbn5jU2iLUP+02KG3E+MQnyz9Ud20MHwCyFKQY+5G3/T8VPyBMydfhtc54XaN7RscTFPnH56FnT+8jhHeiUxCbGp6cLqa7NG+Ckyq/lDjKp3+Dx13QCLIfn1CFlIRlF2M0ObeV1a2m/Uny9vdpWcfgO3ffuqj2ji3WkBhi9OBXWU=
   on:
     tags: true
     branch: master
