@@ -1,11 +1,7 @@
 import React, { Component } from 'preact';
 import PropTypes from 'prop-types';
 import NotifyPortal from './NotifyPortal';
-import lodash from 'lodash';
-import Icon from './../Icon';
-import colors from './../theme';
 import NotifyPanel from './NotifyPanel';
-import { StyledNotify } from './styles';
 
 /**
  * Notification system for application with customizable features
