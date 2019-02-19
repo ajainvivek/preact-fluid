@@ -27,5 +27,5 @@ deploy:
     secure: $NPM_TOKEN
   on:
     tags: true
-    branch: master
+    all_branches: true
     repo: ajainvivek/preact-fluid
