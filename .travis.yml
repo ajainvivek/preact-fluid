@@ -25,7 +25,7 @@ deploy:
   provider: npm
   email: ajainvivek07@gmail.com
   skip_cleanup: true
-  api_key: $NPM_TOKEN
+  api_key: $NPM_API_KEY
   on:
     tags: true
     branch: master
