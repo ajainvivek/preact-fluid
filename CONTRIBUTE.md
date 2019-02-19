@@ -58,3 +58,11 @@ yarn generate-component
 Creates a boilerplate structure for a new component
 
 Then finally, hook the component in styleguide.config.js to list in the demo.
+
+## Release
+
+If you are colloborator on the project, you can run release on master, which will publish the latest changes to npm registry
+
+```
+yarn release
+```

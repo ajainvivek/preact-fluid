@@ -16,9 +16,7 @@
     "prettier": "prettier --write src/**/*.js",
     "prettier-check": "prettier --list-different src/**/*.js",
     "publish-docs": "npm run styleguide-build && npm run gh-pages",
-    "publish-patch": "npm run build && npm version patch && npm publish",
-    "publish-minor": "npm run build && npm version minor && npm publish",
-    "publish-major": "npm run build && npm version major && npm publish"
+    "release": "./scripts/release.sh"
   },
   "lint-staged": {
     "*.{js}": [
