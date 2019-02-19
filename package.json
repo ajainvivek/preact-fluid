@@ -1,6 +1,6 @@
 {
   "name": "preact-fluid",
-  "version": "0.7.2",
+  "version": "0.9.1",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
