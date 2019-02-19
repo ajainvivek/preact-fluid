@@ -17,12 +17,11 @@ script:
 deploy:
   provider: npm
   email: ajainvivek07@gmail.com
+  skip_cleanup: true
   api_key:
     secure: $NPM_TOKEN
   on:
-    branch: master
     tags: true
-    repo: ajainvivek/preact-fluid
 
 branches:
   only: master
