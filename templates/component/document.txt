@@ -1,5 +1,0 @@
-<b>Examples:</b>
-
-```js
-<{{ properCase name }}>Newly generated component {{ name }}</{{ properCase name }}>
-```
