@@ -48,6 +48,7 @@
     "if-env": "^1.0.0",
     "jest": "^23.5.0",
     "lint-staged": "^6.0.0",
+    "lodash": "4.17.4",
     "plop": "^1.9.0",
     "preact": "^8.2.0",
     "preact-compat": "^3.16.0",
