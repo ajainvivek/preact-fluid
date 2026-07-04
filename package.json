@@ -48,7 +48,7 @@
     "if-env": "^1.0.0",
     "jest": "^23.5.0",
     "lint-staged": "^6.0.0",
-    "lodash": "4.17.4",
+    "lodash": "^4.18.0",
     "plop": "^1.9.0",
     "preact": "^8.2.0",
     "preact-compat": "^3.16.0",
@@ -62,7 +62,6 @@
     "webpack": "^3.5.5"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
     "preact": "^8.2.5",
     "preact-router": "^2.5.4",
     "styled-components": "^2.1.2"
