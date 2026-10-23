@@ -100,7 +100,7 @@ class Dropdown extends Component {
                 isOpened: true,
             },
             () => {
-                if (typeof openDropdown() === 'function') {
+                if (typeof openDropdown === 'function') {
                     openDropdown();
                 }
             }
